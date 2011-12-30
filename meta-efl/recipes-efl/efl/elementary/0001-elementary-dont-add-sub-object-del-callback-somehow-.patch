@@ -1,0 +1,27 @@
+From d77baa896ef377d83e7e2cbdcca3847bdaa2c1f5 Mon Sep 17 00:00:00 2001
+From: Martin Jansa <Martin.Jansa@gmail.com>
+Date: Fri, 30 Dec 2011 18:36:09 +0100
+Subject: [PATCH] elementary: dont add sub-object-del callback, somehow it
+ breaks shr_elm_softkey
+
+Signed-off-by: Martin Jansa <Martin.Jansa@gmail.com>
+---
+ src/lib/elm_win.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/lib/elm_win.c b/src/lib/elm_win.c
+index b4bdc35..21be4a2 100644
+--- a/src/lib/elm_win.c
++++ b/src/lib/elm_win.c
+@@ -1605,7 +1605,7 @@ elm_win_add(Evas_Object *parent, const char *name, Elm_Win_Type type)
+    evas_object_intercept_show_callback_add(win->win_obj,
+                                            _elm_win_obj_intercept_show, win);
+ 
+-   evas_object_smart_callback_add(win->win_obj, "sub-object-del", (Evas_Smart_Cb)_subobj_del, win);
++   //evas_object_smart_callback_add(win->win_obj, "sub-object-del", (Evas_Smart_Cb)_subobj_del, win);
+    ecore_evas_name_class_set(win->ee, name, _elm_appname);
+    ecore_evas_callback_delete_request_set(win->ee, _elm_win_delete_request);
+    ecore_evas_callback_resize_set(win->ee, _elm_win_resize);
+-- 
+1.7.8.1
+

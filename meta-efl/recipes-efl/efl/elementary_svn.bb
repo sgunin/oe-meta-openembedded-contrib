@@ -7,7 +7,9 @@ PR = "r1"
 SRCREV = "${EFL_SRCREV}"
 
 inherit efl gettext
-SRC_URI = "${E_SVN}/trunk;module=${SRCNAME};proto=http;scmdata=keep"
+SRC_URI = "${E_SVN}/trunk;module=${SRCNAME};proto=http;scmdata=keep \
+  file://0001-elementary-dont-add-sub-object-del-callback-somehow-.patch \
+"
 S = "${WORKDIR}/${SRCNAME}"
 
 EXTRA_OECONF = "\
