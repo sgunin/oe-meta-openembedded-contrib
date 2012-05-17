@@ -14,7 +14,7 @@ inherit gitpkgv
 PKGV = "v${GITPKGVTAG}"
 
 PV = "git"
-PR = "r27"
+PR = "r28"
 
 inherit useradd pkgconfig autotools vala perlnative
 
@@ -68,6 +68,10 @@ do_install() {
 	# create machine-id
 	# 20:12 < mezcalero> koen: you have three options: a) run systemd-machine-id-setup at install time, b) have / read-only and an empty file there (for stateless) and c) boot with / writable
 	touch ${D}${sysconfdir}/machine-id
+	
+	# systemd-update-utmp-runlevel.service fails to start without this
+	install -d ${D}${localstatedir}/run
+	touch ${D}${localstatedir}/run/utmp
 }
 
 python populate_packages_prepend (){
