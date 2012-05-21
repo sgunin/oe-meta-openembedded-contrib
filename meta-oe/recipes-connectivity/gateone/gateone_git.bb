@@ -2,7 +2,7 @@ DESCRIPTION = "HTML5 (plugin-free) web-based terminal emulator and SSH client"
 LICENSE = "AGPLv3"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=ee5b168fc7de89a0cadc49e27830aa2c"
 
-PR = "r1"
+PR = "r2"
 
 PV = "1.0"
 SRCREV = "0dfa4196ca514e075199c0dbf849353c6aa2976b"
