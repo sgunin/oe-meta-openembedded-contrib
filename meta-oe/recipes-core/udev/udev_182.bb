@@ -16,6 +16,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \
 # util-linux: Needed for libblkid
 # kmod: needed for libkmod
 DEPENDS = "gperf-native usbutils acl glib-2.0 util-linux kmod"
+PR = "r2"
 
 # version specific SRC_URI
 SRC_URI = "${KERNELORG_MIRROR}/linux/utils/kernel/hotplug/${P}.tar.gz \
@@ -51,23 +52,29 @@ do_configure_prepend() {
 	cp ${WORKDIR}/gtk-doc.make ${S}
 }
 
-PACKAGES =+ "${PN}-systemd libudev libgudev udev-consolekit udev-utils"
+PACKAGES =+ "${PN}-systemd udev-consolekit udev-utils"
+PACKAGES =+ "libudev libudev-dev libudev-dbg"
+PACKAGES =+ "libgudev libgudev-dev libgudev-dbg"
 
 FILES_${PN}-systemd = "${systemd_unitdir}"
 RDEPENDS_${PN}-systemd += "udev"
 
-FILES_libudev = "${base_libdir}/libudev.so.*"
-FILES_libgudev = "${base_libdir}/libgudev*.so.*"
-
 RDEPENDS_${PN} += "udev-utils"
 RPROVIDES_${PN} = "hotplug"
-FILES_${PN} += "${usrbindir}/* ${usrsbindir}/udevd"
-FILES_${PN}-dbg += "${usrbindir}/.debug ${usrsbindir}/.debug"
 
-# udev installs binaries under $(udev_prefix)/lib/udev, even if ${libdir}
-# is ${prefix}/lib64
-FILES_${PN} += "/lib/udev*"
-FILES_${PN}-dbg += "/lib/udev/.debug"
+FILES_${PN} += "${base_libdir}/udev"
+FILES_${PN}-dbg += "${libexecdir}/.debug"
+FILES_${PN}-dbg += "${base_libdir}/udev/.debug/"
+FILES_${PN}-dbg += "${base_libdir}/udev/.debug/*"
+FILES_${PN}-dev = "${datadir}/pkgconfig/udev.pc"
+FILES_libudev = "${base_libdir}/libudev.so.*"
+FILES_libudev-dbg = "${base_libdir}/.debug/libudev.so.*"
+FILES_libudev-dev = "${includedir}/libudev.h ${libdir}/libudev.so ${libdir}/libudev.la \
+                     ${libdir}/libudev.a ${libdir}/pkgconfig/libudev.pc"
+FILES_libgudev = "${base_libdir}/libgudev*.so.* ${libdir}/libgudev*.so.*"
+FILES_libgudev-dbg = "${base_libdir}/.debug/libgudev*.so.* ${libdir}/.debug/libgudev*.so.*"
+FILES_libgudev-dev = "${includedir}/gudev* ${libdir}/libgudev*.so ${libdir}/libgudev*.la \
+                     ${libdir}/libgudev*.a ${libdir}/pkgconfig/gudev*.pc"
 
 FILES_${PN}-consolekit += "${libdir}/ConsoleKit"
 RDEPENDS_${PN}-consolekit += "${@base_contains('DISTRO_FEATURES', 'x11', 'consolekit', '', d)}"
