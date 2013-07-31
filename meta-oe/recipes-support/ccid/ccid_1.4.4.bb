@@ -7,7 +7,7 @@ PR = "r0"
 DEPENDS = "virtual/libusb0 pcsc-lite"
 RDEPENDS_${PN} = "pcsc-lite"
 
-SRC_URI = "https://alioth.debian.org/frs/download.php/3579/ccid-${PV}.tar.bz2"
+SRC_URI = "https://alioth.debian.org/frs/download.php/file/3579/ccid-${PV}.tar.bz2"
 
 SRC_URI[md5sum] = "79ef91103bcdd99a3b31cb5c5721a829"
 SRC_URI[sha256sum] = "953e430d2e37a67b99041f584249085656d73e72390dfe40589f4dd5c367edd0"
