@@ -1,6 +1,6 @@
 require recipes-graphics/xorg-app/xorg-app-common.inc
 SUMMARY = "xterm is the standard terminal emulator for the X Window System"
-DEPENDS = "libxaw xproto xextproto libxext libxau libxpm ncurses"
+DEPENDS = "libxaw xproto xextproto libxext libxau libxpm ncurses fontconfig"
 
 LIC_FILES_CHKSUM = "file://xterm.h;beginline=3;endline=31;md5=540cf18ccc16bc3c5fea40d2ab5d8d51"
 
