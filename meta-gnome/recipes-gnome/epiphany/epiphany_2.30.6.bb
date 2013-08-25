@@ -8,6 +8,9 @@ inherit gnome
 SRC_URI[archive.md5sum] = "0c566b3ffd428d2135e3c8cb65352d64"
 SRC_URI[archive.sha256sum] = "278a5c00ce07e6a3ea440d289de22dbec3ebec4ded4ff3b4c48b580f469c2dcc"
 
+PACKAGECONFIG ??= "${@base_contains('DISTRO_FEATURES', 'zeroconf', 'zeroconf', '', d)}"
+PACKAGECONFIG[zeroconf] = "--enable-zeroconf,--disable-zeroconf,avahi"
+
 EXTRA_OECONF += " --disable-nss --with-distributor-name=${DISTRO} --without-ca-file"
 
 do_configure_prepend() {
