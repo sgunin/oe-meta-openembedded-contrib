@@ -13,7 +13,7 @@ VER_DIR = "${@gnome_verdir("${PV}")}"
 SRC_URI = "http://ftp.gnome.org/pub/GNOME/sources/tracker/${VER_DIR}/tracker-${PV}.tar.xz \
            file://0005-Fix-missing-gobject-introspection-checks.patch \
            file://enable-sqlite-crosscompile.patch \
-	   file://fix-removable-media-detection.patch \
+           file://fix-removable-media-detection.patch \
            file://90tracker \
            file://tracker-store.service \
            file://tracker-miner-fs.service \
@@ -24,6 +24,15 @@ SYSTEMD_SERVICE_${PN} = " tracker-store.service tracker-miner-fs.service tracker
 SYSTEMD_AUTO_ENABLE = "disable"
 
 EXTRA_OECONF += " tracker_cv_have_ioprio=yes"
+
+PACKAGECONFIG ??= "gstreamer"
+PACKAGECONFIG[enca] = "--enable-enca,--disable-enca,enca"
+PACKAGECONFIG[libgif] = "--enable-libgif,--disable-libgif,giflib"
+PACKAGECONFIG[gstreamer] = "--enable-generic-media-extractor=gstreamer,--enable-generic-media-extractor=external,gstreamer gst-plugins-good"
+PACKAGECONFIG[libgsf] = "--enable-libgsf,--disable-libgsf,libgsf"
+PACKAGECONFIG[poppler] = "--enable-poppler,--disable-poppler,poppler"
+PACKAGECONFIG[tiff] = "--enable-tiff,--disable-tiff,tiff"
+PACKAGECONFIG[upower] = "--enable-upower,--disable-upower,upower"
 
 # Disable the desktop-centric miners
 EXTRA_OECONF += "--disable-miner-thunderbird --disable-miner-firefox \
