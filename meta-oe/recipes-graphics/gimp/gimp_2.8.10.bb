@@ -11,6 +11,10 @@ inherit gnome
 
 PACKAGECONFIG ??= ""
 PACKAGECONFIG[helpbrowser] = "--with-webkit, --without-webkit, webkit-gtk"
+PACKAGECONFIG[bzip2] = "--with-bzip2,--without-bzip2,bzip2"
+PACKAGECONFIG[libxpm] = "--with-libxpm,--without-libxpm,libxpm"
+PACKAGECONFIG[libjasper] = "--with-libjasper,--without-libjasper,jasper"
+PACKAGECONFIG[gudev] = "--with-gudev,--without-gudev,udev"
 
 SRC_URI = "http://ftp.gimp.org/pub/gimp/v2.8/gimp-${PV}.tar.bz2 \
            file://freetype.patch \
