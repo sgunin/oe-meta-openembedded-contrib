@@ -15,4 +15,7 @@ inherit autotools pkgconfig
 
 S = "${WORKDIR}/${PN}-${PV}"
 
+PACKAGECONFIG ??= ""
+PACKAGECONFIG[png] = "--with-png,--without-png,libpng"
+
 EXTRA_OECONF = ""
