@@ -112,6 +112,8 @@ EXTRA_OECONF_append_armv7a = " --enable-armv6 --enable-neon"
 PACKAGECONFIG[mad] = "--enable-mad,--disable-mad,libmad"
 PACKAGECONFIG[a52] = "--enable-liba52,--disable-liba52,liba52"
 PACKAGECONFIG[lame] = ",,lame"
+PACKAGECONFIG[xss] = "--enable-xss,--disable-xss,libxscreensaver"
+PACKAGECONFIG[mpg123] = "--enable-mpg123,--disable-mpg123,mpg123"
 
 FULL_OPTIMIZATION = "-fexpensive-optimizations -fomit-frame-pointer -frename-registers -O4 -ffast-math"
 BUILD_OPTIMIZATION = "${FULL_OPTIMIZATION}"
