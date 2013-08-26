@@ -24,6 +24,7 @@ PR = "r1"
 PACKAGES =+ "${PN}-gtk"
 GTKIMMODULES_PACKAGES = "${PN}-gtk"
 
+DEPENDS = "gtk+3"
 RDEPENDS_${PN} = "qt4-plugin-inputmethod-imsw-multi libqtsvg4"
 
 RRECOMMENDS_${PN} = "maliit-plugins"
