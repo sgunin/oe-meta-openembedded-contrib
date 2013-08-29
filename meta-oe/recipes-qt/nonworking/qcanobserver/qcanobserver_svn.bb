@@ -8,13 +8,14 @@ inherit qt4x11
 DEPENDS += "qwt"
 
 PV = "0.5+svnr${SRCPV}"
-SRCREV = "48"
-SRC_URI = "svn://qcanobserver.svn.sourceforge.net/svnroot;module=qcanobserver;protocol=https \
+SRCREV = "50"
+SRC_URI = "svn://svn.code.sf.net/p/qcanobserver;module=code;protocol=https \
            file://0001-messagebufferinterface.cpp-add-sys-socket.h-as-inclu.patch \
-           file://0002-qconsole-writethread-gcc-4.5-fixes.patch  \
+	   file://0001-WIP-try-to-upgrade-to-qwt-6-API.patch \
+           file://0003-messagebufferinterface-include-unistd.h-for-read-wri.patch \
            file://candemo.xml"
 
-S = "${WORKDIR}/qcanobserver/"
+S = "${WORKDIR}/code/"
 
 CXXFLAGS += " -DPF_CAN=29  -DAF_CAN=PF_CAN"
 

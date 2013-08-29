@@ -1,0 +1,98 @@
+From fbfd3db23b2707e5d423e3271fef2a5a8f8719ab Mon Sep 17 00:00:00 2001
+From: Martin Jansa <Martin.Jansa@gmail.com>
+Date: Thu, 29 Aug 2013 16:27:22 +0200
+Subject: [PATCH] WIP: try to upgrade to qwt-6 API
+
+* biggest remaining issue is qcancostumplotcurve.cpp
+
+Signed-off-by: Martin Jansa <Martin.Jansa@gmail.com>
+---
+ graphicwindow.cpp     | 4 ++--
+ graphicwindow.h       | 7 +++----
+ qcancostumplotcurve.h | 2 --
+ 3 files changed, 5 insertions(+), 8 deletions(-)
+
+diff --git a/graphicwindow.cpp b/graphicwindow.cpp
+index f1690c6..0af3f12 100644
+--- a/graphicwindow.cpp
++++ b/graphicwindow.cpp
+@@ -123,7 +123,7 @@ void GraphicWindow::MainTimerSlot()
+        {
+            if(Curves.at(i)->x.count())
+            {
+-                Curves.at(i)->PlotCurve->setRawData((double*)&Curves.at(i)->x.first(),(double*)&Curves.at(i)->y.first(), Curves.at(i)->x.size());
++                Curves.at(i)->PlotCurve->setRawSamples((double*)&Curves.at(i)->x.first(),(double*)&Curves.at(i)->y.first(), Curves.at(i)->x.size());
+                 Curves.at(i)->PlotCurve->attach(Plot);
+ 
+            }
+@@ -140,7 +140,7 @@ void GraphicWindow::ClearAll()
+        {
+            if(Curves.at(i)->x.count())
+            {
+-                Curves.at(i)->PlotCurve->setRawData((double*)&Curves.at(i)->x.first(),(double*)&Curves.at(i)->y.first(), 0);
++                Curves.at(i)->PlotCurve->setRawSamples((double*)&Curves.at(i)->x.first(),(double*)&Curves.at(i)->y.first(), 0);
+                 Curves.at(i)->y.clear();
+                 Curves.at(i)->x.clear();
+            }
+diff --git a/graphicwindow.h b/graphicwindow.h
+index ea93db6..cf173bb 100644
+--- a/graphicwindow.h
++++ b/graphicwindow.h
+@@ -41,6 +41,7 @@
+ #include <qwt_plot_magnifier.h>
+ #include <QLinkedList>
+ #include "configdialog.h"
++#include <qwt_compat.h>
+ 
+ using namespace std;
+ 
+@@ -59,7 +60,6 @@ public:
+         this->insertLegend(legend, QwtPlot::BottomLegend);
+         ActCanvas = canvas();
+         CanvasZoomer = new QwtPlotZoomer( QwtPlot::xBottom, QwtPlot::yLeft,  ActCanvas);
+-        CanvasZoomer->setSelectionFlags( QwtPicker::DragSelection );
+         CanvasZoomer->setTrackerMode(QwtPicker::AlwaysOn);
+         CanvasZoomer->setMousePattern(QwtEventPattern::MouseSelect2,
+         Qt::NoButton, Qt::ControlModifier);
+@@ -92,7 +92,6 @@ public:
+ 
+         delete CanvasZoomer;
+         CanvasZoomer = new QwtPlotZoomer( QwtPlot::xBottom, QwtPlot::yLeft,  ActCanvas);
+-        CanvasZoomer->setSelectionFlags( QwtPicker::DragSelection );
+         CanvasZoomer->setTrackerMode(QwtPicker::AlwaysOn);
+     }
+         else
+@@ -132,8 +131,8 @@ class ItemCurveInfo
+     QCANCostumPlotCurve *PlotCurve;
+ 
+     CANSignal *pSignal;
+-    QwtArray<double> x;
+-    QwtArray<double> y;
++    QVector<double> x;
++    QVector<double> y;
+ };
+ 
+ namespace Ui {
+diff --git a/qcancostumplotcurve.h b/qcancostumplotcurve.h
+index a0dc16d..f9f5ad0 100644
+--- a/qcancostumplotcurve.h
++++ b/qcancostumplotcurve.h
+@@ -156,7 +156,6 @@ public:
+     };
+ 
+     PrivateData():
+-            curveType(Yfx),
+             style(QwtPlotCurve::Lines),
+             reference(0.0),
+             attributes(0),
+@@ -173,7 +172,6 @@ public:
+         delete curveFitter;
+     }
+ 
+-    QwtPlotCurve::CurveType curveType;
+     QwtPlotCurve::CurveStyle style;
+     double reference;
+ 
+-- 
+1.8.3.2
+

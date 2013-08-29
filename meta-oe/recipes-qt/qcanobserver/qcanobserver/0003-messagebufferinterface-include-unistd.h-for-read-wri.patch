@@ -1,0 +1,39 @@
+From 3d2d2f586c7a1498ab6a4376b128eaa86a9904b0 Mon Sep 17 00:00:00 2001
+From: Martin Jansa <Martin.Jansa@gmail.com>
+Date: Thu, 29 Aug 2013 12:29:32 +0200
+Subject: [PATCH] include unistd.h for read, write, close, usleep
+
+Upstream-Status: Pending
+
+Signed-off-by: Martin Jansa <Martin.Jansa@gmail.com>
+---
+ messagebufferinterface.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/messagebufferinterface.cpp b/messagebufferinterface.cpp
+index 116564c..93f3ce7 100644
+--- a/messagebufferinterface.cpp
++++ b/messagebufferinterface.cpp
+@@ -18,6 +18,7 @@
+ #include "messagebufferinterface.h"
+ #include "errordialog.h"
+ #include <stdio.h>
++#include <unistd.h>
+ #include <fcntl.h>
+ 
+ #include <string.h>
+diff --git a/graphicwindow.cpp b/graphicwindow.cpp
+index 7db6069..f1690c6 100644
+--- a/graphicwindow.cpp
++++ b/graphicwindow.cpp
+@@ -21,6 +21,7 @@
+ #include "extrect.h"
+ #include <stdio.h>
+ #include <fcntl.h>
++#include <unistd.h>
+ #include<sys/types.h>
+ #include<sys/stat.h>
+ #include <string.h>
+-- 
+1.8.3.2
+
