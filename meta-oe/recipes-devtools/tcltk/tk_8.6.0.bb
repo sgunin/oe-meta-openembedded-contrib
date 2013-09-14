@@ -15,7 +15,7 @@ LIC_FILES_CHKSUM = "file://../license.terms;md5=c88f99decec11afa967ad33d314f87fe
     file://../xlib/license.terms;md5=c88f99decec11afa967ad33d314f87fe \
 "
 
-DEPENDS = "tcl virtual/libx11 libxt"
+DEPENDS = "tcl virtual/libx11 libxt fontconfig"
 
 SRC_URI = "\
     ${SOURCEFORGE_MIRROR}/tcl/${BPN}${PV}-src.tar.gz \
