@@ -30,3 +30,5 @@ do_configure_prepend() {
     rm -f ${S}/acinclude/ltsugar.m4
     rm -f ${S}/acinclude/ltversion.m4
 }
+
+BBCLASSEXTEND = "native"
