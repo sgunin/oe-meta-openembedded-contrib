@@ -12,12 +12,16 @@ LICENSE = "AGPL-3.0 | CC-BY-3.0"
 LIC_FILES_CHKSUM = "file://README.md;beginline=77;endline=84;md5=4e907cb01787f6711506359a57c22961"
 
 export SLIC3R_NO_AUTO = "1"
+export PERL_MM_USE_DEFAULT = "1"
+export PERL_AUTOINSTALL = "--skipdeps"
+export PERL_MM_OPT = "INSTALLDIRS=vendor DESTDIR=${D}"
+export PERL_MB_OPT = "--installdirs vendor --destdir ${D}"
+export MODULEBUILDRC = "/dev/null"
 
 DEPENDS = "  libcapture-tiny-perl-native \
              libconstant-defer-perl-native \
              libencode-locale-perl-native \
 	     libextutils-cppguess-perl-native \
-             libextutils-parsexs-perl-native \
 	     libextutils-typemaps-default-perl-native \
              libio-stringy-perl-native \
              libmath-libm-perl-native \
@@ -47,6 +51,7 @@ RDEPENDS_${PN} = " libencode-locale-perl \
                    libextutils-parsexs-perl \
                    perl-module-file-basename \
                    perl-module-file-spec \
+                   perl-module-findbin \ 
                    perl-module-getopt-long \
                    libmath-planepath-perl \
                    libmodule-build-withxspp-perl \
@@ -54,6 +59,7 @@ RDEPENDS_${PN} = " libencode-locale-perl \
                    perl-module-scalar-util \
                    libtest-harness-perl \
                    libio-scalar-perl \
+		   libslic3r-perl \
                    libslic3r-xs-perl \
                    perl-module-time-hires \
 "
@@ -63,5 +69,15 @@ RECOMMENDS += " libclass-xsaccessor-perl-native \
                 libxml-sax-expatxs-perl-native \
                 libwx-perl-native \
 "
+do_compile() {
+    bbnote "No Build script generated. Skip."
+}
+
+do_install() {
+    install -d ${D}${bindir}
+    install -m 755 ${S}/slic3r.pl ${D}${bindir}
+}
+
+FILES_${PN} = "${bindir}/slic3r.pl"
 
 BBCLASSEXTEND = "native"
