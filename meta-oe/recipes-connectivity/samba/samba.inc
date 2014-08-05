@@ -45,14 +45,14 @@ PACKAGECONFIG[pam] = "--with-pam,--without-pam,libpam"
 PACKAGECONFIG[fam] = "--enable-fam,--disable-fam,gamin"
 PACKAGECONFIG[talloc] = "--enable-external-libtalloc --with-libtalloc, --disable-external-libtalloc --without-libtalloc, talloc"
 
-INITSCRIPT_PACKAGES = "samba winbind"
-INITSCRIPT_NAME_samba = "samba"
+INITSCRIPT_PACKAGES = "${PN}-base winbind"
+INITSCRIPT_NAME_${PN}-base = "samba"
 INITSCRIPT_NAME_winbind = "winbind"
 # No dependencies, goes in at level 20 (NOTE: take care with the
 # level, later levels put the shutdown later too - see the links
 # in rc6.d, the shutdown must precede network shutdown).
 INITSCRIPT_PARAMS = "defaults"
-CONFFILES_${PN} = "${sysconfdir}/samba/smb.conf"
+CONFFILES_${PN}-base = "${sysconfdir}/samba/smb.conf"
 
 do_configure_prepend () {
     ./script/mkversion.sh

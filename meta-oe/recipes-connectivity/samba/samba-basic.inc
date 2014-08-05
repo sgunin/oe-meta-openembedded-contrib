@@ -9,7 +9,22 @@ EXTRA_OECONF += "\
         --without-ldap \
         --without-krb5"
 
-PACKAGES =+ "libwbclient libwinbind libwinbind-dbg libnss-winbind winbind winbind-dbg libnetapi libtdb libsmbsharemodes libsmbclient libsmbclient-dev cifs cifs-doc swat"
+PACKAGES =+ "libwbclient libwinbind libwinbind-dbg libnss-winbind winbind winbind-dbg \
+             libnetapi libtdb libsmbsharemodes libsmbclient libsmbclient-dev \
+             cifs cifs-doc swat ${PN}-base"
+
+RDEPENDS_${PN} += "${PN}-base"
+
+FILES_${PN}-base = "${sbindir}/nmbd \
+                    ${sbindir}/smbd \
+                    ${sysconfdir}/default \
+                    ${sysconfdir}/samba \
+                    ${sysconfdir}/init.d/samba \
+                    ${localstatedir}/lib/samba \
+                    ${localstatedir}/log/samba \
+                    ${localstatedir}/nmbd \
+                    ${localstatedir}/spool/samba \
+"
 
 FILES_winbind-dbg = "${libdir}/idmap/.debug/*.so \
                      ${libdir}/security/.debug/pam_winbind.so \
