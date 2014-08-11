@@ -50,6 +50,9 @@ RDEPENDS_${PN} += "\
     ${PN}-words \
 "
 
+# twisted.spread imports decimal
+RDEPENDS_${PN}-core = "python-numbers"
+
 ALLOW_EMPTY_${PN} = "1"
 FILES_${PN} = ""
 
