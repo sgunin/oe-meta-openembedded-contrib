@@ -10,13 +10,14 @@ LIC_FILES_CHKSUM = "file://LICENSE.GPL;md5=6eb631b6da7fdb01508a80213ffc35ff"
 DEPENDS = "yajl libxmu fribidi mpeg2dec curl python libmodplug libmicrohttpd \
            sqlite3 libcdio libpcre boost lzo taglib libtinyxml jasper libass \
            libmad jpeg libsamplerate0 libvorbis tiff libxslt libgpg-error \
-           libsdl virtual/egl swig-native gperf-native unzip-native zip-native"
+           libsdl virtual/egl swig-native gperf-native unzip-native \
+           zip-native libcec rtmpdump"
 
 DEPENDS_append_arm = " cmake-native"
 DEPENDS_append_x86 = " nasm-native"
 
 CODENAME = "Gotham"
-SRCREV = "84725b0b1df072aecd26a55b82ef50ec828e595b"
+SRCREV = "0f3db0516711e05765d297d060563730131c2f92"
 SRC_URI = "git://github.com/xbmc/xbmc.git;branch=${CODENAME} \
            file://0001-configure-don-t-run-python-distutils-to-find-STAGING.patch \
            file://0002-Revert-fixed-ios-Add-memory-barriers-to-atomic-Add-S.patch \
@@ -112,3 +113,4 @@ RRECOMMENDS_${PN}_append_libc-glibc = " \
     glibc-charmap-ibm850 glibc-charmap-utf-8 \
     glibc-gconv-ibm85 glibc-gconv-utf-32 \
     "
+RDEPENDS_${PN} = " libpulsecommon"
