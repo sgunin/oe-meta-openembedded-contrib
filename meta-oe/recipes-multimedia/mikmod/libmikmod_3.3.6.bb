@@ -13,6 +13,9 @@ SRC_URI[sha256sum] = "3f363e03f7b1db75b9b6602841bbd440ed275a548e53545f980df8155d
 
 inherit autotools binconfig lib_package
 
+PACKAGECONFIG ??= " ${@bb.utils.contains('DISTRO_FEATURES', 'pulseaudio', 'pulseaudio', '', d)}"
+PACKAGECONFIG[pulseaudio] = "--enable-pulseaudio=yes,--enable-pulseaudio=no,pulseaudio"
+
 EXTRA_OECONF = "\
     --disable-af \
     --enable-alsa \
