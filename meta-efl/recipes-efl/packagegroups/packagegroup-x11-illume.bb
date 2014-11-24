@@ -8,7 +8,7 @@ PR = "r5"
 inherit packagegroup allarch
 
 # Default theme and config
-ETHEME ?= "e-wm-theme-default"
+ETHEME ?= "elementary-themes"
 ECONFIG ?= "e-wm-config-mobile"
 
 RRECOMMENDS_${PN} = "\
