@@ -7,6 +7,7 @@ SECTION = "e/apps"
 inherit e gettext systemd
 SRC_URI = "${E_SVN}/trunk/PROTO;module=${SRCNAME};protocol=http;scmdata=keep \
     file://0001-pam-use-common-auth-instead-of-system-auth.patch \
+    file://entrance-conf.patch \
     file://entrance.service \
 "
 S = "${WORKDIR}/${SRCNAME}"
