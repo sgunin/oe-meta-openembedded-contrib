@@ -1,8 +1,9 @@
 [Unit]
 Description=Login manager for Enlightenment
+Conflicts=getty@tty7.service plymouth-quit.service
 
 [Service]
-ExecStart=/usr/sbin/entrance
+ExecStart=/usr/sbin/entrance -n
 
 [Install]
 Alias=display-manager.service
