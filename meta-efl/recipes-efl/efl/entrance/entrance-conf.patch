@@ -1,0 +1,13 @@
+Index: data/entrance.conf
+===================================================================
+--- entrance/data/entrance.conf	(revision 82070)
++++ entrance/data/entrance.conf	(working copy)
+@@ -4,7 +4,7 @@
+     /* X server path */
+     value "xinit_path" string: "/usr/bin/X";
+     /* X server args */
+-    value "xinit_args" string: "-nolisten tcp -br vt7";
++    value "xinit_args" string: "-nolisten tcp vt7";
+ 
+     /* xauth path binary */
+     value "xauth_path" string: "/usr/bin/xauth";
