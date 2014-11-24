@@ -20,6 +20,7 @@ PROVIDES += "ecore edje eet eeze efreet eina eio embryo emotion ethumb evas eldb
 EXTRA_OECONF = " \
     --disable-physics \
     --enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aba \
+    ${@base_contains('TUNE_FEATURES', 'neon', '--enable-neon', '--disable-neon', d)} \
 "
 EXTRA_OECONF_append_class-target = " \
     --with-edje-cc=${STAGING_BINDIR_NATIVE}/edje_cc \
@@ -51,7 +52,9 @@ EXTRA_OECONF_append_class-native = " \
     --disable-image-loader-dds \
 "
 
-PACKAGECONFIG ?= "wayland egl opengl-es gstreamer1 pulseaudio luajit"
+PACKAGECONFIG ?= "wayland egl opengl-es gstreamer1 luajit \
+                  ${@base_contains('DISTRO_FEATURES', 'pulseaudio', 'pulseaudio', '', d)} \
+                  ${@base_contains('DISTRO_FEATURES', 'systemd', 'systemd', '', d)}"
 PACKAGECONFIG_class-native = "luajit"
 
 PACKAGECONFIG[wayland] = "--enable-wayland --enable-wayland-ivi-shell,--disable-wayland --disable-wayland-ivi-shell,wayland"
@@ -193,6 +196,7 @@ FILES_libemotion = "\
 "
 FILES_efreet = " \
     ${datadir}/dbus-1/services/*Efreet* \
+    ${libdir}/systemd/user/efreet.service \
     ${libdir}/efreet/*/efreet*create \
     ${bindir}/efreetd \
     ${datadir}/efreet \
@@ -219,6 +223,7 @@ FILES_embryo = " \
 "
 FILES_ethumb = " \
     ${datadir}/dbus-1/services/*Ethumb* \
+    ${libdir}/systemd/user/ethumb.service \
     ${libdir}/libethumb${SOLIBS} \
     ${libdir}/libethumb_client${SOLIBS} \
     ${bindir}/ethumbd \

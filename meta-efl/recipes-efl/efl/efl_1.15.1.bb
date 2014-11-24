@@ -4,6 +4,8 @@ SRC_URI = "\
     ${E_RELEASES}/libs/${SRCNAME}/${SRCNAME}-${SRCVER}.tar.gz \
     file://0001-configure.ac-Don-t-check-for-Xprint-extension.patch \
     file://0001-evas_3d-Add-Eet.h-includes.patch \
+    file://0002-evas_3d-Add-Eet.h-includes.patch \
+    file://fix-configure-systemd.patch \
 "
 
 SRC_URI[md5sum] = "dc91bcab73275f678e1748a2dea8d88a"
