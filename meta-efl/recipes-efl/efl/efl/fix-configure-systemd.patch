@@ -1,0 +1,47 @@
+--- efl-1.11.0/configure.ac.orig	2014-08-28 08:53:24.215245108 -0600
++++ efl-1.11.0/configure.ac	2014-08-28 08:59:04.341710384 -0600
+@@ -650,7 +650,7 @@
+ 
+ 
+ if test "x${have_systemd_pkg}" = "xauto" -o "x${have_systemd_pkg}" = "xyes"; then
+-   PKG_CHECK_MODULES([SYSTEMD], [libsystemd-daemon >= 192 libsystemd-journal >= 192],
++   PKG_CHECK_MODULES([SYSTEMD], [libsystemd >= 208],
+    [have_systemd_pkg="yes"],
+    [have_systemd_pkg="no"])
+ fi
+@@ -864,7 +864,7 @@
+    [test "x${want_cow_magic}" = "xyes" ],
+    [1], [Turn on Eina_Magic in Eina_Cow])
+ 
+-EFL_OPTIONAL_DEPEND_PKG([EINA], [${want_systemd}], [SYSTEMD], [libsystemd-journal])
++EFL_OPTIONAL_DEPEND_PKG([EINA], [${want_systemd}], [SYSTEMD], [libsystemd])
+ 
+ EFL_EVAL_PKGS([EINA])
+ 
+@@ -2180,7 +2180,7 @@
+    want_g_main_loop="no"
+ fi
+ 
+-EFL_OPTIONAL_DEPEND_PKG([ECORE], [${want_systemd}], [SYSTEMD], [libsystemd-daemon])
++EFL_OPTIONAL_DEPEND_PKG([ECORE], [${want_systemd}], [SYSTEMD], [libsystemd])
+ 
+ EFL_ADD_FEATURE([ECORE], [systemd-daemon], [${want_systemd}])
+ EFL_ADD_FEATURE([ECORE], [glib])
+@@ -2413,7 +2413,7 @@
+    ecore_con_resolver="fork"
+ fi
+ 
+-EFL_OPTIONAL_DEPEND_PKG([ECORE_CON], [${want_systemd}], [SYSTEMD], [libsystemd-daemon])
++EFL_OPTIONAL_DEPEND_PKG([ECORE_CON], [${want_systemd}], [SYSTEMD], [libsystemd])
+ 
+ EFL_ADD_FEATURE([ECORE_CON], [cares])
+ EFL_ADD_FEATURE([ECORE_CON], [local-sockets], [${want_ecore_con_local_sockets}])
+@@ -2813,7 +2813,7 @@
+ EFL_INTERNAL_DEPEND_PKG([ECORE_DRM], [eo])
+ EFL_INTERNAL_DEPEND_PKG([ECORE_DRM], [eina])
+ 
+-EFL_DEPEND_PKG([ECORE_DRM], [DRM], [libudev >= 148 libdrm >= 2.4 xkbcommon >= 0.3.0 libsystemd-login >= 192 dbus-1])
++EFL_DEPEND_PKG([ECORE_DRM], [DRM], [libudev >= 148 libdrm >= 2.4 xkbcommon >= 0.3.0 libsystemd >= 208 dbus-1])
+ 
+ EFL_EVAL_PKGS([ECORE_DRM])
+ 
