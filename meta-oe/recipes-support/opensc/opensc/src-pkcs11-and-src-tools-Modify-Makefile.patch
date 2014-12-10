@@ -1,0 +1,122 @@
+From 7605f887b4c637f099bdd2eccb5d3082a6f93e31 Mon Sep 17 00:00:00 2001
+From: Li xin <lixin.fnst@cn.fujitsu.com>
+Date: Wed, 10 Dec 2014 12:06:08 +0900
+Subject: [PATCH 2/2] src/pkcs11 and src/tools: Modify Makefile
+
+fix error: error: unrecognized command line option '-qversion'
+
+Upstream-Status: pending
+
+Signed-off-by: Li Xin <lixin.fnst@cn.fujitsu.com>
+---
+ src/pkcs11/Makefile.am | 1 +
+ src/pkcs11/Makefile.in | 5 +++--
+ src/tools/Makefile.am  | 2 ++
+ src/tools/Makefile.in  | 8 +++++---
+ 4 files changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/src/pkcs11/Makefile.am b/src/pkcs11/Makefile.am
+index f6b4361..3a3fced 100644
+--- a/src/pkcs11/Makefile.am
++++ b/src/pkcs11/Makefile.am
+@@ -23,6 +23,7 @@ OPENSC_PKCS11_LIBS = $(OPTIONAL_OPENSSL_LIBS) $(PTHREAD_LIBS) \
+ 	$(top_builddir)/src/scconf/libscconf.la
+ 
+ libpkcs11_la_SOURCES = libpkcs11.c
++libpkcs11_la_LIBADD = $(LTLIB_LIBS)
+ 
+ opensc_pkcs11_la_SOURCES = $(OPENSC_PKCS11_SRC) $(OPENSC_PKCS11_INC) hack-disabled.c
+ opensc_pkcs11_la_LIBADD = $(OPENSC_PKCS11_LIBS)
+diff --git a/src/pkcs11/Makefile.in b/src/pkcs11/Makefile.in
+index b0d0ff5..b6d81d6 100644
+--- a/src/pkcs11/Makefile.in
++++ b/src/pkcs11/Makefile.in
+@@ -82,10 +82,10 @@ am__base_list = \
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkcs11dir)" \
+ 	"$(DESTDIR)$(openscincludedir)"
+ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
+-libpkcs11_la_LIBADD =
++am__DEPENDENCIES_1 =
++libpkcs11_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_libpkcs11_la_OBJECTS = libpkcs11.lo
+ libpkcs11_la_OBJECTS = $(am_libpkcs11_la_OBJECTS)
+-am__DEPENDENCIES_1 =
+ am__DEPENDENCIES_2 = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(top_builddir)/src/pkcs15init/libpkcs15init.la \
+ 	$(top_builddir)/src/libopensc/libopensc.la \
+@@ -348,6 +348,7 @@ OPENSC_PKCS11_LIBS = $(OPTIONAL_OPENSSL_LIBS) $(PTHREAD_LIBS) \
+ 	$(top_builddir)/src/scconf/libscconf.la
+ 
+ libpkcs11_la_SOURCES = libpkcs11.c
++libpkcs11_la_LIBADD = $(LTLIB_LIBS)
+ opensc_pkcs11_la_SOURCES = $(OPENSC_PKCS11_SRC) $(OPENSC_PKCS11_INC) \
+ 	hack-disabled.c $(am__append_1)
+ opensc_pkcs11_la_LIBADD = $(OPENSC_PKCS11_LIBS)
+diff --git a/src/tools/Makefile.am b/src/tools/Makefile.am
+index 20af208..dede7a7 100644
+--- a/src/tools/Makefile.am
++++ b/src/tools/Makefile.am
+@@ -22,6 +22,7 @@ LIBS = $(top_builddir)/src/libopensc/libopensc.la \
+ 	$(top_builddir)/src/common/libcompat.la
+ 
+ opensc_tool_SOURCES = opensc-tool.c util.c
++opensc_tool_LDADD = $(top_builddir)/src/scconf/libscconf.la
+ piv_tool_SOURCES = piv-tool.c util.c
+ piv_tool_LDADD = $(OPTIONAL_OPENSSL_LIBS)
+ opensc_explorer_SOURCES = opensc-explorer.c util.c
+@@ -39,6 +40,7 @@ pkcs15_init_SOURCES = pkcs15-init.c util.c
+ pkcs15_init_LDADD = $(OPTIONAL_OPENSSL_LIBS) \
+ 	$(top_builddir)/src/pkcs15init/libpkcs15init.la
+ cardos_tool_SOURCES = cardos-tool.c util.c
++cardos_tool_LDADD = $(OPTIONAL_OPENSSL_LIBS)
+ eidenv_SOURCES = eidenv.c
+ netkey_tool_SOURCES = netkey-tool.c
+ netkey_tool_LDADD = $(OPTIONAL_OPENSSL_LIBS)
+diff --git a/src/tools/Makefile.in b/src/tools/Makefile.in
+index 1041f00..c9b1d12 100644
+--- a/src/tools/Makefile.in
++++ b/src/tools/Makefile.in
+@@ -85,13 +85,13 @@ am__cardos_tool_SOURCES_DIST = cardos-tool.c util.c versioninfo.rc
+ am_cardos_tool_OBJECTS = cardos-tool.$(OBJEXT) util.$(OBJEXT) \
+ 	$(am__objects_1)
+ cardos_tool_OBJECTS = $(am_cardos_tool_OBJECTS)
+-cardos_tool_LDADD = $(LDADD)
++am__DEPENDENCIES_1 =
++cardos_tool_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am__cryptoflex_tool_SOURCES_DIST = cryptoflex-tool.c util.c \
+ 	versioninfo.rc
+ am_cryptoflex_tool_OBJECTS = cryptoflex-tool.$(OBJEXT) util.$(OBJEXT) \
+ 	$(am__objects_1)
+ cryptoflex_tool_OBJECTS = $(am_cryptoflex_tool_OBJECTS)
+-am__DEPENDENCIES_1 =
+ cryptoflex_tool_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am__eidenv_SOURCES_DIST = eidenv.c versioninfo.rc
+ am_eidenv_OBJECTS = eidenv.$(OBJEXT) $(am__objects_1)
+@@ -111,7 +111,7 @@ am__opensc_tool_SOURCES_DIST = opensc-tool.c util.c versioninfo.rc
+ am_opensc_tool_OBJECTS = opensc-tool.$(OBJEXT) util.$(OBJEXT) \
+ 	$(am__objects_1)
+ opensc_tool_OBJECTS = $(am_opensc_tool_OBJECTS)
+-opensc_tool_LDADD = $(LDADD)
++opensc_tool_DEPENDENCIES = $(top_builddir)/src/scconf/libscconf.la
+ am__piv_tool_SOURCES_DIST = piv-tool.c util.c versioninfo.rc
+ am_piv_tool_OBJECTS = piv-tool.$(OBJEXT) util.$(OBJEXT) \
+ 	$(am__objects_1)
+@@ -390,6 +390,7 @@ dist_bin_SCRIPTS = cardos-info $(am__append_2)
+ AM_CFLAGS = $(OPTIONAL_OPENSSL_CFLAGS) $(OPTIONAL_READLINE_CFLAGS)
+ INCLUDES = -I$(top_srcdir)/src/common -I$(top_builddir)/src/include
+ opensc_tool_SOURCES = opensc-tool.c util.c $(am__append_3)
++opensc_tool_LDADD = $(top_builddir)/src/scconf/libscconf.la
+ piv_tool_SOURCES = piv-tool.c util.c $(am__append_4)
+ piv_tool_LDADD = $(OPTIONAL_OPENSSL_LIBS)
+ opensc_explorer_SOURCES = opensc-explorer.c util.c $(am__append_5)
+@@ -409,6 +410,7 @@ pkcs15_init_LDADD = $(OPTIONAL_OPENSSL_LIBS) \
+ 	$(top_builddir)/src/pkcs15init/libpkcs15init.la
+ 
+ cardos_tool_SOURCES = cardos-tool.c util.c $(am__append_11)
++cardos_tool_LDADD = $(OPTIONAL_OPENSSL_LIBS)
+ eidenv_SOURCES = eidenv.c $(am__append_12)
+ netkey_tool_SOURCES = netkey-tool.c $(am__append_13)
+ netkey_tool_LDADD = $(OPTIONAL_OPENSSL_LIBS)
+-- 
+1.8.4.2
+
