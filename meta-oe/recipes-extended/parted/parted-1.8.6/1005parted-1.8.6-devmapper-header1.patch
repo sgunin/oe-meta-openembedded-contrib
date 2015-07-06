@@ -1,0 +1,13 @@
+diff -up parted-1.8.6/include/parted/device.h.devmapper parted-1.8.6/include/parted/device.h
+--- parted-1.8.6/include/parted/device.h.devmapper	2007-10-04 15:39:27.000000000 -0400
++++ parted-1.8.6/include/parted/device.h	2007-10-04 15:40:11.000000000 -0400
+@@ -46,9 +46,7 @@ typedef enum {
+         PED_DEVICE_DASD         = 9,
+         PED_DEVICE_VIODASD      = 10,
+         PED_DEVICE_SX8          = 11,
+-#ifdef ENABLE_DEVICE_MAPPER
+         PED_DEVICE_DM           = 12,
+-#endif
+         PED_DEVICE_XVD          = 13
+ } PedDeviceType;
+ 

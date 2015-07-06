@@ -1,0 +1,50 @@
+diff -up parted-1.8.6/libparted/arch/linux.c.xvd parted-1.8.6/libparted/arch/linux.c
+--- parted-1.8.6/libparted/arch/linux.c.xvd	2007-08-07 14:05:59.000000000 -0400
++++ parted-1.8.6/libparted/arch/linux.c	2007-08-07 14:07:13.000000000 -0400
+@@ -248,6 +248,7 @@ struct blkdev_ioctl_param {
+ #define VIODASD_MAJOR           112
+ #define SX8_MAJOR1              160
+ #define SX8_MAJOR2              161
++#define XVD_MAJOR               202
+ 
+ #define SCSI_BLK_MAJOR(M) (                                             \
+                 (M) == SCSI_DISK0_MAJOR                                 \
+@@ -450,6 +451,8 @@ _device_probe_type (PedDevice* dev)
+         } else if (_is_dm_major(dev_major)) {
+                 dev->type = PED_DEVICE_DM;
+ #endif
++        } else if (dev_major == XVD_MAJOR && (dev_minor % 0x10 == 0)) {
++                dev->type = PED_DEVICE_XVD;
+         } else {
+                 dev->type = PED_DEVICE_UNKNOWN;
+         }
+@@ -1152,6 +1155,11 @@ linux_new (const char* path)
+                 break;
+ #endif
+ 
++        case PED_DEVICE_XVD:
++                if (!init_generic (dev, _("Xen Virtual Block Device")))
++                        goto error_free_arch_specific;
++                break;
++
+         case PED_DEVICE_UNKNOWN:
+                 if (!init_generic (dev, _("Unknown")))
+                         goto error_free_arch_specific;
+diff -up parted-1.8.6/include/parted/device.h.xvd parted-1.8.6/include/parted/device.h
+--- parted-1.8.6/include/parted/device.h.xvd	2007-01-12 10:15:10.000000000 -0500
++++ parted-1.8.6/include/parted/device.h	2007-08-07 14:07:13.000000000 -0400
+@@ -45,11 +45,11 @@ typedef enum {
+         PED_DEVICE_UBD          = 8,
+         PED_DEVICE_DASD         = 9,
+         PED_DEVICE_VIODASD      = 10,
+-        PED_DEVICE_SX8          = 11
++        PED_DEVICE_SX8          = 11,
+ #ifdef ENABLE_DEVICE_MAPPER
+-                                    ,
+-        PED_DEVICE_DM           = 12
++        PED_DEVICE_DM           = 12,
+ #endif
++        PED_DEVICE_XVD          = 13
+ } PedDeviceType;
+ 
+ typedef struct _PedDevice PedDevice;

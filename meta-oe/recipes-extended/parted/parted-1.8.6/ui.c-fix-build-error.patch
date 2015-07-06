@@ -1,0 +1,26 @@
+From 4f4dfd5aabdaadd8f495e193ca8daed5a3a1782a Mon Sep 17 00:00:00 2001
+From: Li xin <lixin.fnst@cn.fujitsu.com>
+Date: Fri, 28 Nov 2014 02:49:19 +0900
+Subject: [PATCH] parted/ui.c : fix build error
+
+Signed-off-by: Li Xin <lixin.fnst@cn.fujitsu.com>
+---
+ parted/ui.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/parted/ui.c b/parted/ui.c
+index 59cb98b..b583693 100644
+--- a/parted/ui.c
++++ b/parted/ui.c
+@@ -1376,7 +1376,7 @@ init_ui ()
+ 
+ #ifdef HAVE_LIBREADLINE
+         rl_initialize ();
+-        rl_attempted_completion_function = (CPPFunction*) complete_function;
++        rl_attempted_completion_function = (rl_completion_func_t*) complete_function;
+         readline_state.in_readline = 0;
+ #endif
+ 
+-- 
+1.8.4.2
+

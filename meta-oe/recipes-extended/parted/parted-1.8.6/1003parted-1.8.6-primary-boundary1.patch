@@ -1,0 +1,12 @@
+--- parted-1.8.6/libparted/labels/dos.c.boundary	2007-03-13 13:01:09.000000000 -0400
++++ parted-1.8.6/libparted/labels/dos.c	2007-04-11 14:56:54.000000000 -0400
+@@ -1696,8 +1696,7 @@
+ 					 _primary_start_constraint (disk, part,
+ 						 bios_geom, min_geom)));
+ 
+-	if (!solution)
+-		solution = _best_solution (part, bios_geom, solution,
++	solution = _best_solution (part, bios_geom, solution,
+ 			_try_constraint (part, constraint,
+ 				_primary_constraint (disk, bios_geom,
+ 				min_geom)));
