@@ -4,9 +4,8 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=834cbc6995db88433db17cdf8953a428"
 HOMEPAGE = "http://liftoffsoftware.com/Products/GateOne"
 
 PV = "1.2"
-SRCREV = "1528d324088fc1c180b7fdf50f5b5c1af057eef6"
-SRC_URI = "git://github.com/liftoff/GateOne.git \
-           file://0001-configuration.py-Hack-around-broken-gethostname-thin.patch \
+SRCREV = "17fbf85753f4d9c317950a3ef14f811188a51cb7"
+SRC_URI = "git://github.com/liftoff/GateOne.git;branch=master \
            file://gateone-avahi.service \
            file://80oe.conf \
            file://gateone.service \
@@ -49,6 +48,7 @@ FILES_${PN} = "${localstatedir}/lib ${bindir} ${base_libdir} ${sysconfdir} ${PYT
 RDEPENDS_${PN} = "mime-support \
                   openssh-ssh \
                   python-compression \
+                  python-contextlib \
                   python-crypt \
                   python-datetime \
                   python-email \
@@ -76,6 +76,7 @@ RDEPENDS_${PN} = "mime-support \
                   python-tornado \
                   python-unixadmin \
                   python-xml \
+                  python-html5lib \
                   bash \
 "
 
