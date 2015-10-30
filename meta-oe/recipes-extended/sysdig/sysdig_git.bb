@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 inherit cmake pkgconfig
 
-DEPENDS = "luajit zlib ncurses"
+DEPENDS = "lua5.1 zlib ncurses"
 RDEPENDS_${PN} = "bash"
 
 SRC_URI = "git://github.com/draios/sysdig.git;branch=master \
