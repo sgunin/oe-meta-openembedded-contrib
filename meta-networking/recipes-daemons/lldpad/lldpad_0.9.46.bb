@@ -23,7 +23,7 @@ do_configure_prepend() {
 do_install_append () {
     install -m 0755 -d ${D}${systemd_unitdir}
     mv ${D}${prefix}${systemd_unitdir}/* ${D}${systemd_unitdir}/
-    rmdir ${D}${prefix}${systemd_unitdir}
+    rmdir -p --ignore-fail-on-non-empty ${D}${prefix}${systemd_unitdir}
 }
 
 FILES_${PN} += "${systemd_unitdir}"
