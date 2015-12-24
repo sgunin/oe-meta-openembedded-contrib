@@ -1,0 +1,12 @@
+--- ./configure
++++ ./configure
+@@ -316,9 +316,6 @@
+ if [ "$STATIC" = yes ]; then
+ 	echo "LDFLAGS+=	-static" >>$CONFIG_MK
+ fi
+-for x in $INCLUDEDIR; do
+-	echo "CPPFLAGS+=	-I$x" >>$CONFIG_MK
+-done
+
+ if [ -z "$DEBUG" -a -f .fslckout ]; then
+ 	printf "Found fossil checkout ... "
