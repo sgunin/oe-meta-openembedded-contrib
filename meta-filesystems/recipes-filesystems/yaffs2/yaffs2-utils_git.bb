@@ -38,3 +38,6 @@ do_install() {
 }
 
 BBCLASSEXTEND = "native"
+
+# http://errors.yoctoproject.org/Errors/Details/35140/
+PNBLACKLIST[yaffs2-utils] ?= "BROKEN: error: unknown type name 'u8'"
