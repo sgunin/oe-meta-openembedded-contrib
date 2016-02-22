@@ -11,6 +11,8 @@ inherit autotools pkgconfig gnome gconf gobject-introspection
 
 SRC_URI += "file://0001-configure.ac-drop-a-copy-paste-of-introspection.m4-m.patch"
 
+SRC_URI += "file://0001-configure.ac-drop-a-copy-paste-of-introspection.m4-m.patch"
+
 SRC_URI[archive.md5sum] = "3056b94bb3281dbc8311371bfc23cf72"
 SRC_URI[archive.sha256sum] = "4d8bca33424eb711acdb6a060cb488b132063d699c4fa201db24c2c89c62529c"
 
