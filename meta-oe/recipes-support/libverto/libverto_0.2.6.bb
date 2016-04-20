@@ -19,5 +19,7 @@ PACKAGECONFIG[libevent] = "--with-libevent=default,--without-libevent,libevent"
 PACKAGECONFIG[tevent] = "--with-tevent=default,--without-tevent,libtevent"
 
 python populate_packages_prepend () {
-    do_split_packages(d, "${libdir}", "^libverto-(.*)\.so\..*$", "libverto-%s", "libverto module for %s", allow_links=True, prepend=True)
+    modules = do_split_packages(d, "${libdir}", "^libverto-(.*)\.so\..*$", "libverto-%s", "libverto module for %s", allow_links=True, prepend=True)
+    #d.appendVar("RDEPENDS_" + d.getVar("PN", True), "|".join(modules))
+    # BREAKS krb as it doesn't depend on a implementation
 }
