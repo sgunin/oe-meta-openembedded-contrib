@@ -58,3 +58,5 @@ python __anonymous() {
         d.appendVar("EXTRA_OECONF", " --with-flavors=%s" % ",".join(flavors))
 }
 
+# http://errors.yoctoproject.org/Errors/Details/81005/
+PNBLACKLIST[glmark2] ?= "BROKEN: fails to build with gcc-6"
