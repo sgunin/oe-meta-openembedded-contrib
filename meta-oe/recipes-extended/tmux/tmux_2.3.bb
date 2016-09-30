@@ -9,7 +9,7 @@ DEPENDS = "ncurses libevent"
 
 
 SRC_URI = "git://github.com/tmux/tmux.git;branch=master"
-SRCREV ?= "310f0a960ca64fa3809545badc629c0c166c6cd2"
+SRCREV ?= "52869ed182482c26163799a7215139f4d81b6fca"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
