@@ -33,7 +33,7 @@ DEPENDS += "readline virtual/libiconv zlib popt libtalloc libtdb libtevent libld
 SYSVINITTYPE_linuxstdbase = "lsb"
 SYSVINITTYPE = "sysv"
 
-INITSCRIPT_NAME = "samba.sh"
+INITSCRIPT_NAME = "samba"
 INITSCRIPT_PARAMS = "start 20 3 5 . stop 20 0 1 6 ."
 
 PACKAGECONFIG ??= "${@base_contains('DISTRO_FEATURES', 'pam', 'pam', '', d)} \
@@ -102,15 +102,15 @@ do_install_append() {
             >> ${D}${sysconfdir}/tmpfiles.d/samba.conf
     elif ${@bb.utils.contains('PACKAGECONFIG', 'lsb', 'true', 'false', d)}; then
         install -d ${D}${sysconfdir}/init.d
-        install -m 0755 packaging/LSB/samba.sh ${D}${sysconfdir}/init.d
+        install -m 0755 packaging/LSB/samba.sh ${D}${sysconfdir}/init.d/samba
     elif ${@bb.utils.contains('PACKAGECONFIG', 'sysv', 'true', 'false', d)}; then
         install -d ${D}${sysconfdir}/init.d
-        install -m 0755 packaging/sysv/samba.init ${D}${sysconfdir}/init.d/samba.sh
+        install -m 0755 packaging/sysv/samba.init ${D}${sysconfdir}/init.d/samba
         sed -e 's,/opt/samba/bin,${sbindir},g' \
             -e 's,/opt/samba/smb.conf,${sysconfdir}/samba/smb.conf,g' \
             -e 's,/opt/samba/log,${localstatedir}/log/samba,g' \
-            -e 's,/etc/init.d/samba.server,${sysconfdir}/init.d/samba.sh,g' \
-            -i ${D}${sysconfdir}/init.d/samba.sh
+            -e 's,/etc/init.d/samba.server,${sysconfdir}/init.d/samba,g' \
+            -i ${D}${sysconfdir}/init.d/samba
     fi
 
     install -d ${D}${sysconfdir}/samba
