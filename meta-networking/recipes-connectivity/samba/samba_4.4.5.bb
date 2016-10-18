@@ -241,7 +241,7 @@ FILES_${PN} += "${libdir}/vfs/*.so \
                 ${libdir}/charset/*.so \
                 ${libdir}/*.dat \
                 ${libdir}/auth/*.so \
-                ${libdir}/security/pam_smbpass.so \
+                ${base_libdir}/security/pam_smbpass.so \
 "
 
 FILES_libwbclient = "${libdir}/libwbclient.so.* ${libdir}/samba/libwinbind-client.so"
@@ -256,9 +256,6 @@ FILES_winbind = "${sbindir}/winbindd \
 
 FILES_libnss-winbind = "${libdir}/libnss_*${SOLIBS} \
                         ${libdir}/nss_info \
-"
-
-FILES_${PN} += "${base_libdir}/security/pam_smbpass.so \
 "
 
 FILES_libwinbind = "${base_libdir}/security/pam_winbind.so \
