@@ -18,10 +18,10 @@ SRC_URI = " \
     file://dot.zshrc \
 "
 
-SRC_URI[zsh.md5sum] = "afe96fde08b70e23c1cab1ca7a68fb34"
-SRC_URI[zsh.sha256sum] = "f17916320ffaa844bbd7ce48ceeb5945fc5f3eff64b149b4229bbfbdf3795a9d"
-SRC_URI[zsh-docs.md5sum] = "873f1ade1fa5d0d15f9cba16d3ba5f98"
-SRC_URI[zsh-docs.sha256sum] = "328352cf3d5d0ec4b6e31dcefd25ff5b4c0e6b8077d1fe84448ebb50d6ada52a"
+SRC_URI[zsh.md5sum] = "c5ba34e68fcf62a2e78adc56bf3d328a"
+SRC_URI[zsh.sha256sum] = "76f82cfd5ce373cf799a03b6f395283f128430db49202e3e3f512fb5a19d6f8a"
+SRC_URI[zsh-docs.md5sum] = "12c35fff5b1b902a5a81ab79cb9c3da6"
+SRC_URI[zsh-docs.sha256sum] = "cdfc6c3f7235b13308af5316cfa87abb5f51b3ec72d45f9043fde6e5b2e8663e"
 
 inherit autotools gettext update-alternatives pkgconfig
 

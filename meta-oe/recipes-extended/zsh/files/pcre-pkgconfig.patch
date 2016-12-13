@@ -19,10 +19,10 @@ index e91be3c..5580d13 100644
  builtin(include, aczsh.m4)
 +builtin(include, pkg.m4)
 diff --git a/configure.ac b/configure.ac
-index c3bd713..918657c 100644
+index 920c2fc..d151229 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -661,17 +661,15 @@ AC_HEADER_TIME
+@@ -671,17 +671,15 @@ AC_HEADER_TIME
  AC_HEADER_STAT
  AC_HEADER_SYS_WAIT
  
@@ -47,11 +47,11 @@ index c3bd713..918657c 100644
  
  AC_CHECK_HEADERS(sys/time.h sys/times.h sys/select.h termcap.h termio.h \
  		 termios.h sys/param.h sys/filio.h string.h memory.h \
-@@ -925,7 +923,7 @@ fi
+@@ -935,7 +933,7 @@ fi
  if test x$enable_pcre = xyes; then
  dnl pcre-config should probably be employed here
  dnl AC_SEARCH_LIBS(pcre_compile, pcre)
--  LIBS="`pcre-config --libs` $LIBS"
+-  LIBS="`$ac_cv_prog_PCRECONF --libs` $LIBS"
 +  LIBS="$PCRE_LIB $LIBS"
  fi
  
