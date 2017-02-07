@@ -62,8 +62,7 @@ ALTERNATIVE_PRIORITY = "80"
 export AUTOHEADER = "true"
 
 do_configure () {
-    gnu-configize --force ${S}
-    (cd ${S}; autoconf -I ${ACLOCALDIR}; autoheader -f -I ${ACLOCALDIR})
+    (cd ${S}; autoconf -I ${ACLOCALDIR} -I ${STAGING_DATADIR_NATIVE}/aclocal ; autoheader -f -I ${ACLOCALDIR} -I ${STAGING_DATADIR_NATIVE}/aclocal)
     touch ${S}/stamp-h.in
     oe_runconf
 }
