@@ -18,10 +18,10 @@ SRC_URI = " \
     file://dot.zshrc \
 "
 
-SRC_URI[zsh.md5sum] = "c5ba34e68fcf62a2e78adc56bf3d328a"
-SRC_URI[zsh.sha256sum] = "76f82cfd5ce373cf799a03b6f395283f128430db49202e3e3f512fb5a19d6f8a"
-SRC_URI[zsh-docs.md5sum] = "12c35fff5b1b902a5a81ab79cb9c3da6"
-SRC_URI[zsh-docs.sha256sum] = "cdfc6c3f7235b13308af5316cfa87abb5f51b3ec72d45f9043fde6e5b2e8663e"
+SRC_URI[zsh.md5sum] = "67d3e5ed99de68340c16aef613b0ecf7"
+SRC_URI[zsh.sha256sum] = "fc886cb2ade032d006da8322c09a7e92b2309177811428b121192d44832920da"
+SRC_URI[zsh-docs.md5sum] = "6b908409528e77e00a26b7283f1f425d"
+SRC_URI[zsh-docs.sha256sum] = "d51762fcb5699c332da8a4e404cb9eb8d5de8fa4e0235a08bcf252c915bda6ed"
 
 inherit autotools gettext update-alternatives pkgconfig
 
@@ -132,5 +132,7 @@ FILES_${PN} += "\
     ${libdir}/${BPN}/${PV}/zsh/param/*.so \
 "
 
+RDEPENDS_${PN}-functions += "${PN}"
+RDEPENDS_${PN}-examples += "${PN}"
 RRECOMMENDS_${PN} += "${PN}-functions"
 RRECOMMENDS_${PN}-doc += "${PN}-examples"
