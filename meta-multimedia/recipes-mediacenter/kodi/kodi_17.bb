@@ -74,6 +74,7 @@ SRC_URI = "git://github.com/xbmc/xbmc.git;branch=Krypton \
            file://0010-RssReader-Fix-compiler-warning-comparing-pointer-to-.patch \
            file://0011-Let-configure-pass-on-unknown-architectures-setting-.patch \
            file://0012-Revert-droid-fix-builds-with-AML-disabled.patch \
+           file://0013-VideoPlayer-Fix-build-with-FFmpeg-3.0.patch \
 "
 
 SRC_URI_append_libc-musl = " \
