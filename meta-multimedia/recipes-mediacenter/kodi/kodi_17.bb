@@ -93,12 +93,12 @@ ACCEL ?= ""
 ACCEL_x86 = "vaapi vdpau"
 ACCEL_x86-64 = "vaapi vdpau"
 
-PACKAGECONFIG ??= "${ACCEL}"
-PACKAGECONFIG_append = " ${@bb.utils.contains('DISTRO_FEATURES', 'x11', ' x11', '', d)}"
-PACKAGECONFIG_append = " ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', ' opengl', ' openglesv2', d)}"
+PACKAGECONFIG ??= "${ACCEL} \
+                   ${@bb.utils.contains('DISTRO_FEATURES', 'x11', 'x11', '', d)} \
+                   ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', 'opengl', 'openglesv2', d)}"
 
-PACKAGECONFIG[opengl] = "--enable-gl,--enable-gles,"
-PACKAGECONFIG[openglesv2] = "--enable-gles,--enable-gl,virtual/egl"
+PACKAGECONFIG[opengl] = "--enable-gl,--disable-gl,"
+PACKAGECONFIG[openglesv2] = "--enable-gles,--disable-gles,virtual/egl"
 PACKAGECONFIG[vaapi] = "--enable-vaapi,--disable-vaapi,libva"
 PACKAGECONFIG[vdpau] = "--enable-vdpau,--disable-vdpau,libvdpau"
 PACKAGECONFIG[mysql] = "--enable-mysql,--disable-mysql,mysql5"
