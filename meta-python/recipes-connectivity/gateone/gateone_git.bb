@@ -14,10 +14,10 @@ SRC_URI = "git://github.com/liftoff/GateOne.git;branch=master \
 
 S = "${WORKDIR}/git"
 
-inherit setuptools python-dir systemd update-rc.d
+inherit distutils setuptools python-dir systemd update-rc.d
 
 DISTUTILS_INSTALL_ARGS = "--root=${D} \
-    --prefix=${prefix} \
+    --prefix=${localstatedir} \
     --install-lib=${PYTHON_SITEPACKAGES_DIR} \
     --install-data=${PYTHON_SITEPACKAGES_DIR} \
     --install-scripts=${bindir} \
@@ -59,7 +59,6 @@ RDEPENDS_${PN} = "mime-support \
                   python-fcntl \
                   python-futures \
                   python-html \
-                  python-imaging \
                   python-io \
                   python-json \
                   python-logging \
