@@ -9,7 +9,7 @@ DEPENDS = "ncurses libevent"
 
 
 SRC_URI = "git://github.com/tmux/tmux.git;branch=master"
-SRCREV ?= "310f0a960ca64fa3809545badc629c0c166c6cd2"
+SRCREV ?= "caa90735cf0b20a7110d25596140f553e2d05bff"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
@@ -19,3 +19,6 @@ inherit autotools pkgconfig
 PACKAGECONFIG ??= ""
 PACKAGECONFIG[utempter] = "ac_cv_header_utempter_h=yes,ac_cv_header_utempter_h=no,libutempter,"
 
+do_configure_append() {
+    mkdir -p ${B}/compat
+}
