@@ -46,4 +46,3 @@ FILES_${PN} =+ "${datadir}/gnome* \
                 ${libdir}/bonobo \
 "
 
-PNBLACKLIST[gnome-panel3] ?= "Depends on broken gnome-menus - the recipe will be removed on 2017-09-01 unless the issue is fixed"
