@@ -17,4 +17,15 @@ DEPENDS = ""
 FILES_${PN} += "${datadir}/aclocal"
 FILES_${PN}-dev = ""
 
+# ax_code_coverage.m4 and ax_check_enable_debug.m4 are in gnome-common only
+# because older versions of autoconf-archive didn't have them yet. Now they
+# are in autoconf-archive from OE-core. We depend on that below to ensure
+# that recipes which only depend on gnome-common still get them.
+do_install_append () {
+    rm -f ${D}${datadir}/aclocal/ax_code_coverage.m4
+    rm -f ${D}${datadir}/aclocal/ax_check_enable_debug.m4
+}
+RDEPENDS_${PN} += "autoconf-archive"
+DEPENDS_append_class-native = " autoconf-archive-native"
+
 BBCLASSEXTEND = "native"
