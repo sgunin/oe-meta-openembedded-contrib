@@ -59,6 +59,7 @@ c_args = [${@meson_array('MESON_C_ARGS', d)}]
 c_link_args = [${@meson_array('MESON_LINK_ARGS', d)}]
 cpp_args = [${@meson_array('MESON_C_ARGS', d)}]
 cpp_link_args = [${@meson_array('MESON_LINK_ARGS', d)}]
+gtkdoc_exe_wrapper = '${B}/gtkdoc-qemuwrapper'
 
 [host_machine]
 system = '${HOST_OS}'
