@@ -9,16 +9,6 @@ do_configure[cleandirs] = "${B}"
 # Where the meson.build build configuration is
 MESON_SOURCEPATH = "${S}"
 
-# These variables in the environment override the *native* tools, not the cross.
-export CPPFLAGS = "${BUILD_CPPFLAGS}"
-export CC = "${BUILD_CC}"
-export CFLAGS = "${BUILD_CFLAGS}"
-export CXX = "${BUILD_CXX}"
-export CXXFLAGS = "${BUILD_CXXFLAGS}"
-export LDFLAGS = "${BUILD_LDFLAGS}"
-export AR = "${BUILD_AR}"
-export PKG_CONFIG = "pkg-config-native"
-
 def noprefix(var, d):
     return d.getVar(var, True).replace(d.getVar('prefix', True) + '/', '', 1)
 
