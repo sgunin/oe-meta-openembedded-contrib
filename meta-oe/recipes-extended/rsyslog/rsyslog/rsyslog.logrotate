@@ -23,6 +23,9 @@
 /var/log/user.log
 /var/log/lpr.log
 /var/log/cron.log
+{
+        create 0600 root root
+}
 /var/log/debug
 /var/log/messages
 {
