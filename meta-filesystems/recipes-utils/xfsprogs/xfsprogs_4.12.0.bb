@@ -8,9 +8,12 @@ DEPENDS = "util-linux util-linux-native"
 SRC_URI = "https://www.kernel.org/pub/linux/utils/fs/xfs/xfsprogs/${BP}.tar.xz \
            file://link_needed_libs.patch \
            file://0001-define-__-prefixed-version-of-intXY_t-types.patch \
+           file://remove_flags_from_build_flags.patch \
+           file://0001-Rename-progname-as-it-is-provided-by-libc.patch \
+           file://xfsprogs-4.12.0-fix_musl.patch \
            "
-SRC_URI[md5sum] = "f1f9b8c752347eefdb56483dafa0cefb"
-SRC_URI[sha256sum] = "c3a6d87b564d7738243c507df82276bed982265e345363a95f2c764e8a5f5bb2"
+SRC_URI[md5sum] = "e348b0e1d7bd1cd82d64b91ff37e727e"
+SRC_URI[sha256sum] = "b330ad8d737f4152ae511580102e2fc49212bb51dfb4b614084344abae46d0df"
 
 inherit autotools-brokensep
 
