@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includeir=${prefix}/include
+
+Name: qhull_r
+Description: Reentrant library for convex hull, Delaunay triangulation, Voronoi diagram, and halfspace intersection about a point
+Version: 2015.2
+URL: http://www.qhull.org/
+Requires:
+Conflicts:
+Libs: -L${libdir} -lqhull_r -lm
+Cflags: -I${includedir}

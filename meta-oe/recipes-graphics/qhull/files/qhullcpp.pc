@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includeir=${prefix}/include
+
+Name: qhullstatic_r
+Description: C++ static library with libqhullstati_r.a reentrant library for convex hull, Delaunay triangulation, Voronoi diagram, and halfspace intersection about a point
+Version: 2015.2
+URL: http://www.qhull.org/
+Requires:
+Conflicts:
+Libs: -L${libdir} -l:libqhullstatic_r.a
+Cflags: -I${includedir}
