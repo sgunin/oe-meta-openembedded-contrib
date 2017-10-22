@@ -18,3 +18,5 @@ RDEPENDS_${PN}_class-target = "\
     ${PYTHON_PN}-datetime \
     ${PYTHON_PN}-six \
     "
+
+BBCLASSEXTEND = "native nativesdk"
