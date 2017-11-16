@@ -21,3 +21,4 @@ EXTRA_OECONF = "\
     --enable-latex-docs=no \
     LDFLAGS=-pthread \
 "
+INSANE_SKIP_${PN} = "ldflags"
