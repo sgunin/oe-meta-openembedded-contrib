@@ -1,0 +1,64 @@
+From a9af19d2679442b679536b51276334149b0b6655 Mon Sep 17 00:00:00 2001
+From: Eduardo Silva <eduardo@treasure-data.com>
+Date: Wed, 19 Apr 2017 12:35:53 -0600
+Subject: [PATCH] lib: flb_libco: merged changes for aarch64 support (#228)
+
+This patch merge the following changes:
+
+ - 534e405 armv8: on arm64 (aarch64) use sjlj backend
+ - fdcb558 sjlj: include missing settings and adapt API
+ - 9dab058 settings: tweak for Windows build
+
+These changes needs further testing on a armv8 platform.
+
+Upstream-Status: Backport [from 0.12.0 https://github.com/fluent/fluent-bit/commit/a9af19d2679442b679536b51276334149b0b6655]
+
+Signed-off-by: Eduardo Silva <eduardo@treasure-data.com>
+---
+ lib/flb_libco/libco.c | 2 ++
+ lib/flb_libco/sjlj.c  | 5 ++++-
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/lib/flb_libco/libco.c b/lib/flb_libco/libco.c
+index 13eb2379..2db92e95 100755
+--- a/lib/flb_libco/libco.c
++++ b/lib/flb_libco/libco.c
+@@ -14,6 +14,8 @@
+     #include "amd64.c"
+   #elif defined(__arm__)
+     #include "arm.c"
++  #elif defined(__aarch64__)
++    #include "sjlj.c"
+   #elif defined(_ARCH_PPC)
+     #include "ppc.c"
+   #elif defined(_WIN32)
+diff --git a/lib/flb_libco/sjlj.c b/lib/flb_libco/sjlj.c
+index dfa0aa45..36d110b7 100755
+--- a/lib/flb_libco/sjlj.c
++++ b/lib/flb_libco/sjlj.c
+@@ -15,6 +15,7 @@
+ #include <stdlib.h>
+ #include <signal.h>
+ #include <setjmp.h>
++#include "settings.h"
+ 
+ #ifdef __cplusplus
+ extern "C" {
+@@ -41,7 +42,8 @@ cothread_t co_active() {
+   return (cothread_t)co_running;
+ }
+ 
+-cothread_t co_create(unsigned int size, void (*coentry)(void)) {
++cothread_t co_create(unsigned int size, void (*coentry)(void),
++                     size_t *out_size) {
+   if(!co_running) co_running = &co_primary;
+ 
+   cothread_struct *thread = (cothread_struct*)malloc(sizeof(cothread_struct));
+@@ -78,6 +80,7 @@ cothread_t co_create(unsigned int size, void (*coentry)(void)) {
+     }
+   }
+ 
++  *out_size = size;
+   return (cothread_t)thread;
+ }
+ 
