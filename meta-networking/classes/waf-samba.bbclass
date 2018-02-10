@@ -42,6 +42,7 @@ CONFIGUREOPTS = " --prefix=${prefix} \
 # to help generate the cross answer when adding new board support.
 CROSS_METHOD ?= "answer"
 
+do_configure[prefuncs] = ""
 do_configure() {
 
     # Prepare the cross-answers file
