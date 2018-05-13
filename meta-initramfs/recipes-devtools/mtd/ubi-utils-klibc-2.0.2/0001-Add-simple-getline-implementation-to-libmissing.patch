@@ -1,0 +1,187 @@
+From 10c289454dad34632d767694aecb508dae5073bf Mon Sep 17 00:00:00 2001
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+Date: Thu, 1 Feb 2018 12:16:18 +0100
+Subject: [PATCH 1/4] Add simple getline() implementation to libmissing
+
+Some C libraries, like klibc don't implement getline(). This patch
+adds a simple stub implementation to libmissing that does an fgets
+into a stack allocated buffer and returns the result.
+
+Upstream-Status: Backport
+
+Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+---
+ configure.ac              |  1 +
+ include/common.h          |  1 +
+ include/libmissing.h      |  7 +++++++
+ jffsX-utils/Makemodule.am |  2 +-
+ lib/Makemodule.am         |  3 ++-
+ lib/getline.c             | 36 ++++++++++++++++++++++++++++++++++++
+ misc-utils/Makemodule.am  |  2 ++
+ ubi-utils/Makemodule.am   |  2 +-
+ ubifs-utils/Makemodule.am |  1 +
+ 9 files changed, 52 insertions(+), 3 deletions(-)
+ create mode 100644 lib/getline.c
+
+diff --git a/configure.ac b/configure.ac
+index 83d754f..5af0115 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -191,6 +191,7 @@ if test "x$need_cmocka" = "xyes"; then
+ fi
+ 
+ AC_CHECK_HEADERS([execinfo.h])
++AC_CHECK_FUNCS([getline])
+ 
+ ##### produce summary on dependencies #####
+ 
+diff --git a/include/common.h b/include/common.h
+index 2ce5d22..f8f72ea 100644
+--- a/include/common.h
++++ b/include/common.h
+@@ -32,6 +32,7 @@
+ #include <sys/sysmacros.h>
+ 
+ #include "config.h"
++#include "libmissing.h"
+ 
+ #ifndef PROGRAM_NAME
+ # error "You must define PROGRAM_NAME before including this header"
+diff --git a/include/libmissing.h b/include/libmissing.h
+index 0196033..09dbce1 100644
+--- a/include/libmissing.h
++++ b/include/libmissing.h
+@@ -7,11 +7,18 @@
+ #include <execinfo.h>
+ #endif
+ 
++#include <sys/types.h>
++#include <stdio.h>
++
+ #ifndef HAVE_EXECINFO_H
+ int backtrace(void **buffer, int size);
+ char **backtrace_symbols(void *const *buffer, int size);
+ void backtrace_symbols_fd(void *const *buffer, int size, int fd);
+ #endif
+ 
++#ifndef HAVE_GETLINE
++ssize_t getline(char **lineptr, size_t *n, FILE *stream);
++#endif
++
+ #endif /* LIBMISSING_H */
+ 
+diff --git a/jffsX-utils/Makemodule.am b/jffsX-utils/Makemodule.am
+index fb181de..9d7a5d9 100644
+--- a/jffsX-utils/Makemodule.am
++++ b/jffsX-utils/Makemodule.am
+@@ -17,7 +17,7 @@ jffs2dump_SOURCES = jffsX-utils/jffs2dump.c
+ jffs2dump_LDADD = libmtd.a $(ZLIB_LIBS) $(LZO_LIBS)
+ 
+ sumtool_SOURCES = jffsX-utils/sumtool.c
+-sumtool_LDADD = libmtd.a
++sumtool_LDADD = libmtd.a libmissing.a
+ 
+ JFFSX_BINS = \
+ 	mkfs.jffs2 jffs2dump jffs2reader sumtool
+diff --git a/lib/Makemodule.am b/lib/Makemodule.am
+index 5bee5b6..645632a 100644
+--- a/lib/Makemodule.am
++++ b/lib/Makemodule.am
+@@ -7,7 +7,8 @@ libmtd_a_SOURCES = \
+ 	lib/libmtd_int.h
+ 
+ libmissing_a_SOURCES = \
+-	lib/execinfo.c
++	lib/execinfo.c \
++	lib/getline.c
+ 
+ libubi_a_SOURCES = \
+ 	lib/libubi.c \
+diff --git a/lib/getline.c b/lib/getline.c
+new file mode 100644
+index 0000000..c575bf7
+--- /dev/null
++++ b/lib/getline.c
+@@ -0,0 +1,36 @@
++#include <stdlib.h>
++#include <string.h>
++
++#include "libmissing.h"
++
++#ifndef HAVE_GETLINE
++ssize_t getline(char **lineptr, size_t *n, FILE *stream)
++{
++	char buffer[256], *new;
++	size_t count;
++
++	if (!(*lineptr))
++		*n = 0;
++
++	if (!fgets(buffer, sizeof(buffer), stream)) {
++		if (!feof(stream))
++			return -1;
++
++		buffer[0] = '\0';
++	}
++
++	count = strlen(buffer) + 1;
++
++	if (*n < count) {
++		new = realloc(*lineptr, count);
++		if (!new)
++			return -1;
++		*lineptr = new;
++		*n = count;
++	}
++
++	memcpy(*lineptr, buffer, count);
++	return count;
++}
++#endif
++
+diff --git a/misc-utils/Makemodule.am b/misc-utils/Makemodule.am
+index ce1c385..bfc5342 100644
+--- a/misc-utils/Makemodule.am
++++ b/misc-utils/Makemodule.am
+@@ -1,4 +1,5 @@
+ ftl_format_SOURCES = misc-utils/ftl_format.c
++ftl_format_LDADD = libmissing.a
+ 
+ doc_loadbios_SOURCES = misc-utils/doc_loadbios.c
+ 
+@@ -25,6 +26,7 @@ flash_otp_info_SOURCES = misc-utils/flash_otp_info.c
+ flash_otp_dump_SOURCES = misc-utils/flash_otp_dump.c
+ 
+ flash_otp_lock_SOURCES = misc-utils/flash_otp_lock.c
++flash_otp_lock_LDADD = libmissing.a
+ 
+ flash_otp_write_SOURCES = misc-utils/flash_otp_write.c
+ 
+diff --git a/ubi-utils/Makemodule.am b/ubi-utils/Makemodule.am
+index 215eac2..7b447c7 100644
+--- a/ubi-utils/Makemodule.am
++++ b/ubi-utils/Makemodule.am
+@@ -23,7 +23,7 @@ ubinize_SOURCES = ubi-utils/ubinize.c
+ ubinize_LDADD = libubi.a libubigen.a libmtd.a libiniparser.a
+ 
+ ubiformat_SOURCES = ubi-utils/ubiformat.c
+-ubiformat_LDADD = libubi.a libubigen.a libmtd.a libscan.a
++ubiformat_LDADD = libubi.a libubigen.a libmtd.a libscan.a libmissing.a
+ 
+ ubirename_SOURCES = ubi-utils/ubirename.c
+ ubirename_LDADD = libmtd.a libubi.a
+diff --git a/ubifs-utils/Makemodule.am b/ubifs-utils/Makemodule.am
+index 5862afb..787beb9 100644
+--- a/ubifs-utils/Makemodule.am
++++ b/ubifs-utils/Makemodule.am
+@@ -17,6 +17,7 @@ mkfs_ubifs_SOURCES = \
+ 	ubifs-utils/mkfs.ubifs/hashtable/hashtable_itr.c \
+ 	ubifs-utils/mkfs.ubifs/devtable.c
+ mkfs_ubifs_LDADD = libmtd.a libubi.a $(ZLIB_LIBS) $(LZO_LIBS) $(UUID_LIBS) -lm
++mkfs_ubifs_LDADD += libmissing.a
+ mkfs_ubifs_CPPFLAGS = $(AM_CPPFLAGS) $(ZLIB_CFLAGS) $(LZO_CFLAGS) $(UUID_CFLAGS) \
+ 	-I$(top_srcdir)/ubi-utils/include -I$(top_srcdir)/ubifs-utils/mkfs.ubifs/
+ 
+-- 
+2.7.4
+
