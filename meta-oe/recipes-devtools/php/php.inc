@@ -24,6 +24,7 @@ SRC_URI_append_class-target = " \
             file://0001-acinclude.m4-don-t-unset-cache-variables.patch \
             file://70_mod_php${PHP_MAJOR_VERSION}.conf \
             file://php-fpm.service \
+            file://valgrind.patch \
           "
 S = "${WORKDIR}/php-${PV}"
 
