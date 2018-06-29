@@ -22,6 +22,7 @@ SRC_URI_append_class-target = " \
             file://php-fpm-apache.conf \
             file://70_mod_php${PHP_MAJOR_VERSION}.conf \
             file://php-fpm.service \
+            file://valgrind.patch \
           "
 S = "${WORKDIR}/php-${PV}"
 
