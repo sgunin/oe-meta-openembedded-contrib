@@ -15,7 +15,7 @@ SRCREV = "37ecc41b58be3dbdd79592a76e331b5b371e4f81"
 
 DEPENDS = "elfutils"
 RDEPENDS_${PN} = "elfutils"
-SRC_URI = "git://anonscm.debian.org/collab-maint/ltrace.git;branch=ltrace-0.7 \
+SRC_URI = "git://github.com/sparkleholic/ltrace.git;branch=ltrace-0.7 \
            file://ltrace-0.7.2-unused-typedef.patch \
            file://configure-allow-to-disable-selinux-support.patch \
            file://0001-ltrace-fix-gcc-5-logical-not-parentheses.patch \
