@@ -1,0 +1,19 @@
+Description: Bring Clang's _Nonnull keyword to GCC
+Author: Kai-Chung Yan
+--- a/adb/sysdeps.h
++++ b/adb/sysdeps.h
+@@ -66,11 +66,12 @@
+ #endif
+ #endif
+ 
++#define _Nonnull
++#define _Nullable
++
+ #ifdef _WIN32
+ 
+ // Clang-only nullability specifiers
+-#define _Nonnull
+-#define _Nullable
+ 
+ #include <ctype.h>
+ #include <direct.h>

@@ -1,0 +1,641 @@
+DEBUG: Executing shell function do_compile
+-- The C compiler identification is GNU 7.3.0
+-- Check for working C compiler: /OE/build/owpb/webos-ports/tmp-glibc/hosttools/gcc
+-- Check for working C compiler: /OE/build/owpb/webos-ports/tmp-glibc/hosttools/gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- The CXX compiler identification is GNU 7.3.0
+-- Check for working CXX compiler: /OE/build/owpb/webos-ports/tmp-glibc/hosttools/g++
+-- Check for working CXX compiler: /OE/build/owpb/webos-ports/tmp-glibc/hosttools/g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Perl: /OE/build/owpb/webos-ports/tmp-glibc/hosttools/perl (found version "5.26.1") 
+-- The ASM compiler identification is GNU
+-- Found assembler: /OE/build/owpb/webos-ports/tmp-glibc/hosttools/gcc
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build
+[1/395] Building C object crypto/CMakeFiles/crypto_base.dir/cpu-arm.c.o
+[2/395] Building C object crypto/CMakeFiles/crypto_base.dir/cpu-arm-linux.c.o
+[3/395] Building C object crypto/CMakeFiles/crypto_base.dir/cpu-ppc64le.c.o
+[4/395] Building C object crypto/CMakeFiles/crypto_base.dir/cpu-aarch64-linux.c.o
+[5/395] Building C object crypto/CMakeFiles/crypto_base.dir/crypto.c.o
+[6/395] Building C object crypto/CMakeFiles/crypto_base.dir/refcount_c11.c.o
+[7/395] Building C object crypto/CMakeFiles/crypto_base.dir/cpu-intel.c.o
+[8/395] Building C object crypto/CMakeFiles/crypto_base.dir/refcount_lock.c.o
+[9/395] Building C object crypto/CMakeFiles/crypto_base.dir/mem.c.o
+[10/395] Building C object crypto/CMakeFiles/crypto_base.dir/thread.c.o
+[11/395] Building C object crypto/CMakeFiles/crypto_base.dir/ex_data.c.o
+[12/395] Building C object crypto/CMakeFiles/crypto_base.dir/thread_none.c.o
+[13/395] Building C object crypto/CMakeFiles/crypto_base.dir/thread_win.c.o
+[14/395] Building C object crypto/CMakeFiles/crypto_base.dir/thread_pthread.c.o
+[15/395] Building C object crypto/rc4/CMakeFiles/rc4.dir/rc4.c.o
+[16/395] Building C object crypto/pool/CMakeFiles/pool.dir/pool.c.o
+[17/395] Building C object crypto/lhash/CMakeFiles/lhash.dir/lhash.c.o
+[18/395] Building C object crypto/bytestring/CMakeFiles/bytestring.dir/asn1_compat.c.o
+[19/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_strnid.c.o
+[20/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_time.c.o
+[21/395] Building C object crypto/stack/CMakeFiles/stack.dir/stack.c.o
+[22/395] Building C object crypto/buf/CMakeFiles/buf.dir/buf.c.o
+[23/395] Building C object crypto/poly1305/CMakeFiles/poly1305.dir/poly1305.c.o
+[24/395] Building C object crypto/bytestring/CMakeFiles/bytestring.dir/ber.c.o
+[25/395] Building C object crypto/base64/CMakeFiles/base64.dir/base64.c.o
+[26/395] Building C object crypto/poly1305/CMakeFiles/poly1305.dir/poly1305_arm.c.o
+[27/395] Generating chacha-x86_64.S
+[28/395] Building C object crypto/digest_extra/CMakeFiles/digest_extra.dir/digest_extra.c.o
+[29/395] Building C object crypto/bytestring/CMakeFiles/bytestring.dir/cbs.c.o
+[30/395] Building C object crypto/bytestring/CMakeFiles/bytestring.dir/cbb.c.o
+[31/395] Building C object crypto/chacha/CMakeFiles/chacha.dir/chacha.c.o
+[32/395] Building ASM object crypto/chacha/CMakeFiles/chacha.dir/chacha-x86_64.S.o
+[33/395] Building C object crypto/curve25519/CMakeFiles/curve25519.dir/spake25519.c.o
+[34/395] Building C object crypto/rand_extra/CMakeFiles/rand_extra.dir/deterministic.c.o
+[35/395] Building C object crypto/conf/CMakeFiles/conf.dir/conf.c.o
+[36/395] Building C object crypto/rand_extra/CMakeFiles/rand_extra.dir/fuchsia.c.o
+[37/395] Building C object crypto/rand_extra/CMakeFiles/rand_extra.dir/forkunsafe.c.o
+[38/395] Building C object crypto/rand_extra/CMakeFiles/rand_extra.dir/windows.c.o
+[39/395] Building C object crypto/rand_extra/CMakeFiles/rand_extra.dir/rand_extra.c.o
+[40/395] Generating err_data.c
+[41/395] Building C object crypto/poly1305/CMakeFiles/poly1305.dir/poly1305_vec.c.o
+[42/395] Building C object crypto/bio/CMakeFiles/bio.dir/bio_mem.c.o
+[43/395] Building C object crypto/err/CMakeFiles/err.dir/err_data.c.o
+[44/395] Building C object crypto/bio/CMakeFiles/bio.dir/fd.c.o
+[45/395] Generating crypto_test_data.cc
+[46/395] Generating aes128gcmsiv-x86_64.S
+[47/395] Building C object crypto/bio/CMakeFiles/bio.dir/connect.c.o
+[48/395] Building C object crypto/bio/CMakeFiles/bio.dir/printf.c.o
+[49/395] Building C object crypto/bio/CMakeFiles/bio.dir/bio.c.o
+[50/395] Building C object crypto/bn_extra/CMakeFiles/bn_extra.dir/bn_asn1.c.o
+[51/395] Building C object crypto/bio/CMakeFiles/bio.dir/hexdump.c.o
+[52/395] Building C object crypto/err/CMakeFiles/err.dir/err.c.o
+[53/395] Building C object crypto/bio/CMakeFiles/bio.dir/pair.c.o
+[54/395] Building C object crypto/bio/CMakeFiles/bio.dir/socket_helper.c.o
+[55/395] Building C object crypto/bio/CMakeFiles/bio.dir/file.c.o
+[56/395] Building C object crypto/bio/CMakeFiles/bio.dir/socket.c.o
+[57/395] Building C object crypto/obj/CMakeFiles/obj.dir/obj_xref.c.o
+[58/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_bool.c.o
+[59/395] Building C object crypto/bn_extra/CMakeFiles/bn_extra.dir/convert.c.o
+[60/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_dup.c.o
+[61/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_enum.c.o
+[62/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_bitstr.c.o
+[63/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_d2i_fp.c.o
+[64/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_i2d_fp.c.o
+[65/395] Building C object crypto/obj/CMakeFiles/obj.dir/obj.c.o
+[66/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_print.c.o
+[67/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_mbstr.c.o
+[68/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_octet.c.o
+[69/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_gentm.c.o
+[70/395] Generating chacha20_poly1305_x86_64.S
+[71/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_type.c.o
+[72/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_object.c.o
+[73/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_int.c.o
+[74/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_utctm.c.o
+[75/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/cipher_extra.c.o
+[76/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/asn1_par.c.o
+[77/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/a_utf8.c.o
+[78/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/e_rc4.c.o
+[79/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/e_null.c.o
+[80/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/derive_key.c.o
+[81/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/asn1_lib.c.o
+[82/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/e_aesctrhmac.c.o
+[83/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/e_rc2.c.o
+[84/395] Building ASM object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/aes128gcmsiv-x86_64.S.o
+[85/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/e_chacha20poly1305.c.o
+[86/395] Building ASM object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/chacha20_poly1305_x86_64.S.o
+[87/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/e_aesgcmsiv.c.o
+[88/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/f_string.c.o
+[89/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/f_int.c.o
+[90/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/e_ssl3.c.o
+[91/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/tls_cbc.c.o
+[92/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/f_enum.c.o
+[93/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/asn_pack.c.o
+[94/395] Building C object crypto/cipher_extra/CMakeFiles/cipher_extra.dir/e_tls.c.o
+[95/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/time_support.c.o
+[96/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/tasn_new.c.o
+[97/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/tasn_fre.c.o
+[98/395] Building C object crypto/engine/CMakeFiles/engine.dir/engine.c.o
+[99/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/tasn_utl.c.o
+[100/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/tasn_enc.c.o
+[101/395] Building C object crypto/dh/CMakeFiles/dh.dir/check.c.o
+[102/395] Building C object crypto/dh/CMakeFiles/dh.dir/params.c.o
+[103/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/tasn_typ.c.o
+[104/395] Building C object crypto/asn1/CMakeFiles/asn1.dir/tasn_dec.c.o
+[105/395] Building C object crypto/dh/CMakeFiles/dh.dir/dh.c.o
+[106/395] Building C object crypto/dh/CMakeFiles/dh.dir/dh_asn1.c.o
+[107/395] Building C object crypto/ecdh/CMakeFiles/ecdh.dir/ecdh.c.o
+[108/395] Building CXX object CMakeFiles/crypto_test_data.dir/crypto_test_data.cc.o
+[109/395] Building C object crypto/dsa/CMakeFiles/dsa.dir/dsa_asn1.c.o
+[110/395] Building C object crypto/rsa_extra/CMakeFiles/rsa_extra.dir/rsa_asn1.c.o
+[111/395] Building C object crypto/evp/CMakeFiles/evp.dir/digestsign.c.o
+[112/395] Building C object crypto/ecdsa_extra/CMakeFiles/ecdsa_extra.dir/ecdsa_asn1.c.o
+[113/395] Building C object crypto/evp/CMakeFiles/evp.dir/evp.c.o
+[114/395] Building C object crypto/ec_extra/CMakeFiles/ec_extra.dir/ec_asn1.c.o
+[115/395] Building C object crypto/cmac/CMakeFiles/cmac.dir/cmac.c.o
+[116/395] Building C object crypto/dsa/CMakeFiles/dsa.dir/dsa.c.o
+[117/395] Building C object crypto/evp/CMakeFiles/evp.dir/p_dsa_asn1.c.o
+[118/395] Building C object crypto/evp/CMakeFiles/evp.dir/evp_asn1.c.o
+[119/395] Building C object crypto/evp/CMakeFiles/evp.dir/p_ec_asn1.c.o
+[120/395] Building C object crypto/evp/CMakeFiles/evp.dir/p_rsa_asn1.c.o
+[121/395] Building C object crypto/evp/CMakeFiles/evp.dir/evp_ctx.c.o
+[122/395] Building C object crypto/evp/CMakeFiles/evp.dir/p_ed25519.c.o
+[123/395] Building C object crypto/evp/CMakeFiles/evp.dir/pbkdf.c.o
+[124/395] Building C object crypto/evp/CMakeFiles/evp.dir/p_ed25519_asn1.c.o
+[125/395] Building C object crypto/evp/CMakeFiles/evp.dir/p_ec.c.o
+[126/395] Building C object crypto/evp/CMakeFiles/evp.dir/sign.c.o
+[127/395] Building C object crypto/hkdf/CMakeFiles/hkdf.dir/hkdf.c.o
+[128/395] Building C object crypto/evp/CMakeFiles/evp.dir/p_rsa.c.o
+[129/395] Building C object crypto/evp/CMakeFiles/evp.dir/print.c.o
+[130/395] Building C object crypto/evp/CMakeFiles/evp.dir/scrypt.c.o
+[131/395] Building C object crypto/pem/CMakeFiles/pem.dir/pem_info.c.o
+[132/395] Building C object crypto/pem/CMakeFiles/pem.dir/pem_oth.c.o
+[133/395] Building C object crypto/pem/CMakeFiles/pem.dir/pem_pkey.c.o
+[134/395] Building C object crypto/x509/CMakeFiles/x509.dir/a_digest.c.o
+[135/395] Building C object crypto/pem/CMakeFiles/pem.dir/pem_all.c.o
+[136/395] Building C object crypto/x509/CMakeFiles/x509.dir/a_sign.c.o
+[137/395] Building C object crypto/pem/CMakeFiles/pem.dir/pem_xaux.c.o
+[138/395] Building C object crypto/pem/CMakeFiles/pem.dir/pem_pk8.c.o
+[139/395] Building C object crypto/pem/CMakeFiles/pem.dir/pem_x509.c.o
+[140/395] Building C object crypto/x509/CMakeFiles/x509.dir/a_verify.c.o
+[141/395] Building C object crypto/x509/CMakeFiles/x509.dir/i2d_pr.c.o
+[142/395] Building C object crypto/x509/CMakeFiles/x509.dir/algorithm.c.o
+[143/395] Building C object crypto/x509/CMakeFiles/x509.dir/by_file.c.o
+[144/395] Building C object crypto/pem/CMakeFiles/pem.dir/pem_lib.c.o
+[145/395] Building C object crypto/x509/CMakeFiles/x509.dir/t_crl.c.o
+[146/395] Building C object crypto/x509/CMakeFiles/x509.dir/rsa_pss.c.o
+[147/395] Building C object crypto/x509/CMakeFiles/x509.dir/by_dir.c.o
+[148/395] Building C object crypto/x509/CMakeFiles/x509.dir/t_req.c.o
+[149/395] Building C object crypto/x509/CMakeFiles/x509.dir/a_strex.c.o
+[150/395] Building C object crypto/x509/CMakeFiles/x509.dir/t_x509a.c.o
+[151/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509.c.o
+[152/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_d2.c.o
+[153/395] Building C object crypto/x509/CMakeFiles/x509.dir/t_x509.c.o
+[154/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_def.c.o
+[155/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_att.c.o
+[156/395] Building C object crypto/x509/CMakeFiles/x509.dir/asn1_gen.c.o
+[157/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_r2x.c.o
+[158/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_ext.c.o
+[159/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_cmp.c.o
+[160/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_obj.c.o
+[161/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_set.c.o
+[162/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_txt.c.o
+[163/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_req.c.o
+[164/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_trs.c.o
+[165/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509cset.c.o
+[166/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_lu.c.o
+[167/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_v3.c.o
+[168/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509rset.c.o
+[169/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_vpm.c.o
+[170/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509spki.c.o
+[171/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_algor.c.o
+[172/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_attrib.c.o
+[173/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509name.c.o
+[174/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_exten.c.o
+[175/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_info.c.o
+[176/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_pkey.c.o
+[177/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_all.c.o
+[178/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_spki.c.o
+[179/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_sig.c.o
+[180/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_req.c.o
+[181/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_name.c.o
+[182/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_crl.c.o
+[183/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_val.c.o
+[184/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_pubkey.c.o
+[185/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_x509a.c.o
+[186/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/pcy_lib.c.o
+[187/395] Building C object crypto/x509/CMakeFiles/x509.dir/x_x509.c.o
+[188/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/pcy_map.c.o
+[189/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/pcy_cache.c.o
+[190/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/pcy_data.c.o
+[191/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_akeya.c.o
+[192/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_akey.c.o
+[193/395] Building C object crypto/x509/CMakeFiles/x509.dir/x509_vfy.c.o
+[194/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/pcy_node.c.o
+[195/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_bcons.c.o
+[196/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_bitst.c.o
+[197/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_enum.c.o
+[198/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/pcy_tree.c.o
+[199/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_extku.c.o
+[200/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_genn.c.o
+[201/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_conf.c.o
+[202/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_int.c.o
+[203/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_alt.c.o
+[204/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_crld.c.o
+[205/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_ia5.c.o
+[206/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_cpols.c.o
+[207/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_info.c.o
+[208/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_lib.c.o
+[209/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_pcia.c.o
+[210/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_ncons.c.o
+[211/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_pci.c.o
+[212/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_pku.c.o
+[213/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_pcons.c.o
+[214/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_pmaps.c.o
+[215/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_prn.c.o
+[216/395] Building C object crypto/pkcs7/CMakeFiles/pkcs7.dir/pkcs7.c.o
+[217/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_skey.c.o
+[218/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_sxnet.c.o
+[219/395] Building C object crypto/pkcs7/CMakeFiles/pkcs7.dir/pkcs7_x509.c.o
+[220/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_purp.c.o
+[221/395] Building C object crypto/pkcs8/CMakeFiles/pkcs8_lib.dir/p5_pbev2.c.o
+[222/395] Building C object crypto/pkcs8/CMakeFiles/pkcs8_lib.dir/pkcs8.c.o
+[223/395] Generating aesni-gcm-x86_64.S
+[224/395] Building C object crypto/pkcs8/CMakeFiles/pkcs8_lib.dir/pkcs8_x509.c.o
+[225/395] Building CXX object crypto/test/CMakeFiles/test_support.dir/malloc.cc.o
+[226/395] Building C object crypto/x509v3/CMakeFiles/x509v3.dir/v3_utl.c.o
+[227/395] Generating aes-x86_64.S
+[228/395] Generating md5-x86_64.S
+[229/395] Generating rdrand-x86_64.S
+[230/395] Generating bsaes-x86_64.S
+[231/395] Generating ghash-x86_64.S
+[232/395] Building CXX object crypto/test/CMakeFiles/test_support.dir/test_util.cc.o
+[233/395] Generating aesni-x86_64.S
+[234/395] Generating vpaes-x86_64.S
+[235/395] Generating p256-x86_64-asm.S
+[236/395] Generating rsaz-avx2.S
+[237/395] Generating x86_64-mont.S
+[238/395] Generating x86_64-mont5.S
+[239/395] Generating sha512-x86_64.S
+[240/395] Generating sha256-x86_64.S
+[241/395] Building C object decrepit/bio/CMakeFiles/bio_decrepit.dir/base64_bio.c.o
+[242/395] Building C object decrepit/cast/CMakeFiles/cast.dir/cast_tables.c.o
+[243/395] Building C object decrepit/cfb/CMakeFiles/cfb.dir/cfb.c.o
+[244/395] Building C object decrepit/blowfish/CMakeFiles/blowfish.dir/blowfish.c.o
+[245/395] Generating sha1-x86_64.S
+[246/395] Building C object decrepit/des/CMakeFiles/des_decrepit.dir/cfb64ede.c.o
+[247/395] Building C object decrepit/dh/CMakeFiles/dh_decrepit.dir/dh_decrepit.c.o
+[248/395] Building CXX object crypto/test/CMakeFiles/boringssl_gtest_main.dir/gtest_main.cc.o
+[249/395] Building C object decrepit/evp/CMakeFiles/evp_decrepit.dir/dss1.c.o
+[250/395] Building C object decrepit/dsa/CMakeFiles/dsa_decrepit.dir/dsa_decrepit.c.o
+[251/395] Building C object decrepit/cast/CMakeFiles/cast.dir/cast.c.o
+[252/395] Building CXX object crypto/test/CMakeFiles/test_support.dir/file_test.cc.o
+[253/395] Building C object third_party/fiat/CMakeFiles/fiat.dir/curve25519.c.o
+[254/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/chacha/chacha_test.cc.o
+[255/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/asn1/asn1_test.cc.o
+[256/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/buf/buf_test.cc.o
+[257/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/cmac/cmac_test.cc.o
+[258/395] Building CXX object CMakeFiles/boringssl_gtest.dir/third_party/googletest/src/gtest-all.cc.o
+[259/395] Linking CXX static library libboringssl_gtest.a
+[260/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/cipher_extra/cipher_test.cc.o
+[261/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/base64/base64_test.cc.o
+[262/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/curve25519/spake25519_test.cc.o
+[263/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/compiler_test.cc.o
+[264/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/constant_time_test.cc.o
+[265/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/curve25519/ed25519_test.cc.o
+[266/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/curve25519/x25519_test.cc.o
+[267/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/dh/dh_test.cc.o
+[268/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/ecdh/ecdh_test.cc.o
+[269/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/dsa/dsa_test.cc.o
+[270/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/cipher_extra/aead_test.cc.o
+[271/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/bio/bio_test.cc.o
+[272/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/bytestring/bytestring_test.cc.o
+[273/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/digest_extra/digest_test.cc.o
+[274/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/evp/evp_test.cc.o
+[275/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/err/err_test.cc.o
+[276/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/evp/pbkdf_test.cc.o
+[277/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/fipsmodule/aes/aes_test.cc.o
+[278/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/evp/evp_extra_test.cc.o
+[279/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/evp/scrypt_test.cc.o
+[280/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/hkdf/hkdf_test.cc.o
+[281/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/fipsmodule/modes/gcm_test.cc.o
+[282/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/fipsmodule/rand/ctrdrbg_test.cc.o
+[283/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/fipsmodule/ec/p256-x86_64_test.cc.o
+[284/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/obj/obj_test.cc.o
+[285/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/fipsmodule/ecdsa/ecdsa_test.cc.o
+[286/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/lhash/lhash_test.cc.o
+[287/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/hmac_extra/hmac_test.cc.o
+[288/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/fipsmodule/ec/ec_test.cc.o
+[289/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/poly1305/poly1305_test.cc.o
+[290/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/pool/pool_test.cc.o
+[291/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/refcount_test.cc.o
+[292/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/pkcs8/pkcs8_test.cc.o
+[293/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/pkcs7/pkcs7_test.cc.o
+[294/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/pkcs8/pkcs12_test.cc.o
+[295/395] Building C object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/is_fips.c.o
+[296/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/aesni-gcm-x86_64.S.o
+[297/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/aesni-x86_64.S.o
+[298/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/aes-x86_64.S.o
+[299/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/bsaes-x86_64.S.o
+[300/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/ghash-x86_64.S.o
+[301/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/self_test.cc.o
+[302/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/md5-x86_64.S.o
+[303/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/p256-x86_64-asm.S.o
+[304/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/rdrand-x86_64.S.o
+[305/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/test/file_test_gtest.cc.o
+[306/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/rsaz-avx2.S.o
+[307/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/sha256-x86_64.S.o
+[308/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/sha1-x86_64.S.o
+[309/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/vpaes-x86_64.S.o
+[310/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/sha512-x86_64.S.o
+[311/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/x86_64-mont5.S.o
+[312/395] Building ASM object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/x86_64-mont.S.o
+[313/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/thread_test.cc.o
+[314/395] Building CXX object ssl/CMakeFiles/ssl.dir/bio_ssl.cc.o
+[315/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/x509v3/tab_test.cc.o
+[316/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/x509v3/v3name_test.cc.o
+[317/395] Building CXX object ssl/CMakeFiles/ssl.dir/d1_both.cc.o
+[318/395] Building CXX object ssl/CMakeFiles/ssl.dir/custom_extensions.cc.o
+[319/395] Building CXX object ssl/CMakeFiles/ssl.dir/d1_pkt.cc.o
+[320/395] Building CXX object ssl/CMakeFiles/ssl.dir/d1_srtp.cc.o
+[321/395] Building CXX object ssl/CMakeFiles/ssl.dir/dtls_method.cc.o
+[322/395] Building CXX object ssl/CMakeFiles/ssl.dir/handoff.cc.o
+[323/395] Building CXX object ssl/CMakeFiles/ssl.dir/d1_lib.cc.o
+[324/395] Building CXX object ssl/CMakeFiles/ssl.dir/dtls_record.cc.o
+[325/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/rsa_extra/rsa_test.cc.o
+[326/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/fipsmodule/bn/bn_test.cc.o
+[327/395] Building CXX object ssl/CMakeFiles/ssl.dir/s3_both.cc.o
+[328/395] Building CXX object ssl/CMakeFiles/ssl.dir/s3_pkt.cc.o
+[329/395] Building CXX object ssl/CMakeFiles/ssl.dir/handshake_client.cc.o
+[330/395] Building CXX object ssl/CMakeFiles/ssl.dir/s3_lib.cc.o
+[331/395] Building CXX object ssl/CMakeFiles/ssl.dir/handshake.cc.o
+[332/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_aead_ctx.cc.o
+[333/395] Building CXX object crypto/CMakeFiles/crypto_test.dir/x509/x509_test.cc.o
+[334/395] Building CXX object ssl/CMakeFiles/ssl.dir/handshake_server.cc.o
+[335/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_file.cc.o
+[336/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_asn1.cc.o
+[337/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_buffer.cc.o
+[338/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_key_share.cc.o
+[339/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_cert.cc.o
+[340/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_cipher.cc.o
+[341/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_stat.cc.o
+[342/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_privkey.cc.o
+[343/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_session.cc.o
+[344/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_versions.cc.o
+[345/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_lib.cc.o
+[346/395] Building CXX object ssl/CMakeFiles/ssl.dir/tls_method.cc.o
+[347/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_transcript.cc.o
+[348/395] Building CXX object ssl/CMakeFiles/ssl.dir/t1_enc.cc.o
+[349/395] Building CXX object ssl/CMakeFiles/ssl.dir/tls_record.cc.o
+[350/395] Building CXX object ssl/CMakeFiles/ssl.dir/ssl_x509.cc.o
+[351/395] Building CXX object ssl/CMakeFiles/ssl.dir/tls13_enc.cc.o
+[352/395] Building CXX object ssl/CMakeFiles/ssl.dir/tls13_client.cc.o
+[353/395] Building CXX object ssl/test/CMakeFiles/bssl_shim.dir/async_bio.cc.o
+[354/395] Building CXX object ssl/CMakeFiles/ssl.dir/tls13_both.cc.o
+[355/395] Building CXX object ssl/CMakeFiles/ssl.dir/tls13_server.cc.o
+[356/395] Building CXX object ssl/test/CMakeFiles/bssl_shim.dir/test_config.cc.o
+[357/395] Building CXX object ssl/test/CMakeFiles/bssl_shim.dir/packeted_bio.cc.o
+[358/395] Building CXX object tool/CMakeFiles/bssl.dir/const.cc.o
+[359/395] Building CXX object ssl/CMakeFiles/ssl.dir/t1_lib.cc.o
+[360/395] Building CXX object tool/CMakeFiles/bssl.dir/ciphers.cc.o
+[361/395] Building CXX object tool/CMakeFiles/bssl.dir/args.cc.o
+[362/395] Building CXX object tool/CMakeFiles/bssl.dir/file.cc.o
+[363/395] Building CXX object tool/CMakeFiles/bssl.dir/digest.cc.o
+[364/395] Building CXX object ssl/CMakeFiles/ssl_test.dir/span_test.cc.o
+[365/395] Building CXX object tool/CMakeFiles/bssl.dir/generate_ed25519.cc.o
+[366/395] Building CXX object tool/CMakeFiles/bssl.dir/genrsa.cc.o
+[367/395] Building CXX object tool/CMakeFiles/bssl.dir/rand.cc.o
+[368/395] Building CXX object tool/CMakeFiles/bssl.dir/client.cc.o
+[369/395] Building CXX object tool/CMakeFiles/bssl.dir/pkcs12.cc.o
+[370/395] Building CXX object tool/CMakeFiles/bssl.dir/sign.cc.o
+[371/395] Building C object decrepit/evp/CMakeFiles/evp_decrepit.dir/evp_do_all.c.o
+[372/395] Building CXX object tool/CMakeFiles/bssl.dir/tool.cc.o
+[373/395] Building C object decrepit/rc4/CMakeFiles/rc4_decrepit.dir/rc4_decrepit.c.o
+[374/395] Building C object decrepit/obj/CMakeFiles/obj_decrepit.dir/obj_decrepit.c.o
+[375/395] Building C object decrepit/rsa/CMakeFiles/rsa_decrepit.dir/rsa_decrepit.c.o
+[376/395] Building C object crypto/fipsmodule/CMakeFiles/fipsmodule.dir/bcm.c.o
+[377/395] Building C object decrepit/ssl/CMakeFiles/ssl_decrepit.dir/ssl_decrepit.c.o
+[378/395] Linking C static library crypto/libcrypto.a
+[379/395] Building CXX object ssl/test/CMakeFiles/bssl_shim.dir/bssl_shim.cc.o
+[380/395] Building C object decrepit/x509/CMakeFiles/x509_decrepit.dir/x509_decrepit.c.o
+[381/395] Linking CXX static library ssl/libssl.a
+[382/395] Building C object decrepit/ripemd/CMakeFiles/ripemd_decrepit.dir/ripemd.c.o
+[383/395] Building CXX object tool/CMakeFiles/bssl.dir/transport_common.cc.o
+[384/395] Building C object decrepit/xts/CMakeFiles/xts.dir/xts.c.o
+[385/395] Linking CXX static library decrepit/libdecrepit.a
+[386/395] Building CXX object tool/CMakeFiles/bssl.dir/server.cc.o
+[387/395] Building CXX object decrepit/CMakeFiles/decrepit_test.dir/ripemd/ripemd_test.cc.o
+[388/395] Building CXX object tool/CMakeFiles/bssl.dir/speed.cc.o
+[389/395] Linking CXX executable ssl/test/bssl_shim
+[390/395] Building CXX object decrepit/CMakeFiles/decrepit_test.dir/cfb/cfb_test.cc.o
+[391/395] Linking CXX executable tool/bssl
+[392/395] Linking CXX executable decrepit/decrepit_test
+[393/395] Linking CXX executable crypto/crypto_test
+[394/395] Building CXX object ssl/CMakeFiles/ssl_test.dir/ssl_test.cc.o
+[395/395] Linking CXX executable ssl/ssl_test
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git
+[1/177] gcc  -I/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -std=gnu11 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -Icore/libsparse/include -Icore/base/include -c core/libsparse/sparse_crc32.c -o core/libsparse/sparse_crc32.c.o
+[2/177] gcc  -I/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -std=gnu11 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -Icore/libsparse/include -Icore/base/include -c core/libsparse/sparse_err.c -o core/libsparse/sparse_err.c.o
+[3/177] gcc  -I/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -std=gnu11 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -Icore/libsparse/include -Icore/base/include -c core/libsparse/sparse.c -o core/libsparse/sparse.c.o
+[4/177] gcc  -I/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -std=gnu11 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -Icore/libsparse/include -Icore/base/include -c core/libsparse/backed_block.c -o core/libsparse/backed_block.c.o
+[5/177] g++  -lpthread -lusb-1.0 -L/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -L/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-rpath-link,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -Wl,-rpath-link,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-rpath,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -Wl,-rpath,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-O1 -L/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -L/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-rpath-link,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -Wl,-rpath-link,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-rpath,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -Wl,-rpath,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-O1 core/base/file.cpp.o core/base/logging.cpp.o core/base/parsenetaddress.cpp.o core/base/stringprintf.cpp.o core/base/strings.cpp.o core/base/errors_unix.cpp.o core/base/test_utils.cpp.o core/liblog/log_event_write.c.o core/liblog/fake_log_device.c.o core/liblog/log_event_list.c.o core/liblog/logger_write.c.o core/liblog/config_write.c.o core/liblog/config_read.c.o core/liblog/logger_lock.c.o core/liblog/local_logger.c.o core/liblog/fake_writer.c.o core/liblog/logger_name.c.o core/liblog/stderr_write.c.o core/liblog/logprint.c.o core/libcutils/load_file.cpp.o core/libcutils/socket_local_client_unix.cpp.o core/libcutils/socket_network_client_unix.cpp.o core/libcutils/socket_local_server_unix.cpp.o core/libcutils/sockets_unix.cpp.o core/libcutils/socket_inaddr_any_server_unix.cpp.o core/libcutils/sockets.cpp.o core/libcutils/android_get_control_file.cpp.o core/libcutils/threads.cpp.o core/libcutils/fs_config.cpp.o core/libcutils/canned_fs_config.cpp.o core/adb/adb.cpp.o core/adb/adb_io.cpp.o core/adb/adb_listeners.cpp.o core/adb/adb_trace.cpp.o core/adb/adb_utils.cpp.o core/adb/bugreport.cpp.o core/adb/line_printer.cpp.o core/adb/sockets.cpp.o core/adb/transport.cpp.o core/adb/transport_local.cpp.o core/adb/transport_usb.cpp.o core/adb/transport_mdns_unsupported.cpp.o core/adb/fdevent.cpp.o core/adb/adb_auth_host.cpp.o core/adb/shell_service_protocol.cpp.o core/adb/console.cpp.o core/adb/socket_spec.cpp.o core/adb/commandline.cpp.o core/adb/adb_client.cpp.o core/adb/services.cpp.o core/adb/file_sync_client.cpp.o core/adb/sysdeps_unix.cpp.o core/adb/sysdeps/errno.cpp.o core/adb/client/main.cpp.o core/adb/client/usb_dispatch.cpp.o core/adb/client/usb_linux.cpp.o core/adb/client/usb_libusb.cpp.o core/adb/sysdeps/posix/network.cpp.o core/adb/diagnose_usb.cpp.o core/libcrypto_utils/android_pubkey.c.o boringssl/build/crypto/libcrypto.a -o adb
+FAILED: adb 
+g++  -lpthread -lusb-1.0 -L/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -L/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-rpath-link,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -Wl,-rpath-link,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-rpath,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -Wl,-rpath,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-O1 -L/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -L/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-rpath-link,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -Wl,-rpath-link,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-rpath,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/lib -Wl,-rpath,/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/lib -Wl,-O1 core/base/file.cpp.o core/base/logging.cpp.o core/base/parsenetaddress.cpp.o core/base/stringprintf.cpp.o core/base/strings.cpp.o core/base/errors_unix.cpp.o core/base/test_utils.cpp.o core/liblog/log_event_write.c.o core/liblog/fake_log_device.c.o core/liblog/log_event_list.c.o core/liblog/logger_write.c.o core/liblog/config_write.c.o core/liblog/config_read.c.o core/liblog/logger_lock.c.o core/liblog/local_logger.c.o core/liblog/fake_writer.c.o core/liblog/logger_name.c.o core/liblog/stderr_write.c.o core/liblog/logprint.c.o core/libcutils/load_file.cpp.o core/libcutils/socket_local_client_unix.cpp.o core/libcutils/socket_network_client_unix.cpp.o core/libcutils/socket_local_server_unix.cpp.o core/libcutils/sockets_unix.cpp.o core/libcutils/socket_inaddr_any_server_unix.cpp.o core/libcutils/sockets.cpp.o core/libcutils/android_get_control_file.cpp.o core/libcutils/threads.cpp.o core/libcutils/fs_config.cpp.o core/libcutils/canned_fs_config.cpp.o core/adb/adb.cpp.o core/adb/adb_io.cpp.o core/adb/adb_listeners.cpp.o core/adb/adb_trace.cpp.o core/adb/adb_utils.cpp.o core/adb/bugreport.cpp.o core/adb/line_printer.cpp.o core/adb/sockets.cpp.o core/adb/transport.cpp.o core/adb/transport_local.cpp.o core/adb/transport_usb.cpp.o core/adb/transport_mdns_unsupported.cpp.o core/adb/fdevent.cpp.o core/adb/adb_auth_host.cpp.o core/adb/shell_service_protocol.cpp.o core/adb/console.cpp.o core/adb/socket_spec.cpp.o core/adb/commandline.cpp.o core/adb/adb_client.cpp.o core/adb/services.cpp.o core/adb/file_sync_client.cpp.o core/adb/sysdeps_unix.cpp.o core/adb/sysdeps/errno.cpp.o core/adb/client/main.cpp.o core/adb/client/usb_dispatch.cpp.o core/adb/client/usb_linux.cpp.o core/adb/client/usb_libusb.cpp.o core/adb/sysdeps/posix/network.cpp.o core/adb/diagnose_usb.cpp.o core/libcrypto_utils/android_pubkey.c.o boringssl/build/crypto/libcrypto.a -o adb
+core/adb/commandline.cpp.o: In function `stdin_read_thread_loop(void*)':
+commandline.cpp:(.text+0x49d): undefined reference to `pthread_sigmask'
+commandline.cpp:(.text+0x4cb): undefined reference to `pthread_sigmask'
+core/adb/commandline.cpp.o: In function `adb_shell(int, char const**)':
+commandline.cpp:(.text+0x267c): undefined reference to `pthread_sigmask'
+commandline.cpp:(.text+0x26a3): undefined reference to `pthread_create'
+core/adb/client/usb_libusb.cpp.o: In function `libusb::get_device_address(libusb_device*)':
+usb_libusb.cpp:(.text+0x22): undefined reference to `libusb_get_device_address'
+usb_libusb.cpp:(.text+0x2c): undefined reference to `libusb_get_bus_number'
+core/adb/client/usb_libusb.cpp.o: In function `adb_thread_setname(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+usb_libusb.cpp:(.text+0x149): undefined reference to `pthread_setname_np'
+core/adb/client/usb_libusb.cpp.o: In function `std::call_once<libusb::hotplug_callback(libusb_context*, libusb_device*, libusb_hotplug_event, void*)::{lambda()#1}>(std::once_flag&, libusb::hotplug_callback(libusb_context*, libusb_device*, libusb_hotplug_event, void*)::{lambda()#1}&&)::{lambda()#2}::_FUN()':
+usb_libusb.cpp:(.text+0x1bf): undefined reference to `pthread_create'
+core/adb/client/usb_libusb.cpp.o: In function `std::thread::_State_impl<std::thread::_Invoker<std::tuple<libusb::usb_init()::{lambda()#7}> > >::_M_run()':
+usb_libusb.cpp:(.text+0x3d3): undefined reference to `libusb_handle_events'
+core/adb/client/usb_libusb.cpp.o: In function `libusb::usb_init()':
+usb_libusb.cpp:(.text+0x411): undefined reference to `libusb_init'
+usb_libusb.cpp:(.text+0x487): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x4e8): undefined reference to `libusb_hotplug_register_callback'
+usb_libusb.cpp:(.text+0x526): undefined reference to `pthread_create'
+core/adb/client/usb_libusb.cpp.o: In function `libusb::perform_usb_transfer(libusb::usb_handle*, transfer_info*, std::unique_lock<std::mutex>) [clone .isra.25]':
+usb_libusb.cpp:(.text+0x859): undefined reference to `libusb_submit_transfer'
+usb_libusb.cpp:(.text+0x90e): undefined reference to `libusb_error_name'
+core/adb/client/usb_libusb.cpp.o: In function `libusb::transfer_callback(libusb_transfer*)':
+usb_libusb.cpp:(.text+0x1006): undefined reference to `libusb_submit_transfer'
+usb_libusb.cpp:(.text+0x107d): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x11fe): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x1261): undefined reference to `libusb_submit_transfer'
+usb_libusb.cpp:(.text+0x1317): undefined reference to `libusb_error_name'
+core/adb/client/usb_libusb.cpp.o: In function `libusb::usb_kick(libusb::usb_handle*)':
+usb_libusb.cpp:(.text+0x20b8): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text+0x20c4): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text+0x20d3): undefined reference to `libusb_release_interface'
+usb_libusb.cpp:(.text+0x20db): undefined reference to `libusb_close'
+core/adb/client/usb_libusb.cpp.o: In function `libusb::hotplug_callback(libusb_context*, libusb_device*, libusb_hotplug_event, void*)':
+usb_libusb.cpp:(.text+0x2188): undefined reference to `pthread_once'
+core/adb/client/usb_libusb.cpp.o: In function `libusb::hotplug_thread()':
+usb_libusb.cpp:(.text+0x2574): undefined reference to `pthread_create'
+usb_libusb.cpp:(.text+0x26ed): undefined reference to `libusb_free_transfer'
+usb_libusb.cpp:(.text+0x2705): undefined reference to `libusb_free_transfer'
+usb_libusb.cpp:(.text+0x2793): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text+0x279f): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text+0x27b3): undefined reference to `libusb_release_interface'
+usb_libusb.cpp:(.text+0x27bf): undefined reference to `libusb_close'
+core/adb/client/usb_libusb.cpp.o: In function `libusb::process_device(libusb_device*)':
+usb_libusb.cpp:(.text+0x2b69): undefined reference to `libusb_get_device_descriptor'
+usb_libusb.cpp:(.text+0x2c07): undefined reference to `libusb_get_active_config_descriptor'
+usb_libusb.cpp:(.text+0x2e23): undefined reference to `libusb_free_config_descriptor'
+usb_libusb.cpp:(.text+0x31ea): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x34f0): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x3557): undefined reference to `libusb_open'
+usb_libusb.cpp:(.text+0x35b2): undefined reference to `libusb_get_string_descriptor_ascii'
+usb_libusb.cpp:(.text+0x35e5): undefined reference to `libusb_claim_interface'
+usb_libusb.cpp:(.text+0x36a9): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x36d9): undefined reference to `libusb_close'
+usb_libusb.cpp:(.text+0x3796): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x37e4): undefined reference to `libusb_get_port_numbers'
+usb_libusb.cpp:(.text+0x3800): undefined reference to `libusb_get_bus_number'
+usb_libusb.cpp:(.text+0x3a79): undefined reference to `libusb_alloc_transfer'
+usb_libusb.cpp:(.text+0x3ae4): undefined reference to `libusb_alloc_transfer'
+usb_libusb.cpp:(.text+0x3c19): undefined reference to `libusb_free_transfer'
+usb_libusb.cpp:(.text+0x3c31): undefined reference to `libusb_free_transfer'
+usb_libusb.cpp:(.text+0x3d45): undefined reference to `libusb_free_config_descriptor'
+usb_libusb.cpp:(.text+0x4165): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x418c): undefined reference to `libusb_set_interface_alt_setting'
+usb_libusb.cpp:(.text+0x41ad): undefined reference to `libusb_clear_halt'
+usb_libusb.cpp:(.text+0x41c7): undefined reference to `libusb_clear_halt'
+usb_libusb.cpp:(.text+0x42f9): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x4328): undefined reference to `libusb_release_interface'
+usb_libusb.cpp:(.text+0x438b): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text+0x4397): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text+0x43a6): undefined reference to `libusb_release_interface'
+usb_libusb.cpp:(.text+0x43ae): undefined reference to `libusb_close'
+usb_libusb.cpp:(.text+0x44cd): undefined reference to `libusb_error_name'
+usb_libusb.cpp:(.text+0x459e): undefined reference to `libusb_close'
+usb_libusb.cpp:(.text+0x45a6): undefined reference to `libusb_free_config_descriptor'
+usb_libusb.cpp:(.text+0x4693): undefined reference to `libusb_free_transfer'
+core/adb/client/usb_libusb.cpp.o: In function `std::thread::_State_impl<std::thread::_Invoker<std::tuple<libusb::device_connected(libusb_device*)::{lambda()#1}> > >::_M_run()':
+usb_libusb.cpp:(.text+0x49ff): undefined reference to `libusb_get_port_numbers'
+usb_libusb.cpp:(.text+0x4a1a): undefined reference to `libusb_get_bus_number'
+core/adb/client/usb_libusb.cpp.o: In function `libusb::usb_cleanup()':
+usb_libusb.cpp:(.text+0x6f9): undefined reference to `libusb_hotplug_deregister_callback'
+core/adb/client/usb_libusb.cpp.o: In function `std::default_delete<libusb::usb_handle>::operator()(libusb::usb_handle*) const [clone .isra.51] [clone .part.52]':
+usb_libusb.cpp:(.text.unlikely+0x7f): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text.unlikely+0x8b): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text.unlikely+0x9a): undefined reference to `libusb_release_interface'
+usb_libusb.cpp:(.text.unlikely+0xa2): undefined reference to `libusb_close'
+usb_libusb.cpp:(.text.unlikely+0xc8): undefined reference to `libusb_free_transfer'
+usb_libusb.cpp:(.text.unlikely+0xe0): undefined reference to `libusb_free_transfer'
+core/adb/client/usb_libusb.cpp.o: In function `std::_Hashtable<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::unique_ptr<libusb::usb_handle, std::default_delete<libusb::usb_handle> > >, std::allocator<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::unique_ptr<libusb::usb_handle, std::default_delete<libusb::usb_handle> > > >, std::__detail::_Select1st, std::equal_to<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::hash<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_erase(unsigned long, std::__detail::_Hash_node_base*, std::__detail::_Hash_node<std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::unique_ptr<libusb::usb_handle, std::default_delete<libusb::usb_handle> > >, true>*)':
+usb_libusb.cpp:(.text._ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE[_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE]+0xb5): undefined reference to `libusb_free_transfer'
+usb_libusb.cpp:(.text._ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE[_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE]+0xcd): undefined reference to `libusb_free_transfer'
+usb_libusb.cpp:(.text._ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE[_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE]+0x1d4): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text._ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE[_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE]+0x1e0): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text._ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE[_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE]+0x1ef): undefined reference to `libusb_release_interface'
+usb_libusb.cpp:(.text._ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE[_ZNSt10_HashtableINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St10unique_ptrIN6libusb10usb_handleESt14default_deleteISA_EEESaISE_ENSt8__detail10_Select1stESt8equal_toIS5_ESt4hashIS5_ENSG_18_Mod_range_hashingENSG_20_Default_ranged_hashENSG_20_Prime_rehash_policyENSG_17_Hashtable_traitsILb1ELb0ELb1EEEE8_M_eraseEmPNSG_15_Hash_node_baseEPNSG_10_Hash_nodeISE_Lb1EEE]+0x1f7): undefined reference to `libusb_close'
+core/adb/client/usb_libusb.cpp.o: In function `std::pair<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const, std::unique_ptr<libusb::usb_handle, std::default_delete<libusb::usb_handle> > >::~pair()':
+usb_libusb.cpp:(.text._ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED2Ev[_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED5Ev]+0x74): undefined reference to `libusb_free_transfer'
+usb_libusb.cpp:(.text._ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED2Ev[_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED5Ev]+0x8c): undefined reference to `libusb_free_transfer'
+usb_libusb.cpp:(.text._ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED2Ev[_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED5Ev]+0x144): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text._ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED2Ev[_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED5Ev]+0x150): undefined reference to `libusb_cancel_transfer'
+usb_libusb.cpp:(.text._ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED2Ev[_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED5Ev]+0x15f): undefined reference to `libusb_release_interface'
+usb_libusb.cpp:(.text._ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED2Ev[_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt10unique_ptrIN6libusb10usb_handleESt14default_deleteIS9_EEED5Ev]+0x167): undefined reference to `libusb_close'
+core/adb/transport.cpp.o: In function `read_transport_thread(void*)':
+transport.cpp:(.text+0x4ca2): undefined reference to `pthread_setname_np'
+core/adb/transport.cpp.o: In function `write_transport_thread(void*)':
+transport.cpp:(.text+0x5ad2): undefined reference to `pthread_setname_np'
+core/adb/transport.cpp.o: In function `transport_registration_func(int, unsigned int, void*)':
+transport.cpp:(.text+0x7b35): undefined reference to `pthread_create'
+transport.cpp:(.text+0x7ba7): undefined reference to `pthread_create'
+core/adb/transport_local.cpp.o: In function `local_init(int)':
+transport_local.cpp:(.text+0x14d): undefined reference to `pthread_create'
+core/adb/transport_local.cpp.o: In function `client_socket_thread(int)':
+transport_local.cpp:(.text+0x1374): undefined reference to `pthread_setname_np'
+core/adb/client/main.cpp.o: In function `adb_server_main(int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)':
+main.cpp:(.text+0x683): undefined reference to `pthread_create'
+core/adb/client/usb_linux.cpp.o: In function `native::usb_kick(native::usb_handle*)':
+usb_linux.cpp:(.text+0x2b6): undefined reference to `pthread_kill'
+core/adb/client/usb_linux.cpp.o: In function `native::usb_init()':
+usb_linux.cpp:(.text+0x681): undefined reference to `pthread_create'
+core/adb/client/usb_linux.cpp.o: In function `native::device_poll_thread()':
+usb_linux.cpp:(.text+0x3537): undefined reference to `pthread_setname_np'
+core/liblog/logger_lock.c.o: In function `__android_log_trylock':
+logger_lock.c:(.text+0x18): undefined reference to `pthread_mutex_trylock'
+core/liblog/local_logger.c.o: In function `writeToLocalGetReadbleSize':
+local_logger.c:(.text+0x2d): undefined reference to `pthread_rwlock_rdlock'
+local_logger.c:(.text+0x52): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `writeToLocalGetSize':
+local_logger.c:(.text+0x81): undefined reference to `pthread_rwlock_rdlock'
+local_logger.c:(.text+0x99): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `writeToLocalSetSize':
+local_logger.c:(.text+0xdc): undefined reference to `pthread_rwlock_wrlock'
+local_logger.c:(.text+0xf4): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `writeToLocalClose':
+local_logger.c:(.text+0x12c): undefined reference to `pthread_rwlock_wrlock'
+core/liblog/local_logger.c.o: In function `writeToLocalClear':
+local_logger.c:(.text+0x17c): undefined reference to `pthread_rwlock_wrlock'
+local_logger.c:(.text+0x1c1): undefined reference to `pthread_rwlock_rdlock'
+local_logger.c:(.text+0x1c9): undefined reference to `pthread_rwlock_unlock'
+local_logger.c:(.text+0x200): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `writeToLocalPoll':
+local_logger.c:(.text+0x2a3): undefined reference to `pthread_rwlock_rdlock'
+local_logger.c:(.text+0x305): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `writeToLocalRead':
+local_logger.c:(.text+0x34d): undefined reference to `pthread_rwlock_rdlock'
+local_logger.c:(.text+0x3a4): undefined reference to `pthread_rwlock_unlock'
+local_logger.c:(.text+0x420): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `LogBufferClear.constprop.5':
+local_logger.c:(.text+0x4c9): undefined reference to `pthread_rwlock_wrlock'
+core/liblog/local_logger.c.o: In function `writeToLocalInit':
+local_logger.c:(.text+0x5c8): undefined reference to `pthread_rwlock_wrlock'
+local_logger.c:(.text+0x662): undefined reference to `pthread_rwlock_unlock'
+local_logger.c:(.text+0x67e): undefined reference to `pthread_rwlock_wrlock'
+local_logger.c:(.text+0x6a1): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `writeToLocalWrite':
+local_logger.c:(.text+0x7c7): undefined reference to `pthread_rwlock_wrlock'
+local_logger.c:(.text+0x87d): undefined reference to `pthread_rwlock_rdlock'
+local_logger.c:(.text+0x889): undefined reference to `pthread_rwlock_unlock'
+local_logger.c:(.text+0x8c2): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `writeToLocalReset':
+local_logger.c:(.text+0x98c): undefined reference to `pthread_rwlock_wrlock'
+local_logger.c:(.text+0x9af): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `writeToLocalClose':
+local_logger.c:(.text+0x144): undefined reference to `pthread_rwlock_unlock'
+core/liblog/local_logger.c.o: In function `LogBufferClear.constprop.5':
+local_logger.c:(.text+0x548): undefined reference to `pthread_rwlock_unlock'
+core/libcutils/threads.cpp.o: In function `thread_store_set':
+threads.cpp:(.text+0x61): undefined reference to `pthread_key_create'
+core/libcutils/threads.cpp.o: In function `thread_store_get':
+threads.cpp:(.text+0x2b): undefined reference to `pthread_getspecific'
+core/libcutils/threads.cpp.o: In function `thread_store_set':
+threads.cpp:(.text+0x83): undefined reference to `pthread_setspecific'
+core/adb/services.cpp.o: In function `create_service_thread(char const*, void (*)(int, void*), void*)':
+services.cpp:(.text+0xd5): undefined reference to `pthread_create'
+core/adb/services.cpp.o: In function `service_bootstrap_func(void*)':
+services.cpp:(.text+0x3de): undefined reference to `pthread_setname_np'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `thread_local_init':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:126: undefined reference to `pthread_key_create'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_MUTEX_init':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:31: undefined reference to `pthread_rwlock_init'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_MUTEX_lock_read':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:37: undefined reference to `pthread_rwlock_rdlock'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_MUTEX_lock_write':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:43: undefined reference to `pthread_rwlock_wrlock'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_MUTEX_unlock_read':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:49: undefined reference to `pthread_rwlock_unlock'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_STATIC_MUTEX_lock_read':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:65: undefined reference to `pthread_rwlock_rdlock'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_STATIC_MUTEX_lock_write':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:71: undefined reference to `pthread_rwlock_wrlock'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_STATIC_MUTEX_unlock_read':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:77: undefined reference to `pthread_rwlock_unlock'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_once':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:89: undefined reference to `pthread_once'
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:89: undefined reference to `pthread_once'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_get_thread_local':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:135: undefined reference to `pthread_getspecific'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_once':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:89: undefined reference to `pthread_once'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_set_thread_local':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:150: undefined reference to `pthread_getspecific'
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:158: undefined reference to `pthread_setspecific'
+boringssl/build/crypto/libcrypto.a(thread_pthread.c.o): In function `CRYPTO_MUTEX_cleanup':
+/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/git/boringssl/build/../crypto/thread_pthread.c:61: undefined reference to `pthread_rwlock_destroy'
+collect2: error: ld returned 1 exit status
+[6/177] g++  -std=gnu++17 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -Icore/include -c core/libutils/FileMap.cpp -o core/libutils/FileMap.cpp.o
+[7/177] gcc  -I/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -std=gnu11 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -Icore/libsparse/include -Icore/base/include -c core/libsparse/output_file.c -o core/libsparse/output_file.c.o
+[8/177] gcc  -I/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -std=gnu11 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -D_GNU_SOURCE -Icore/libsparse/include -Icore/include -Iselinux/libselinux/include -Iextras/ext4_utils/include -c extras/ext4_utils/ext4_utils.c -o extras/ext4_utils/ext4_utils.c.o
+[9/177] g++  -std=gnu++17 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -Icore/libsparse/include -Icore/base/include -c core/libsparse/sparse_read.cpp -o core/libsparse/sparse_read.cpp.o
+[10/177] g++  -std=gnu++17 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -DFASTBOOT_VERSION="\"9.0.0.r10\"" -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -DUSE_F2FS -Icore/base/include -Icore/include -Icore/adb -Icore/libsparse/include -Icore/mkbootimg -Iextras/ext4_utils/include -Iextras/f2fs_utils -Icore/libziparchive/include -Icore/mkbootimg/include/bootimg -c core/fastboot/socket.cpp -o core/fastboot/socket.cpp.o
+[11/177] g++  -std=gnu++17 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -DFASTBOOT_VERSION="\"9.0.0.r10\"" -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -DUSE_F2FS -Icore/base/include -Icore/include -Icore/adb -Icore/libsparse/include -Icore/mkbootimg -Iextras/ext4_utils/include -Iextras/f2fs_utils -Icore/libziparchive/include -Icore/mkbootimg/include/bootimg -c core/fastboot/tcp.cpp -o core/fastboot/tcp.cpp.o
+[12/177] g++  -std=gnu++17 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -DFASTBOOT_VERSION="\"9.0.0.r10\"" -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -DUSE_F2FS -Icore/base/include -Icore/include -Icore/adb -Icore/libsparse/include -Icore/mkbootimg -Iextras/ext4_utils/include -Iextras/f2fs_utils -Icore/libziparchive/include -Icore/mkbootimg/include/bootimg -c core/fastboot/udp.cpp -o core/fastboot/udp.cpp.o
+[13/177] g++  -std=gnu++17 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -Icore/base/include -Icore/include -Icore/libziparchive/include -c core/libziparchive/zip_archive.cc -o core/libziparchive/zip_archive.cc.o
+[14/177] g++  -std=gnu++17 -isystem/OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/recipe-sysroot-native/usr/include -O2 -pipe  -DFASTBOOT_VERSION="\"9.0.0.r10\"" -D_GNU_SOURCE -D_XOPEN_SOURCE=700 -DUSE_F2FS -Icore/base/include -Icore/include -Icore/adb -Icore/libsparse/include -Icore/mkbootimg -Iextras/ext4_utils/include -Iextras/f2fs_utils -Icore/libziparchive/include -Icore/mkbootimg/include/bootimg -c core/fastboot/fastboot.cpp -o core/fastboot/fastboot.cpp.o
+ninja: build stopped: subcommand failed.
+WARNING: /OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/temp/run.do_compile.12223:1 exit 1 from 'ninja'
+ERROR: Function failed: do_compile (log file is located at /OE/build/owpb/webos-ports/tmp-glibc/work/x86_64-linux/android-tools-native/9.0.0.r10-r0/temp/log.do_compile.12223)
