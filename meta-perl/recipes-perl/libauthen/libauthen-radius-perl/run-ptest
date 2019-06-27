@@ -13,8 +13,22 @@ systemctl restart radiusd || /etc/init.d/radiusd restart || {
         exit 1
 }
 
-# run teests
-perl test.pl
+# run tests
+# FIXME: this is from ptest-perl.bbclass and might not be correct
+for case in `find t -type f -name '*.t'`; do
+    perl $case >$case.output 2>&1
+    ret=$?
+    cat $case.output
+    if [ $ret -ne 0 ]; then
+        echo "FAIL: ${case%.t}"
+    elif grep -i 'SKIP' $case.output; then
+        echo "SKIP: ${case%.t}"
+    else
+        echo "PASS: ${case%.t}"
+    fi
+
+    rm -f $case.output
+done
 
 # restore the config and restart
 mv ${CONF_USERS}_orig ${CONF_USERS}
