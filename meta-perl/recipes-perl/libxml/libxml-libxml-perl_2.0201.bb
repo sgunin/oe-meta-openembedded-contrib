@@ -9,17 +9,8 @@ your programs."
 HOMEPAGE = "http://search.cpan.org/dist/XML-LibXML-1.99/"
 SECTION = "libs"
 LICENSE = "Artistic-1.0|GPLv1+"
-DEPENDS += "libxml2 \
-        libxml-sax-perl-native \
-        zlib \
-"
-RDEPENDS_${PN} += "\
-    libxml2 \
-    libxml-sax-perl \
-    libxml-sax-base-perl \
-    perl-module-encode \
-    perl-module-data-dumper \
-    zlib \
+LIC_FILES_CHKSUM = "file://debian/copyright;md5=64eda1bc135f0ece1d1187f2a8ac82c1 \
+    file://LICENSE;md5=97871bde150daeb5e61ad95137ff2446 \
 "
 
 SRC_URI = "http://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/XML-LibXML-${PV}.tar.gz;name=libxml \
@@ -27,33 +18,23 @@ SRC_URI = "http://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/XML-LibXML-${PV}.
     file://fix-CATALOG-conditional-compile.patch \
     file://using-DOCB-conditional.patch \
 "
-LIC_FILES_CHKSUM = "file://debian/copyright;md5=64eda1bc135f0ece1d1187f2a8ac82c1 \
-    file://LICENSE;md5=97871bde150daeb5e61ad95137ff2446 \
-"
-SRC_URI[libxml.md5sum] = "dce687dd8b7e82d1c359fd74b1852f64"
-SRC_URI[libxml.sha256sum] = "f0bca4d0c2da35d879fee4cd13f352014186cedab27ab5e191f39b5d7d4f46cf"
+SRC_URI[libxml.md5sum] = "573d8bfad98cf1156daffe059efeef02"
+SRC_URI[libxml.sha256sum] = "e008700732502b3f1f0890696ec6e2dc70abf526cd710efd9ab7675cae199bc2"
 
 S = "${WORKDIR}/XML-LibXML-${PV}"
+
+DEPENDS += "\
+    libxml2 \
+    libxml-sax-perl-native \
+    zlib \
+"
 
 inherit cpan ptest-perl
 
 EXTRA_CPANFLAGS = "INC=-I${STAGING_INCDIR}/libxml2 LIBS=-L${STAGING_LIBDIR}"
 
-BBCLASSEXTEND = "native"
-
 CFLAGS += " -D_GNU_SOURCE "
 BUILD_CFLAGS += " -D_GNU_SOURCE "
-
-FILES_${PN}-dbg =+ "${libdir}/perl/vendor_perl/*/auto/XML/LibXML/.debug/"
-
-RDEPENDS_${PN}-ptest += " \
-    liburi-perl \
-    perl-module-encode-byte \
-    perl-module-encode-unicode \
-    perl-module-locale \
-    perl-module-perlio-scalar \
-    perl-module-test-more \
-"
 
 do_install_prepend() {
 	# test requires "-T" (taint) command line option
@@ -69,3 +50,25 @@ do_install_ptest() {
 	cp -r ${B}/test ${D}${PTEST_PATH}
 	chown -R root:root ${D}${PTEST_PATH}
 }
+
+FILES_${PN}-dbg =+ "${libdir}/perl/vendor_perl/*/auto/XML/LibXML/.debug/"
+
+RDEPENDS_${PN} += "\
+    libxml2 \
+    libxml-sax-perl \
+    libxml-sax-base-perl \
+    perl-module-encode \
+    perl-module-data-dumper \
+    zlib \
+"
+
+RDEPENDS_${PN}-ptest += " \
+    liburi-perl \
+    perl-module-encode-byte \
+    perl-module-encode-unicode \
+    perl-module-locale \
+    perl-module-perlio-scalar \
+    perl-module-test-more \
+"
+
+BBCLASSEXTEND = "native"
