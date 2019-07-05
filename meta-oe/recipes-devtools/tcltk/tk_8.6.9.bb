@@ -42,7 +42,7 @@ REQUIRED_DISTRO_FEATURES = "x11"
 EXTRA_OECONF = "\
     --enable-threads \
     --with-x \
-    --with-tcl=${STAGING_BINDIR}/crossscripts \
+    --with-tcl=${STAGING_BINDIR_CROSS} \
     --libdir=${libdir} \
 "
 export TK_LIBRARY='${libdir}/tk${VER}'
@@ -77,20 +77,5 @@ SSTATE_SCAN_FILES += "*Config.sh"
 
 inherit binconfig
 
-SYSROOT_DIRS += "${bindir_crossscripts}"
-
 # Fix some paths that might be used by Tcl extensions
-BINCONFIG_GLOB = "*Config.sh"
-
-# Cleanup host path from ${libdir}/tclConfig.sh and remove the
-# ${bindir_crossscripts}/tclConfig.sh from target
-PACKAGE_PREPROCESS_FUNCS += "tcl_package_preprocess"
-tcl_package_preprocess() {
-        sed -i -e "s;${DEBUG_PREFIX_MAP};;g" \
-               -e "s;-L${STAGING_LIBDIR};-L${libdir};g" \
-               -e "s;${STAGING_INCDIR};${includedir};g" \
-               -e "s;--sysroot=${RECIPE_SYSROOT};;g" \
-               ${PKGD}${libdir}/tkConfig.sh
-
-        rm -f ${PKGD}${bindir_crossscripts}/tkConfig.sh
-}
+BINCONFIG = "${libdir}/*Config.sh"
