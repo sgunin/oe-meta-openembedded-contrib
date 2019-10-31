@@ -13,6 +13,7 @@ SRC_URI = "${SAVANNAH_GNU_MIRROR}/${BPN}/${BP}.tar.gz \
     file://0001-include-sys-ttydefaults.h.patch \
     file://0001-Add-bounds-check-in-in_escape-state-of-JSON-parser.patch \
     file://0001-gps_shm_close-Free-privdata.patch \
+    file://0001-Address-Savannah-bug-53846-gps_shm_open-should-reset.patch \
 "
 SRC_URI[md5sum] = "e0cfadcf4a65dfbdd2afb11c58f4e4a1"
 SRC_URI[sha256sum] = "68e0dbecfb5831997f8b3d6ba48aed812eb465d8c0089420ab68f9ce4d85e77a"

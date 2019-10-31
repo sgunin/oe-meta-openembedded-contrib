@@ -1,0 +1,28 @@
+From 20e7553d8e7e716e8365958e75957216dd41cd4d Mon Sep 17 00:00:00 2001
+From: "Eric S. Raymond" <esr@thyrsus.com>
+Date: Wed, 26 Dec 2018 09:23:57 -0500
+Subject: Address Savannah bug #53846, gps_shm_open() should
+ reset...PRIVATE(gpsdata)->tick
+
+Upstream-Status: Backport
+Signed-off-by: Adrian Bunk <bunk@stusta.de>
+
+---
+ libgps_shm.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/libgps_shm.c b/libgps_shm.c
+index 755f63c73..8510c0f1c 100644
+--- a/libgps_shm.c
++++ b/libgps_shm.c
+@@ -59,6 +59,7 @@ int gps_shm_open(struct gps_data_t *gpsdata)
+     if (gpsdata->privdata == NULL)
+ 	return -1;
+ 
++    PRIVATE(gpsdata)->tick = 0;
+     PRIVATE(gpsdata)->shmseg = shmat(shmid, 0, 0);
+     if (PRIVATE(gpsdata)->shmseg == (void *) -1) {
+ 	/* attach failed for sume unknown reason */
+-- 
+2.20.1
+
