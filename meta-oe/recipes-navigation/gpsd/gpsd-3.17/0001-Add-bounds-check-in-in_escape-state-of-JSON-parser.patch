@@ -1,0 +1,46 @@
+From a6e718c0dd32501c8961b6ac0493b148b6489f14 Mon Sep 17 00:00:00 2001
+From: "Eric S. Raymond" <esr@thyrsus.com>
+Date: Fri, 15 Jun 2018 13:26:28 -0400
+Subject: Add bounds check in in_escape state of JSON parser.
+
+CVE: CVE-2018-17937
+Upstream-Status: Backport
+Signed-off-by: Adrian Bunk <bunk@stusta.de>
+
+---
+ json.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/json.c b/json.c
+index f5b59fba2..e7cac81fd 100644
+--- a/json.c
++++ b/json.c
+@@ -374,6 +374,12 @@ static int json_internal_read_object(const char *cp,
+ 	    if (pval == NULL)
+ 		/* don't update end here, leave at value start */
+ 		return JSON_ERR_NULLPTR;
++	    else if (pval > valbuf + JSON_VAL_MAX - 1
++		       || pval > valbuf + maxlen) {
++		json_debug_trace((1, "String value too long.\n"));
++		/* don't update end here, leave at value start */
++		return JSON_ERR_STRLONG;	/*  */
++	    }
+ 	    switch (*cp) {
+ 	    case 'b':
+ 		*pval++ = '\b';
+@@ -394,8 +400,10 @@ static int json_internal_read_object(const char *cp,
+ 		for (n = 0; n < 4 && cp[n] != '\0'; n++)
+ 		    uescape[n] = *cp++;
+ 		--cp;
+-		(void)sscanf(uescape, "%04x", &u);
+-		*pval++ = (char)u;	/* will truncate values above 0xff */
++		if (1 != sscanf(uescape, "%4x", &u)) {
++		    return JSON_ERR_BADSTRING;
++                }
++		*pval++ = (unsigned char)u;  /* will truncate values above 0xff */
+ 		break;
+ 	    default:		/* handles double quote and solidus */
+ 		*pval++ = *cp;
+-- 
+2.20.1
+
