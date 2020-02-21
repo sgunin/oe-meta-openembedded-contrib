@@ -16,8 +16,8 @@ SRC_URI = "http://www.freedesktop.org/software/ModemManager/ModemManager-${PV}.t
            file://0001-Do-not-pass-null-string-to-s-printf-formatted-string.patch \
            "
 
-SRC_URI[md5sum] = "a49c9f73e46c7b89e5efedda250d22c0"
-SRC_URI[sha256sum] = "96f2a5f0ed15532b4c4c185b756fdc0326e7c2027cea26a1264f91e098260f80"
+SRC_URI[md5sum] = "460661e12b7cc1da5c0920bdfe9f38de"
+SRC_URI[sha256sum] = "d9d0ef25e256586ce3c9bbe4b27f443721f8c891340e5e9087a21f5d70e637da"
 
 S = "${WORKDIR}/ModemManager-${PV}"
 
