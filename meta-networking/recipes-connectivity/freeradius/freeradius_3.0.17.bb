@@ -27,6 +27,7 @@ SRC_URI = "ftp://ftp.freeradius.org/pub/freeradius/freeradius-server-${PV}.tar.b
     file://freeradius-fix-quoting-for-BUILT_WITH.patch \
     file://freeradius-fix-error-for-expansion-of-macro.patch \
     file://0001-rlm_mschap-Use-includedir-instead-of-hardcoding-usr-.patch \
+    file://0001-su-to-radiusd-user-group-when-rotating-logs.patch \
     file://radiusd.service \
     file://radiusd-volatiles.conf \
     file://0001-freeradius-correct-version-number-of-libssl-defect.patch \
