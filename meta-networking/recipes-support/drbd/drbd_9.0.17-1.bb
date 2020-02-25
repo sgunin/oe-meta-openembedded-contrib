@@ -8,7 +8,7 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=5574c6965ae5f583e55880e397fbb018"
 DEPENDS = "virtual/kernel"
 
-SRC_URI = "http://www.linbit.com/downloads/drbd/9.0/drbd-${PV}.tar.gz \
+SRC_URI = "http://www.linbit.com/downloads/drbd/9.0/archive/drbd-${PV}.tar.gz \
            file://check_existence_of_modules_before_installing.patch \
            file://0001-drbd-kbuild-fix-use-M-don-t-forget-addprefix-obj.patch \
            "
