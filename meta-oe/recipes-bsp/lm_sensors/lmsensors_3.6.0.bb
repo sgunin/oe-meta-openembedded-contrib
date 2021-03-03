@@ -151,12 +151,17 @@ RRECOMMENDS_${PN}-fancontrol = "lmsensors-config-fancontrol"
 # sensors-detect script files
 FILES_${PN}-sensorsdetect = "${sbindir}/sensors-detect"
 FILES_${PN}-sensorsdetect-doc = "${mandir}/man8/sensors-detect.8"
-RDEPENDS_${PN}-sensorsdetect = "${PN}-sensors perl perl-modules"
+RDEPENDS_${PN}-sensorsdetect = "${PN}-sensors perl \
+    perl-module-constant \
+    perl-module-fcntl \
+    perl-module-file-basename \
+    perl-module-strict \
+    perl-module-vars"
 
 # sensors-conf-convert script files
 FILES_${PN}-sensorsconfconvert = "${bindir}/sensors-conf-convert"
 FILES_${PN}-sensorsconfconvert-doc = "${mandir}/man8/sensors-conf-convert.8"
-RDEPENDS_${PN}-sensorsconfconvert = "${PN}-sensors perl perl-modules"
+RDEPENDS_${PN}-sensorsconfconvert = "${PN}-sensors perl perl-module-strict perl-module-vars"
 
 # pwmconfig script files
 FILES_${PN}-pwmconfig = "${sbindir}/pwmconfig"
