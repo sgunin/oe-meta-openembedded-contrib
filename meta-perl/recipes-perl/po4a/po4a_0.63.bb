@@ -8,11 +8,12 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=a96fc9b4cc36d80659e694ea109f0325"
 
 SRC_URI = "git://github.com/mquinson/po4a.git;protocol=https"
 
-# v0.49
-SRCREV = "79ed87a577a543538fe39c7b60079981f5997072"
+# v0.63
+SRCREV = "5d2498c644c42724a6a70fc9351e76f3f6e1fc16"
 
 S = "${WORKDIR}/git"
 
+# libpod-parser-perl
 DEPENDS = " \
     libmodule-build-perl-native \
     libtext-wrapi18n-perl \
