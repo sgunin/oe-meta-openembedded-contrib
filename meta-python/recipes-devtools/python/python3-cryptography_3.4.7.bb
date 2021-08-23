@@ -6,14 +6,16 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=bf405a8056a6647e7d077b0e7bc36aba"
 
 LDSHARED += "-pthread"
 
-SRC_URI[sha256sum] = "5a60d3780149e13b7a6ff7ad6526b38846354d11a15e21068e57073e29e19bed"
+SRC_URI[sha256sum] = "3d10de8116d25649631977cb37da6cbdd2d6fa0e0281d014a5b7d337255ca713"
 
 SRC_URI += " \
     file://run-ptest \
-    file://h-test.patch \
 "
 
 inherit pypi setuptools3
+
+# We don't have rust support in oe-core yet
+export CRYPTOGRAPHY_DONT_BUILD_RUST=1
 
 DEPENDS += " \
     ${PYTHON_PN}-cffi \
@@ -43,6 +45,7 @@ RDEPENDS:${PN}:class-target += " \
 RDEPENDS:${PN}-ptest += " \
     ${PN} \
     ${PYTHON_PN}-cryptography-vectors \
+    ${PYTHON_PN}-hypothesis \
     ${PYTHON_PN}-iso8601 \
     ${PYTHON_PN}-pretend \
     ${PYTHON_PN}-pytest \
