@@ -6,46 +6,58 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=bf405a8056a6647e7d077b0e7bc36aba"
 
 LDSHARED += "-pthread"
 
-SRC_URI[sha256sum] = "5a60d3780149e13b7a6ff7ad6526b38846354d11a15e21068e57073e29e19bed"
+SRC_URI[sha256sum] = "9933f28f70d0517686bd7de36166dda42094eac49415459d9bdf5e7df3e0086d"
 
 SRC_URI += " \
     file://run-ptest \
-    file://h-test.patch \
 "
 
-inherit pypi setuptools3
+
+inherit cargo pypi python3-dir setuptools3
+
+export PYO3_CROSS = "1"
+#export PYO3_CROSS_PYTHON_VERSION = "${PYTHON_MAJOR}"
+#export _PYTHON_SYSCONFIGDATA_NAME
+
+export PYO3_CROSS_LIB_DIR="${STAGING_LIBDIR}"
+export PYO3_CROSS_INCLUDE_DIR="${STAGING_INCDIR}"
+export CARGO_BUILD_TARGET="${HOST_SYS}"
+export LD_LIBRARY_PATH="${STAGING_LIBDIR}"
+export RUSTFLAGS
 
 DEPENDS += " \
-    ${PYTHON_PN}-cffi \
+    ${PYTHON_PN}-asn1crypto-native \
     ${PYTHON_PN}-cffi-native \
-    ${PYTHON_PN}-asn1crypto \
-    ${PYTHON_PN}-six \
+    ${PYTHON_PN}-setuptools-rust-native \
+    ${PYTHON_PN}-six-native \
 "
 
 RDEPENDS:${PN} += " \
+    ${PYTHON_PN}-asn1crypto \
     ${PYTHON_PN}-cffi \
     ${PYTHON_PN}-idna \
-    ${PYTHON_PN}-asn1crypto \
     ${PYTHON_PN}-setuptools \
     ${PYTHON_PN}-six \
 "
 
 RDEPENDS:${PN}:class-target += " \
+    ${PYTHON_PN}-asn1crypto \
     ${PYTHON_PN}-cffi \
     ${PYTHON_PN}-idna \
     ${PYTHON_PN}-numbers \
-    ${PYTHON_PN}-asn1crypto \
     ${PYTHON_PN}-setuptools \
     ${PYTHON_PN}-six \
     ${PYTHON_PN}-threading \
 "
 
 RDEPENDS:${PN}-ptest += " \
-    ${PN} \
+    ${PYTHON_PN}-bcrypt \
     ${PYTHON_PN}-cryptography-vectors \
+    ${PYTHON_PN}-hypothesis \
     ${PYTHON_PN}-iso8601 \
     ${PYTHON_PN}-pretend \
     ${PYTHON_PN}-pytest \
+    ${PYTHON_PN}-pytest-subtests \
     ${PYTHON_PN}-pytz \
 "
 
@@ -56,10 +68,11 @@ do_install_ptest() {
     cp -rf ${S}/tests/* ${D}${PTEST_PATH}/tests/
     install -d ${D}${PTEST_PATH}/tests/hazmat
     cp -rf ${S}/tests/hazmat/* ${D}${PTEST_PATH}/tests/hazmat/
+    cp -r ${S}/pyproject.toml ${D}${PTEST_PATH}/
 }
 
 FILES:${PN}-dbg += " \
-    ${libdir}/${PYTHON_PN}2.7/site-packages/${SRCNAME}/hazmat/bindings/.debug \
+    ${PYTHON_SITEPACKAGES_DIR}/${SRCNAME}/hazmat/bindings/.debug \
 "
 
 BBCLASSEXTEND = "native nativesdk"
