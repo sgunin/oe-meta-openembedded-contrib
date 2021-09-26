@@ -1,0 +1,34 @@
+From ef35f4ed2e1be5575c55fc752336206b8cc1ae55 Mon Sep 17 00:00:00 2001
+From: Armin Kuster <akuster808@gmail.com>
+Date: Sun, 25 Jul 2021 10:16:13 -0700
+Subject: [meta-networking][PATCH] wireshark: update to 3.4.7
+To: openembedded-devel@lists.openembedded.org
+
+Stable branch bug fix update. Includes:
+CVE-2021-22235
+
+Signed-off-by: Armin Kuster <akuster808@gmail.com>
+---
+ .../wireshark/{wireshark_3.4.6.bb => wireshark_3.4.7.bb}        | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ rename meta-networking/recipes-support/wireshark/{wireshark_3.4.6.bb => wireshark_3.4.7.bb} (97%)
+
+diff --git a/meta-networking/recipes-support/wireshark/wireshark_3.4.6.bb b/meta-networking/recipes-support/wireshark/wireshark_3.4.7.bb
+similarity index 97%
+rename from meta-networking/recipes-support/wireshark/wireshark_3.4.6.bb
+rename to meta-networking/recipes-support/wireshark/wireshark_3.4.7.bb
+index 3062633bc3..7bc5a8150c 100644
+--- a/meta-networking/recipes-support/wireshark/wireshark_3.4.6.bb
++++ b/meta-networking/recipes-support/wireshark/wireshark_3.4.7.bb
+@@ -19,7 +19,7 @@ SRC_URI += " \
+ 
+ UPSTREAM_CHECK_URI = "https://1.as.dl.wireshark.org/src"
+ 
+-SRC_URI[sha256sum] = "12a678208f8cb009e6b9d96026e41a6ef03c7ad086b9e1029f42053b249b4628"
++SRC_URI[sha256sum] = "6c4cee51ef997cb9d9aaee84113525a5629157d3c743d7c4e320000de804a09d"
+ 
+ PE = "1"
+ 
+-- 
+2.25.1
+

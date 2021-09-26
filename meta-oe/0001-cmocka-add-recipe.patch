@@ -1,0 +1,34 @@
+From f708fe6948977ee2cebc092085774d33eacf23fd Mon Sep 17 00:00:00 2001
+From: Armin Kuster <akuster808@gmail.com>
+Date: Thu, 24 Sep 2020 13:54:44 -0700
+Subject: [PATCH] cmocka: add recipe
+
+Signed-off-by: Armin Kuster <akuster808@gmail.com>
+---
+ meta-oe/recipes-test/cmocka/cmocka_1.1.5.bb | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 meta-oe/recipes-test/cmocka/cmocka_1.1.5.bb
+
+diff --git a/meta-oe/recipes-test/cmocka/cmocka_1.1.5.bb b/meta-oe/recipes-test/cmocka/cmocka_1.1.5.bb
+new file mode 100644
+index 0000000000..a2d84025f1
+--- /dev/null
++++ b/meta-oe/recipes-test/cmocka/cmocka_1.1.5.bb
+@@ -0,0 +1,14 @@
++DESCRIPTION = "cmocka is an elegant unit testing framework for C with support for mock \
++objects. It only requires the standard C library, works on a range of computing \
++platforms (including embedded) and with different compilers."
++HOMEPAGE = "https://cmocka.org/"
++
++LICENSE = "Apache-2.0"
++LIC_FILES_CHKSUM = "file://COPYING;md5=3b83ef96387f14655fc854ddc3c6bd57"
++
++SRC_URI = "git://git.cryptomilk.org/projects/cmocka.git"
++SRCREV = "56eb3a183fc222120f86d0c54fd033992c30135e"
++
++S = "${WORKDIR}/git"
++
++inherit cmake ptest
+-- 
+2.17.1
+
