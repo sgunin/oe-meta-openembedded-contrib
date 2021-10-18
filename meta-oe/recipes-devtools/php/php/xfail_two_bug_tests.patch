@@ -1,4 +1,7 @@
-php-ptest: xfail two tests
+From 2b860634886d353fe34a5236642074a6f3106d3d Mon Sep 17 00:00:00 2001
+From: Lei Maohui <leimaohui@fujitsu.com>
+Date: Tue, 12 Oct 2021 02:11:10 +0000
+Subject: [PATCH] php-ptest: xfail two tests
 
 If and when these tests are modified to expect the correct output, they will
 succeed and generate warnings in the test summary.  This patch can then be removed.
@@ -9,26 +12,37 @@ Upstream-Status: Pending
 
 Signed-off-By: Joe Slater <joe.slater@windriver.com>
 
+update patch to version 8.0.10
+Signed-off-by: Lei Maohui <leimaohui@fujitsu.com>
+---
+ tests/basic/bug71273.phpt      | 2 ++
+ tests/run-test/bug75042-3.phpt | 2 ++
+ 2 files changed, 4 insertions(+)
 
+diff --git a/tests/basic/bug71273.phpt b/tests/basic/bug71273.phpt
+index 7634d432..50451d7b 100644
 --- a/tests/basic/bug71273.phpt
 +++ b/tests/basic/bug71273.phpt
-@@ -16,6 +16,8 @@ Bug #71273 A wrong ext directory setup i
- 	var_dump(preg_match(",.+a[\\/].+[\\/]w.php_kartoffelbrei.dll.+,s", $out));
+@@ -9,5 +9,7 @@ Bug #71273 A wrong ext directory setup in php.ini leads to crash
+ 
+     var_dump(preg_match(",.+a[\\/].+[\\/]w.php_kartoffelbrei.dll.+,s", $out));
  ?>
- ==DONE==
 +--XFAIL--
 +Output is int(0), not int(1)
  --EXPECT--
  int(1)
- ==DONE==
+diff --git a/tests/run-test/bug75042-3.phpt b/tests/run-test/bug75042-3.phpt
+index 5a30143b..1ca1055a 100644
 --- a/tests/run-test/bug75042-3.phpt
 +++ b/tests/run-test/bug75042-3.phpt
-@@ -8,5 +8,8 @@ display_errors=1
- nonexistentsharedmodule
+@@ -9,5 +9,7 @@ nonexistentsharedmodule
  --FILE--
  <?php
-+?>
+ ?>
 +--XFAIL--
 +No warning message printed.
  --EXPECTF--
- PHP Warning:  PHP Startup: Unable to load dynamic library '%snonexistentsharedmodule.%s' %A
+ Warning: PHP Startup: Unable to load dynamic library '%snonexistentsharedmodule.%s' %A
+-- 
+2.17.1
+

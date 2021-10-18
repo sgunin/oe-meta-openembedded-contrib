@@ -18,9 +18,9 @@ diff --git a/configure.ac b/configure.ac
 index 2a474ba36d..6d22a21630 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -1323,7 +1323,7 @@ PHP_BUILD_DATE=`date -u +%Y-%m-%d`
- fi
- AC_DEFINE_UNQUOTED(PHP_BUILD_DATE,"$PHP_BUILD_DATE",[PHP build date])
+@@ -1288,7 +1288,7 @@ PHP_BUILD_DATE=`date -u +%Y-%m-%d`
+ EXTRA_LDFLAGS="$EXTRA_LDFLAGS $PHP_LDFLAGS"
+ EXTRA_LDFLAGS_PROGRAM="$EXTRA_LDFLAGS_PROGRAM $PHP_LDFLAGS"
  
 -UNAME=`uname -a | xargs`
 +UNAME=`uname | xargs`

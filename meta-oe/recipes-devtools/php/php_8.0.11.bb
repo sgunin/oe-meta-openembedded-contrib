@@ -33,7 +33,7 @@ SRC_URI:append:class-target = " \
           "
 
 S = "${WORKDIR}/php-${PV}"
-SRC_URI[sha256sum] = "36ec6102e757e2c2b7742057a700bbff77c76fa0ccbe9c860398c3d24e32822a"
+SRC_URI[sha256sum] = "70ed874285e4010c1e2e8937bfb56b13b9ed1b3789dcaf274b793b00c1f4403a"
 
 
 inherit autotools pkgconfig python3native gettext
@@ -52,6 +52,7 @@ COMMON_EXTRA_OECONF = "--enable-sockets \
                        --disable-rpath \
                        --with-pic \
                        --libdir=${PHP_LIBDIR} \
+                       --disable-opcache-jit \
 "
 EXTRA_OECONF = "--enable-mbstring \
                 --enable-fpm \

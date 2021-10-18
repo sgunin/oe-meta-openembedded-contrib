@@ -1,6 +1,6 @@
-From a74b42098aededd296ec6a3cd4cf5a17e59d6f29 Mon Sep 17 00:00:00 2001
-From: Claude Bing <cbing@cybernetics.com>
-Date: Fri, 8 May 2020 10:15:32 -0400
+From c42c7a1498aa9aeebc39d2c84e059d35cf51797a Mon Sep 17 00:00:00 2001
+From: Lei Maohui <leimaohui@fujitsu.com>
+Date: Tue, 12 Oct 2021 06:17:29 +0000
 Subject: [PATCH] opcache/config.m4: enable opcache
 
 We can't use AC_TRY_RUN to run programs in a cross compile environment.
@@ -13,20 +13,85 @@ Upstream-Status: Inappropriate [Configuration]
 
 Signed-off-by: Anuj Mittal <anuj.mittal@intel.com>
 
-update patch to version 7.4.4
-Signed-off-by: Changqing Li <changqing.li@windriver.com>
-
 fix issue linking with librt
 Signed-off-by: Claude Bing <cbing@cybernetics.com>
+
+update patch to version 8.0.10
+Signed-off-by: Lei Maohui <leimaohui@fujitsu.com>
 ---
- ext/opcache/config.m4 | 195 +-----------------------------------------
- 1 file changed, 4 insertions(+), 191 deletions(-)
+---
+ ext/opcache/config.m4 | 257 ++----------------------------------------
+ 1 file changed, 10 insertions(+), 247 deletions(-)
 
 diff --git a/ext/opcache/config.m4 b/ext/opcache/config.m4
-index 6c40cafc1c..6569aa9e1c 100644
+index 5492fd92..ba55e9c4 100644
 --- a/ext/opcache/config.m4
 +++ b/ext/opcache/config.m4
-@@ -23,201 +23,14 @@ if test "$PHP_OPCACHE" != "no"; then
+@@ -43,260 +43,27 @@ if test "$PHP_OPCACHE" != "no"; then
+     ZEND_JIT_SRC="jit/zend_jit.c jit/zend_jit_vm_helpers.c"
+ 
+     dnl Find out which ABI we are using.
+-    AC_RUN_IFELSE([AC_LANG_SOURCE([[
+-      int main(void) {
+-        return sizeof(void*) == 4;
+-      }
+-    ]])],[
+-      ac_cv_32bit_build=no
+-    ],[
+-      ac_cv_32bit_build=yes
+-    ],[
+-      ac_cv_32bit_build=no
++    PHP_CHECK_LIBRARY(opagent, op_write_native_code,
++    [
++      AC_DEFINE(HAVE_OPROFILE,1,[ ])
++      PHP_ADD_INCLUDE($OPAGENT_DIR/include)
++      PHP_ADD_LIBRARY_WITH_PATH(opagent, $OPAGENT_DIR/$PHP_LIBDIR/oprofile, OPCACHE_SHARED_LIBADD)
++      PHP_SUBST(OPCACHE_SHARED_LIBADD)
+     ])
+-
+-    if test "$ac_cv_32bit_build" = "no"; then
+-      case $host_alias in
+-        *x86_64-*-darwin*)
+-          DASM_FLAGS="-D X64APPLE=1 -D X64=1"
+-        ;;
+-        *x86_64*)
+-          DASM_FLAGS="-D X64=1"
+-        ;;
+-      esac
+-    fi
+-
+-    if test "$PHP_THREAD_SAFETY" = "yes"; then
+-      DASM_FLAGS="$DASM_FLAGS -D ZTS=1"
+-    fi
+-
+-    PHP_SUBST(DASM_FLAGS)
+-
+-    AC_MSG_CHECKING(for opagent in default path)
+-    for i in /usr/local /usr; do
+-      if test -r $i/include/opagent.h; then
+-        OPAGENT_DIR=$i
+-        AC_MSG_RESULT(found in $i)
+-        break
+-      fi
+-    done
+-    if test -z "$OPAGENT_DIR"; then
+-      AC_MSG_RESULT(not found)
+-    else
+-      PHP_CHECK_LIBRARY(opagent, op_write_native_code,
+-      [
+-        AC_DEFINE(HAVE_OPROFILE,1,[ ])
+-        PHP_ADD_INCLUDE($OPAGENT_DIR/include)
+-        PHP_ADD_LIBRARY_WITH_PATH(opagent, $OPAGENT_DIR/$PHP_LIBDIR/oprofile, OPCACHE_SHARED_LIBADD)
+-        PHP_SUBST(OPCACHE_SHARED_LIBADD)
+-      ],[
+-        AC_MSG_RESULT(not found)
+-      ],[
+-        -L$OPAGENT_DIR/$PHP_LIBDIR/oprofile
+-      ])
+-    fi
+-
+   fi
+ 
    AC_CHECK_FUNCS([mprotect])
  
    AC_MSG_CHECKING(for sysvipc shared memory support)
@@ -96,8 +161,8 @@ index 6c40cafc1c..6569aa9e1c 100644
 -}
 -]])],[dnl
 -    AC_DEFINE(HAVE_SHM_IPC, 1, [Define if you have SysV IPC SHM support])
--    msg=yes],[msg=no],[msg=no])
--  AC_MSG_RESULT([$msg])
+-    have_shm_ipc=yes],[have_shm_ipc=no],[have_shm_ipc=no])
+-  AC_MSG_RESULT([$have_shm_ipc])
 +  AC_DEFINE(HAVE_SHM_IPC, 1, [Define if you have SysV IPC SHM support])
  
    AC_MSG_CHECKING(for mmap() using MAP_ANON shared memory support)
@@ -116,8 +181,7 @@ index 6c40cafc1c..6569aa9e1c 100644
 -#ifndef MAP_FAILED
 -# define MAP_FAILED ((void*)-1)
 -#endif
-+  AC_DEFINE(HAVE_SHM_MMAP_ANON, 1, [Define if you have mmap(MAP_ANON) SHM support])
- 
+-
 -int main() {
 -  pid_t pid;
 -  int status;
@@ -150,10 +214,11 @@ index 6c40cafc1c..6569aa9e1c 100644
 -}
 -]])],[dnl
 -    AC_DEFINE(HAVE_SHM_MMAP_ANON, 1, [Define if you have mmap(MAP_ANON) SHM support])
--    msg=yes],[msg=no],[msg=no])
--  AC_MSG_RESULT([$msg])
--
--  PHP_CHECK_FUNC_LIB(shm_open, rt)
+-    have_shm_mmap_anon=yes],[have_shm_mmap_anon=no],[have_shm_mmap_anon=no])
+-  AC_MSG_RESULT([$have_shm_mmap_anon])
++  AC_DEFINE(HAVE_SHM_MMAP_ANON, 1, [Define if you have mmap(MAP_ANON) SHM support])
+ 
+   PHP_CHECK_FUNC_LIB(shm_open, rt, root)
    AC_MSG_CHECKING(for mmap() using shm_open() shared memory support)
 -  AC_RUN_IFELSE([AC_LANG_SOURCE([[
 -#include <sys/types.h>
@@ -221,6 +286,7 @@ index 6c40cafc1c..6569aa9e1c 100644
 -]])],[dnl
 -    AC_DEFINE(HAVE_SHM_MMAP_POSIX, 1, [Define if you have POSIX mmap() SHM support])
 -    AC_MSG_RESULT([yes])
+-    have_shm_mmap_posix=yes
 -    PHP_CHECK_LIBRARY(rt, shm_unlink, [PHP_ADD_LIBRARY(rt,1,OPCACHE_SHARED_LIBADD)])
 -  ],[
 -    AC_MSG_RESULT([no])
@@ -232,6 +298,17 @@ index 6c40cafc1c..6569aa9e1c 100644
  
    PHP_NEW_EXTENSION(opcache,
  	ZendAccelerator.c \
+@@ -339,10 +106,6 @@ int main() {
+   PHP_ADD_BUILD_DIR([$ext_builddir/Optimizer], 1)
+   PHP_ADD_EXTENSION_DEP(opcache, pcre)
+ 
+-  if test "$have_shm_ipc" != "yes" && test "$have_shm_mmap_posix" != "yes" && test "$have_shm_mmap_anon" != "yes"; then
+-    AC_MSG_ERROR([No supported shared memory caching support was found when configuring opcache. Check config.log for any errors or missing dependencies.])
+-  fi
+-
+   if test "$PHP_OPCACHE_JIT" = "yes"; then
+     PHP_ADD_BUILD_DIR([$ext_builddir/jit], 1)
+     PHP_ADD_MAKEFILE_FRAGMENT($ext_srcdir/jit/Makefile.frag)
 -- 
 2.17.1
 
