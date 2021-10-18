@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = " \
 
 GNOMEBASEBUILDCLASS = "meson"
 
-DEPENDS = "mozjs gtk+3"
+DEPENDS = "mozjs gtk+3 webkitgtk"
 
 inherit gnomebase gsettings gobject-introspection vala gettext features_check upstream-version-is-even pkgconfig
 
