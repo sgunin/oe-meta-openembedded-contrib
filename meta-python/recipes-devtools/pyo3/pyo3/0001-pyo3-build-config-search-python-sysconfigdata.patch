@@ -1,0 +1,28 @@
+From 937322e1ca64025976d33d446e9646f1885c40f5 Mon Sep 17 00:00:00 2001
+From: Tim Orling <timothy.t.orling@intel.com>
+Date: Mon, 1 Nov 2021 21:44:06 +0000
+Subject: [PATCH] pyo3-build-config: search python-sysconfigdata
+
+Upstream-Status: Inappropriate [oe-specific]
+
+Signed-off-by: Tim Orling <timothy.t.orling@intel.com>
+---
+ pyo3-build-config/src/impl_.rs | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/pyo3-build-config/src/impl_.rs b/pyo3-build-config/src/impl_.rs
+index 4690b6e70..9300288ad 100644
+--- a/pyo3-build-config/src/impl_.rs
++++ b/pyo3-build-config/src/impl_.rs
+@@ -919,6 +919,8 @@ fn search_lib_dir(path: impl AsRef<Path>, cross: &CrossCompileConfig) -> Vec<Pat
+                 let file_name = file_name.to_string_lossy();
+                 if file_name.starts_with("build") {
+                     search_lib_dir(f.path(), cross)
++                } else if file_name.starts_with("python-sysconfigdata") {
++                    search_lib_dir(f.path(), cross)
+                 } else if file_name.starts_with("lib.") {
+                     // check if right target os
+                     if !file_name.contains(if cross.os == "android" {
+-- 
+2.30.2
+
