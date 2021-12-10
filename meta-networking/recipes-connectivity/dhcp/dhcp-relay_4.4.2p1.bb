@@ -47,13 +47,11 @@ EXTRA_OECONF = "--enable-paranoia \
 # Enable shared libs per dhcp README
 do_configure:prepend () {
     cp configure.ac+lt configure.ac
-    rm ${S}/bind/bind.tar.gz
-    mv ${WORKDIR}/bind.tar.gz ${S}/bind/
 }
 
 do_compile:prepend() {
     rm -rf ${S}/bind/bind-9.11.32/
-    tar xf ${S}/bind/bind.tar.gz -C ${S}/bind
+    tar xf ${WORKDIR}/bind.tar.gz -C ${S}/bind
     install -m 0755 ${STAGING_DATADIR_NATIVE}/gnu-config/config.guess ${S}/bind/bind-9.11.32/
     install -m 0755 ${STAGING_DATADIR_NATIVE}/gnu-config/config.sub ${S}/bind/bind-9.11.32/
     cp -fpR ${S}/m4/*.m4 ${S}/bind/bind-9.11.32/libtool.m4/
