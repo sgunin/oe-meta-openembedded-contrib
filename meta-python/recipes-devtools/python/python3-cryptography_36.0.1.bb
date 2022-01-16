@@ -10,8 +10,10 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=bf405a8056a6647e7d077b0e7bc36aba \
 LDSHARED += "-pthread"
 
 SRC_URI[sha256sum] = "53e5c1dc3d7a953de055d77bef2ff607ceef7a2aac0353b5d630ab67f7423638"
+SRCREV_wycheproof = "2196000605e45d91097147c9c71f26b72af58003"
 
 SRC_URI += " \
+    git://github.com/google/wycheproof.git;protocol=https;branch=master;name=wycheproof;nobranch=1 \
     file://run-ptest \
     file://check-memfree.py \
     file://0001-Cargo.toml-specify-pem-version.patch \
@@ -109,10 +111,13 @@ do_install_ptest() {
     install -d ${D}${PTEST_PATH}/tests/hazmat
     cp -rf ${S}/tests/hazmat/* ${D}${PTEST_PATH}/tests/hazmat/
     cp -r ${S}/pyproject.toml ${D}${PTEST_PATH}/
+    install -d ${D}${PTEST_PATH}/wycheproof
+    cp -rf ${WORKDIR}/git/* ${D}${PTEST_PATH}/wycheproof/
 }
 
 FILES:${PN}-ptest += " \
     ${PTEST_PATH}/check-memfree.py \
+    ${PTEST_PATH}/wycheproof/* \
 "
 FILES:${PN}-dbg += " \
     ${PYTHON_SITEPACKAGES_DIR}/${SRCNAME}/hazmat/bindings/.debug \
