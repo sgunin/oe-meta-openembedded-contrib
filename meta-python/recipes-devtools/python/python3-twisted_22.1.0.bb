@@ -11,7 +11,7 @@ SRC_URI[sha256sum] = "b7971ec9805b0f80e1dcb1a3721d7bfad636d5f909de687430ce373979
 
 PYPI_PACKAGE = "Twisted"
 
-inherit pypi setuptools3
+inherit pypi setuptools_build_meta
 
 do_install:append() {
     # remove some useless files before packaging
