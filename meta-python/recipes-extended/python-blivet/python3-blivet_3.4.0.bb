@@ -29,6 +29,9 @@ REQUIRED_DISTRO_FEATURES = "systemd"
 
 inherit setuptools3 python3native
 
+PIP_INSTALL_PACKAGE = "blivet"
+PIP_INSTALL_DIST_PATH = "${S}/dist"
+
 RDEPENDS:${PN} += "python3-pykickstart python3-pyudev \
                   parted python3-pyparted multipath-tools \
                   lsof cryptsetup libblockdev \
