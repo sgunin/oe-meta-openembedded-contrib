@@ -14,6 +14,8 @@ DEPENDS += "lapack suitesparse"
 
 inherit setuptools3
 
+PIP_INSTALL_PACKAGE = "cvxopt"
+
 export CVXOPT_BLAS_LIB_DIR = "${STAGING_LIBDIR}"
 export CVXOPT_SUITESPARSE_LIB_DIR = "${STAGING_LIBDIR}"
 export CVXOPT_SUITESPARSE_INC_DIR = "${STAGING_INCDIR}"
