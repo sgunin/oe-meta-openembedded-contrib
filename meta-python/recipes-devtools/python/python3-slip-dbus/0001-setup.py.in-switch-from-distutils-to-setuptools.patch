@@ -1,0 +1,32 @@
+From 57258b08d9a62c937ff4c5a7003c228048c5ebf0 Mon Sep 17 00:00:00 2001
+From: Tim Orling <tim.orling@konsulko.com>
+Date: Sun, 27 Feb 2022 12:16:49 -0800
+Subject: [PATCH] setup.py.in: switch from distutils to setuptools
+
+In Python 3.10, distutils is deprecated and is slated for removal in
+Python 3.12. It also prevents 'setup.py bdist_wheel' to build all a
+wheel to be built.
+
+Upstream-Status: Pending
+
+Signed-off-by: Tim Orling <tim.orling@konsulko.com>
+---
+ setup.py.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.py.in b/setup.py.in
+index 9e7644b..e4386d7 100644
+--- a/setup.py.in
++++ b/setup.py.in
+@@ -2,7 +2,7 @@
+ # -*- coding: utf-8 -*-
+ 
+ import sys
+-from distutils.core import setup
++from setuptools import setup
+ 
+ setup(name="slip", version="@VERSION@",
+         py_modules=["slip.__init__", "slip.util.__init__",
+-- 
+2.30.2
+
