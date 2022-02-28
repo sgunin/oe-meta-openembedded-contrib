@@ -14,3 +14,6 @@ S = "${WORKDIR}/i2c-tools-${PV}"
 inherit setuptools3
 
 SETUPTOOLS_SETUP_PATH = "${S}/py-smbus"
+
+PIP_INSTALL_PACKAGE = "smbus"
+PIP_INSTALL_DIST_PATH = "${SETUPTOOLS_SETUP_PATH}/dist"
