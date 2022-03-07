@@ -94,7 +94,6 @@ RDEPENDS:packagegroup-meta-python3 = "\
     python3-cryptography-vectors \
     python3-cson \
     python3-custom-inherit \
-    python3-cvxopt \
     python3-cycler \
     python3-dateparser \
     python3-dateutil \
@@ -259,7 +258,6 @@ RDEPENDS:packagegroup-meta-python3 = "\
     python3-padatious \
     python3-paho-mqtt \
     python3-pako \
-    python3-pandas \
     python3-parallax \
     python3-paramiko \
     python3-parse \
