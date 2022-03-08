@@ -46,7 +46,6 @@ RDEPENDS:packagegroup-meta-python3 = "\
     python3-aws-iot-device-sdk-python \
     python3-babel \
     python3-backcall \
-    python3-backports-functools-lru-cache \
     python3-bandit \
     python3-bcrypt \
     python3-beautifulsoup4 \
