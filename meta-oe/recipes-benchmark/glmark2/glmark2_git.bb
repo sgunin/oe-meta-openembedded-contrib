@@ -17,6 +17,7 @@ SRC_URI = " \
     git://github.com/glmark2/glmark2.git;protocol=https;branch=master \
     file://0001-fix-dispmanx-build.patch \
     file://0002-run-dispmanx-fullscreen.patch \
+    file://0001-waflib-fix-compatibility-with-python-3.11.patch \
     "
 SRCREV = "4b2bbe803576d48f08367aa5441740f9319c21e7"
 
