@@ -53,6 +53,7 @@ SRC_URI = "git://github.com/opencv/opencv.git;name=opencv;branch=master;protocol
            file://0001-Make-ts-module-external.patch \
            file://0001-Add-missing-header-for-LIBAVCODEC_VERSION_INT.patch \
            file://0008-Do-not-embed-build-directory-in-binaries.patch \
+           file://0001-carotene-don-t-use-fsched2-use-superblocks.patch \
            "
 SRC_URI:append:riscv64 = " file://0001-Use-Os-to-compile-tinyxml2.cpp.patch;patchdir=contrib"
 
