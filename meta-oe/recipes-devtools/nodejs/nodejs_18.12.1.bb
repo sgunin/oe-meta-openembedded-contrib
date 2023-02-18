@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=dfd7ae796baf5326016a3865ee1dc632"
 
 CVE_PRODUCT = "nodejs node.js"
 
-DEPENDS = "openssl"
+DEPENDS = "openssl ninja-native"
 DEPENDS:append:class-target = " qemu-native"
 DEPENDS:append:class-native = " c-ares-native"
 
@@ -28,6 +28,7 @@ SRC_URI = "http://nodejs.org/dist/v${PV}/node-v${PV}.tar.xz \
            file://0001-liftoff-Correct-function-signatures.patch \
            file://0001-mips-Use-32bit-cast-for-operand-on-mips32.patch \
            file://gcc13.patch \
+           file://0003-include-obj-name-in-shared-intermediate.patch \
            "
 
 SRC_URI:append:class-target = " \
@@ -146,6 +147,7 @@ do_configure () {
     GYP_DEFINES="${GYP_DEFINES}" export GYP_DEFINES
     # $TARGET_ARCH settings don't match --dest-cpu settings
     python3 configure.py --verbose --prefix=${prefix} \
+               --ninja \
                --shared-openssl \
                --without-dtrace \
                --without-etw \
