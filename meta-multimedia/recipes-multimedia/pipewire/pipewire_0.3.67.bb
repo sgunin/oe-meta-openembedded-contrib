@@ -14,7 +14,9 @@ LIC_FILES_CHKSUM = " \
 DEPENDS = "dbus ncurses"
 
 SRCREV = "26623ff8cb3c9ba774537379a1835c5efb0d5159"
-SRC_URI = "git://gitlab.freedesktop.org/pipewire/pipewire.git;branch=master;protocol=https"
+SRC_URI = "git://gitlab.freedesktop.org/pipewire/pipewire.git;branch=master;protocol=https \
+    file://0001-meson.build-accept-webrtc-audio-processing-1.patch \
+"
 
 S = "${WORKDIR}/git"
 

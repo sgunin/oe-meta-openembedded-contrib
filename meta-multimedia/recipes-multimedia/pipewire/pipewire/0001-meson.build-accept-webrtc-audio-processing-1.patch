@@ -1,0 +1,24 @@
+From 759dc6eb1eac0b6eec125a19787ae2d324edb9b4 Mon Sep 17 00:00:00 2001
+From: Martin Jansa <Martin.Jansa@gmail.com>
+Date: Fri, 17 Mar 2023 13:24:03 +0100
+Subject: [PATCH] meson.build: accept webrtc-audio-processing-1
+
+Signed-off-by: Martin Jansa <Martin.Jansa@gmail.com>
+---
+ meson.build | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index 9d5e3a17b..0a669f971 100644
+--- a/meson.build
++++ b/meson.build
+@@ -358,8 +358,7 @@ summary({'gstreamer-device-provider': gst_dp_found}, bool_yn: true, section: 'Ba
+ 
+ cdata.set('HAVE_GSTREAMER_DEVICE_PROVIDER', get_option('gstreamer-device-provider').allowed())
+ 
+-webrtc_dep = dependency('webrtc-audio-processing',
+-  version : ['>= 0.2', '< 1.0'],
++webrtc_dep = dependency('webrtc-audio-processing-1',
+   required : get_option('echo-cancel-webrtc'))
+ summary({'WebRTC Echo Canceling': webrtc_dep.found()}, bool_yn: true, section: 'Misc dependencies')
+ cdata.set('HAVE_WEBRTC', webrtc_dep.found())
