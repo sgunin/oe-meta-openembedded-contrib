@@ -22,6 +22,7 @@ PTESTS_FAST_META_PERL = "\
 
 PTESTS_SLOW_META_PERL = "\
     libio-socket-ssl-perl \
+    po4a \
 "
 
 PTESTS_PROBLEMS_META_PERL ="\

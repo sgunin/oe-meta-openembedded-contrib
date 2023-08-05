@@ -21,6 +21,20 @@ DEPENDS = " \
     libunicode-linebreak-perl \
 "
 
+RDEPENDS:${PN} = " \
+    perl-module-encode-encoding \
+    perl-module-encode-guess \
+    perl-module-file-copy \
+    perl-module-getopt-long \
+    perl-module-getopt-std \
+    perl-module-pod-simple \
+    perl-module-pod-simple-transcode \
+    perl-module-pod-simple-transcodedumb \
+    perl-module-pod-simple-transcodesmart \
+    perl-module-pod-text \
+    perl-module-time-local \
+"
+
 RRECOMMENDS:${PN} = " \
     libtext-wrapi18n-perl \
     libterm-readkey-perl \
@@ -28,6 +42,30 @@ RRECOMMENDS:${PN} = " \
     libunicode-linebreak-perl \
 "
 
-inherit cpan_build
+inherit cpan_build ptest-perl
+
+RDEPENDS:${PN}-ptest += " \
+    diffutils \
+    gettext \
+    glibc-gconv-iso8859-1 \
+    glibc-charmap-iso-8859-1 \
+    glibc-utils \
+    libpod-parser-perl \
+    perl-module-test-more \
+"
+
+do_install_ptest:prepend () {
+    sed -i -e "s!../../scripts/msguntypot!/usr/bin/msguntypot!g" ${B}/t/28-msguntypot.t
+    rm -rf ${B}/t/20-sgml.t
+    rm -rf ${B}/t/24-tex.t
+}
+
+do_install_ptest:append () {
+    ln -sf ${bindir}/po4a ${D}${PTEST_PATH}/
+    ln -sf ${bindir}/po4a-gettextize ${D}${PTEST_PATH}/
+    ln -sf ${bindir}/po4a-normalize ${D}${PTEST_PATH}/
+    ln -sf ${bindir}/po4a-translate ${D}${PTEST_PATH}/
+    ln -sf ${bindir}/po4a-updatepo ${D}${PTEST_PATH}/
+}
 
 BBCLASSEXTEND = "native"
