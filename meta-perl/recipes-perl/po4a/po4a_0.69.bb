@@ -8,20 +8,28 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=a96fc9b4cc36d80659e694ea109f0325"
 
 SRC_URI = "git://github.com/mquinson/po4a.git;protocol=https;branch=master"
 
-# v0.49
-SRCREV = "79ed87a577a543538fe39c7b60079981f5997072"
+# v0.69
+SRCREV = "1925f62d0a26c4aa0621ca0cd419f7e84ecae676"
 
 S = "${WORKDIR}/git"
 
+inherit cpan_build ptest-perl
+
 DEPENDS = " \
+    docbook-xsl-stylesheets-native \
+    gettext-native \
+    libxslt-native \
     libmodule-build-perl-native \
+    liblocale-gettext-perl \
+    libpod-parser-perl-native \
     libtext-wrapi18n-perl \
     libterm-readkey-perl \
-    liblocale-gettext-perl \
     libunicode-linebreak-perl \
 "
 
 RDEPENDS:${PN} = " \
+    libpod-parser-perl \
+    libyaml-tiny-perl \
     perl-module-encode-encoding \
     perl-module-encode-guess \
     perl-module-file-copy \
@@ -33,6 +41,7 @@ RDEPENDS:${PN} = " \
     perl-module-pod-simple-transcodesmart \
     perl-module-pod-text \
     perl-module-time-local \
+    perl-module-utf8 \
 "
 
 RRECOMMENDS:${PN} = " \
@@ -42,7 +51,14 @@ RRECOMMENDS:${PN} = " \
     libunicode-linebreak-perl \
 "
 
-inherit cpan_build ptest-perl
+do_install_ptest:append() {
+    ln -sf /usr/bin/msguntypot ${D}${PTEST_PATH}/msguntypot
+    ln -sf /usr/bin/po4a ${D}${PTEST_PATH}/po4a
+    ln -sf /usr/bin/po4a-gettextize ${D}${PTEST_PATH}/po4a-gettextize
+    ln -sf /usr/bin/po4a-normalize ${D}${PTEST_PATH}/po4a-normalize
+    ln -sf /usr/bin/po4a-translate ${D}${PTEST_PATH}/po4a-translate
+    ln -sf /usr/bin/po4a-updatepo ${D}${PTEST_PATH}/po4a-updatepo
+}
 
 RDEPENDS:${PN}-ptest += " \
     diffutils \
@@ -50,22 +66,9 @@ RDEPENDS:${PN}-ptest += " \
     glibc-gconv-iso8859-1 \
     glibc-charmap-iso-8859-1 \
     glibc-utils \
-    libpod-parser-perl \
+    perl-module-file-glob \
+    perl-module-lib \
     perl-module-test-more \
 "
-
-do_install_ptest:prepend () {
-    sed -i -e "s!../../scripts/msguntypot!/usr/bin/msguntypot!g" ${B}/t/28-msguntypot.t
-    rm -rf ${B}/t/20-sgml.t
-    rm -rf ${B}/t/24-tex.t
-}
-
-do_install_ptest:append () {
-    ln -sf ${bindir}/po4a ${D}${PTEST_PATH}/
-    ln -sf ${bindir}/po4a-gettextize ${D}${PTEST_PATH}/
-    ln -sf ${bindir}/po4a-normalize ${D}${PTEST_PATH}/
-    ln -sf ${bindir}/po4a-translate ${D}${PTEST_PATH}/
-    ln -sf ${bindir}/po4a-updatepo ${D}${PTEST_PATH}/
-}
 
 BBCLASSEXTEND = "native"
