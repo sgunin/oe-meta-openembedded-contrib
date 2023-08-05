@@ -14,6 +14,7 @@ PTESTS_FAST_META_PERL = "\
     libhtml-tagset-perl \
     libmozilla-ca-perl \
     libmodule-build-tiny-perl \
+    libpod-parser-perl \
     libstrictures-perl \
     libterm-readkey-perl \
     libtest-nowarnings-perl \
