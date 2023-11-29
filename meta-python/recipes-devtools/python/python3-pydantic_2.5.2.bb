@@ -19,5 +19,6 @@ RDEPENDS:${PN} += "\
     python3-netclient \
     python3-numbers \
     python3-profile \
+    python3-pydantic-core \
     python3-typing-extensions \
 "
