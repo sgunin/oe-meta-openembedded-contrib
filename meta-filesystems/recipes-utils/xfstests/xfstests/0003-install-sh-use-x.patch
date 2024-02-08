@@ -1,0 +1,89 @@
+From c933fea471d59b15595b36c386bb3c850b9311c3 Mon Sep 17 00:00:00 2001
+From: Martin Jansa <martin.jansa@gmail.com>
+Date: Thu, 8 Feb 2024 20:51:30 +0100
+Subject: [PATCH 3/3] install-sh: use -x
+
+Upstream-Status: Pending
+Signed-off-by: Martin Jansa <martin.jansa@gmail.com>
+---
+ include/install-sh | 10 +++++++---
+ tools/mkgroupfile  |  6 ++++--
+ 2 files changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/include/install-sh b/include/install-sh
+index a19cbe31..2a32b31a 100755
+--- a/include/install-sh
++++ b/include/install-sh
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /bin/bash -x
+ #
+ # SPDX-License-Identifier: GPL-2.0
+ # Copyright (c) 2000-2001 Silicon Graphics, Inc.  All Rights Reserved.
+@@ -287,7 +287,7 @@ else
+ 	then
+ 	    mkdir -p `dirname $dir`
+ 	fi
+-	$CP $f $dir
++	$CP -v $f $dir
+ 	status=$?
+ 	if [ $status -eq 0 ]
+ 	then
+@@ -311,6 +311,8 @@ else
+ 		fi
+ 		$MANIFEST f $FILEMODE $OWNER $GROUP $HERE/$dir ${dir#$DIST_ROOT}
+ 	    fi
++        else
++            echo "ERROR: failed $CP $f $dir in $HERE"
+ 	fi
+     else
+ 	#
+@@ -331,7 +333,7 @@ else
+ 	# echo DIR=$dir list=\"$list\"
+ 	for f in $list
+ 	do
+-	    $CP $f $dir
++	    $CP -v $f $dir
+ 	    status=$?
+ 	    if [ $status -eq 0 ]
+ 	    then
+@@ -343,6 +345,8 @@ else
+ 		    status=$?
+ 		fi
+ 		$MANIFEST f $FILEMODE $OWNER $GROUP $HERE/$f ${dir#$DIST_ROOT}/$f
++            else
++                echo "ERROR: failed $CP $f $dir in $HERE"
+ 	    fi
+ 	    [ $status -ne 0 ] && break
+ 	done
+diff --git a/tools/mkgroupfile b/tools/mkgroupfile
+index dcf896e0..4f5fdc4c 100755
+--- a/tools/mkgroupfile
++++ b/tools/mkgroupfile
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/bash -x
+ # SPDX-License-Identifier: GPL-2.0
+ # Copyright (c) 2021 Oracle.  All Rights Reserved.
+ #
+@@ -11,6 +11,7 @@ fi
+ 
+ test_dir="$PWD"
+ groupfile="$1"
++echo "MJ: $0 in `pwd` groupfile: $groupfile"
+ new_groups="/tmp/groups.$$"
+ GROUPNAME_DOC_FILE="$(readlink -m ../../doc/group-names.txt)"
+ 
+@@ -83,7 +84,8 @@ if [ -z "$groupfile" ] || [ "$groupfile" = "-" ]; then
+ else
+ 	# Otherwise, write the group file to disk somewhere.
+ 	generate_groupfile
+-	mv -f "$new_groups" "$groupfile"
++        echo "MJ: $0 in `pwd` mv -vf \"$new_groups\" \"$groupfile\""
++	mv -vf "$new_groups" "$groupfile" || echo "MJ: ERROR: mv -vf \"$new_groups\" \"$groupfile\""
+ fi
+ 
+ # Success!
+-- 
+2.43.0
+

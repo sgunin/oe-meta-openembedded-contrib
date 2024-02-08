@@ -11,6 +11,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/fs/xfs/xfstests-dev.git;branch=master \
            file://0001-add-missing-FTW_-macros-when-not-available-in-libc.patch \
            file://0002-Drop-detached_mounts_propagation-and-remove-sys-moun.patch \
            file://0003-tests-Makefile-make-sure-group.list-DIRT-exists-befo.patch \
+           file://0003-install-sh-use-x.patch \
            "
 
 S = "${WORKDIR}/git"
