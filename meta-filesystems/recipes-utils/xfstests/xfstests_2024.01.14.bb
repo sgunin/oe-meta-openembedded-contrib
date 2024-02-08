@@ -12,6 +12,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/fs/xfs/xfstests-dev.git;branch=master \
            file://0002-Drop-detached_mounts_propagation-and-remove-sys-moun.patch \
            file://0003-tests-Makefile-make-sure-group.list-DIRT-exists-befo.patch \
            file://0003-install-sh-use-x.patch \
+           file://0005-mkgroupfile-extra-sleep.patch \
            "
 
 S = "${WORKDIR}/git"
@@ -54,6 +55,7 @@ do_configure:prepend() {
 do_install() {
     # otherwise install-sh duplicates DESTDIR prefix
     export DIST_ROOT="/" DIST_MANIFEST="" DESTDIR="${D}"
+    rm -vf ${S}/tests/*/group.list
     oe_runmake install
 
     unionmount_target_dir=${D}${prefix}/xfstests/unionmount-testsuite

@@ -1,0 +1,26 @@
+From 13f5c103a089f4a02532b7f57ea0221f84d7106f Mon Sep 17 00:00:00 2001
+From: Martin Jansa <martin.jansa@gmail.com>
+Date: Thu, 8 Feb 2024 22:54:57 +0100
+Subject: [PATCH 5/6] mkgroupfile: extra sleep
+
+Upstream-Status: Pending
+---
+ tools/mkgroupfile | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/tools/mkgroupfile b/tools/mkgroupfile
+index 31728cd3..f0dfe5b1 100755
+--- a/tools/mkgroupfile
++++ b/tools/mkgroupfile
+@@ -85,6 +85,8 @@ if [ -z "$groupfile" ] || [ "$groupfile" = "-" ]; then
+ else
+ 	# Otherwise, write the group file to disk somewhere.
+ 	generate_groupfile
++        echo "MJ: $0 in `pwd` sleep 30"
++        sleep 30
+         echo "MJ: $0 in `pwd` mv -vf \"$new_groups\" \"$groupfile\""
+ 	mv -vf "$new_groups" "$groupfile" || echo "MJ: ERROR: mv -vf \"$new_groups\" \"$groupfile\""
+ fi
+-- 
+2.43.0
+
