@@ -37,6 +37,7 @@ PTESTS_FAST_META_PYTHON = "\
     python3-pyasn1-modules \
     python3-pyroute2 \
     python3-pyserial \
+    python3-pytest-lazy-fixtures \
     python3-pytest-mock \
     python3-pytoml \
     python3-pyyaml-include \

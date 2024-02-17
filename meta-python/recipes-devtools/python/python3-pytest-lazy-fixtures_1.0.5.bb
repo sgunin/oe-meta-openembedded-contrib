@@ -19,3 +19,14 @@ inherit pypi python_poetry_core
 PYPI_PACKAGE = "pytest_lazy_fixtures"
 
 RDEPENDS:${PN} = "python3-pytest"
+
+inherit ptest
+
+SRC_URI += "file://run-ptest"
+
+do_install_ptest() {
+        install -d ${D}${PTEST_PATH}/tests
+        cp -rf ${S}/tests/* ${D}${PTEST_PATH}/tests/
+}
+
+BBCLASSEXTEND = "native nativesdk"
