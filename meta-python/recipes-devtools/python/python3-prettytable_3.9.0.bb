@@ -12,7 +12,6 @@ do_install:append() {
     done
 }
 
-BBCLASSEXTEND = "native nativesdk"
 inherit pypi ptest python_hatchling
 
 SRC_URI += " \
@@ -34,11 +33,14 @@ RDEPENDS:${PN} += " \
 
 RDEPENDS:${PN}-ptest += " \
     python3-pytest \
-    python3-pytest-lazy-fixture \
+    python3-pytest-lazy-fixtures \
     python3-sqlite3 \
     python3-unittest-automake-output \
 "
 
 do_install_ptest() {
-	cp -f ${S}/tests/test_prettytable.py ${D}${PTEST_PATH}/
+	install -d ${D}${PTEST_PATH}/tests
+	cp -rf ${S}/tests/* ${D}${PTEST_PATH}/tests/
 }
+
+BBCLASSEXTEND = "native nativesdk"
