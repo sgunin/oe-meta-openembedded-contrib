@@ -21,6 +21,7 @@ PTESTS_FAST_META_PYTHON = "\
     python3-gunicorn \
     python3-html2text \
     python3-inflection \
+    python3-inotify \
     python3-intervals \
     python3-ipy \
     python3-iso3166 \
@@ -75,7 +76,6 @@ PTESTS_PROBLEMS_META_PYTHON ="\
     python3-dnspython \
     python3-fastjsonschema \
     python3-gpiod \
-    python3-inotify \
     python3-license-expression \
     python3-ordered-set \
     python3-pillow \
