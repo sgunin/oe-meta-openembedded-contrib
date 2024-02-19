@@ -23,6 +23,7 @@ PTESTS_FAST_META_PYTHON = "\
     python3-intervals \
     python3-ipy \
     python3-iso3166 \
+    python3-jdcal \
     python3-jsmin \
     python3-msgpack \
     python3-multidict \
@@ -75,7 +76,6 @@ PTESTS_PROBLEMS_META_PYTHON ="\
     python3-gpiod \
     python3-gunicorn \
     python3-inotify \
-    python3-jdcal \
     python3-license-expression \
     python3-ordered-set \
     python3-pillow \
