@@ -26,6 +26,7 @@ PTESTS_FAST_META_PYTHON = "\
     python3-jsmin \
     python3-msgpack \
     python3-multidict \
+    python3-parse \
     python3-parse-type \
     python3-platformdirs \
     python3-polyline \
@@ -77,7 +78,6 @@ PTESTS_PROBLEMS_META_PYTHON ="\
     python3-jdcal \
     python3-license-expression \
     python3-ordered-set \
-    python3-parse \
     python3-pillow \
     python3-pint \
     python3-pytest-lazy-fixture \
